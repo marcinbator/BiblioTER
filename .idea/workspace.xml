@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" afterDir="false" />
     </list>

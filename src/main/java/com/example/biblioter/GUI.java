@@ -36,7 +36,7 @@ public class GUI extends Application{
     public void onAddBookClick() {
         showMessage("AddBook clicked.");
         Calendar c = Calendar.getInstance();
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający", c.getTime());
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający");
         booksTable.getItems().add(book);
         booksTable.refresh();
     }
