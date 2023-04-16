@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" afterDir="false" />
     </list>
@@ -75,7 +73,7 @@
       <workItem from="1681639233256" duration="51000" />
       <workItem from="1681641311981" duration="43000" />
       <workItem from="1681641423512" duration="1647000" />
-      <workItem from="1681669035352" duration="849000" />
+      <workItem from="1681669035352" duration="3440000" />
     </task>
     <servers />
   </component>

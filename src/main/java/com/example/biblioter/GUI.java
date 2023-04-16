@@ -55,7 +55,7 @@ public class GUI extends Application implements Initializable {
         Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający");
         booksTable.getItems().add(book);
     }
-    
+
     public void onAddUserClick() {
         showMessage("AddUser clicked.");
     }
