@@ -1,17 +1,20 @@
 package com.example.biblioter;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class GUI extends Application{
+    public DialogPane messagePanel;
+    public TableView<Book> booksTable;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
@@ -20,13 +23,25 @@ public class GUI extends Application{
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    private MenuItem[] menuitems;
-    @FXML
-    private Button[] buttons;
-    public void addBook(ActionEvent actionEvent) {
-        System.out.println("xd");
+    private void showMessage(String text){
+        messagePanel.setContentText(text);
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> messagePanel.setContentText(""));
+            }
+        }, 2000);
     }
-    public void addUser(ActionEvent actionEvent) {
+    public void onAddBookClick() {
+        showMessage("AddBook clicked.");
+        Calendar c = Calendar.getInstance();
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający", c.getTime());
+        booksTable.getItems().add(book);
+        booksTable.refresh();
+    }
+
+    public void onAddUserClick() {
+        showMessage("AddUser clicked.");
     }
 }

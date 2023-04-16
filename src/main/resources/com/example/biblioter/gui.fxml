@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="642.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.GUI">
+<VBox alignment="TOP_CENTER" prefHeight="642.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.GUI">
    <MenuBar prefHeight="15.0" prefWidth="564.0">
      <menus>
        <Menu mnemonicParsing="false" text="Menu">
          <items>
-           <MenuItem fx:id="addBook" mnemonicParsing="false" onAction="#addBook" text="Dodaj książkę" />
-               <MenuItem fx:id="addUser" mnemonicParsing="false" onAction="#addUser" text="Dodaj osobę" />
+           <MenuItem mnemonicParsing="false" onAction="#onAddBookClick" text="Dodaj książkę" />
+             <MenuItem mnemonicParsing="false" onAction="#onAddUserClick" text="Dodaj osobę" />
          </items>
        </Menu>
      </menus>
@@ -39,7 +28,7 @@
        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
      </rowConstraints>
       <children>
-         <Label prefHeight="35.0" prefWidth="305.0" text="Biblioteka" GridPane.rowIndex="1">
+         <Label prefHeight="35.0" prefWidth="305.0" text="Biblioteka">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
@@ -50,15 +39,16 @@
                <Bloom />
             </effect>
          </Label>
-         <Button mnemonicParsing="false" text="Dodaj książkę" GridPane.columnIndex="1" />
-         <Button mnemonicParsing="false" prefWidth="90.0" text="Dodaj osobę" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Button mnemonicParsing="false" onAction="#onAddBookClick" text="Dodaj książkę" GridPane.columnIndex="1" />
+         <Button mnemonicParsing="false" onAction="#onAddUserClick" prefWidth="90.0" text="Dodaj osobę" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <DialogPane fx:id="messagePanel" GridPane.rowIndex="2" />
       </children>
    </GridPane>
    <TabPane prefHeight="384.0" prefWidth="564.0" tabClosingPolicy="UNAVAILABLE">
      <tabs>
        <Tab text="Książki">
             <content>
-               <TableView prefHeight="479.0" prefWidth="964.0">
+               <TableView fx:id="booksTable" prefHeight="479.0" prefWidth="964.0">
                  <columns>
                    <TableColumn prefWidth="39.0" text="L.p." />
                    <TableColumn prefWidth="123.0" text="Tytuł" />
