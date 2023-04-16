@@ -22,12 +22,12 @@ public class Book {
         this.borrowed=borrowed;
         this.category=category;
     }
-    public static void showBook(Book book){
-        System.out.println(book.getId());
-        System.out.println(book.getTitle());
-        System.out.println(book.getAuthor());
-        System.out.println(book.getCategory());
-        System.out.println(book.getBorrowed());
+    public void showBook(){
+        System.out.println(this.getId());
+        System.out.println(this.getTitle());
+        System.out.println(this.getAuthor());
+        System.out.println(this.getCategory());
+        System.out.println(this.getBorrowed());
     }
     public int getId() {
         return id;

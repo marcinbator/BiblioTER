@@ -48,14 +48,13 @@
      <tabs>
        <Tab text="Książki">
             <content>
-               <TableView fx:id="booksTable" prefHeight="479.0" prefWidth="964.0">
+               <TableView fx:id="booksTable" onMouseClicked="#onBookClick" prefHeight="479.0" prefWidth="964.0">
                  <columns>
-                   <TableColumn prefWidth="39.0" text="L.p." />
-                   <TableColumn prefWidth="123.0" text="Tytuł" />
-                     <TableColumn prefWidth="102.0" text="Autor" />
-                     <TableColumn prefWidth="102.0" text="Kategoria" />
-                     <TableColumn minWidth="9.0" prefWidth="104.0" text="Wypożyczył" />
-                     <TableColumn prefWidth="94.0" text="Data zwrotu" />
+                   <TableColumn fx:id="id" prefWidth="39.0" text="L.p." />
+                   <TableColumn fx:id="title" prefWidth="123.0" text="Tytuł" />
+                     <TableColumn fx:id="author" prefWidth="102.0" text="Autor" />
+                     <TableColumn fx:id="category" prefWidth="102.0" text="Kategoria" />
+                     <TableColumn fx:id="borrowed" minWidth="9.0" prefWidth="104.0" text="Wypożyczył" />
                  </columns>
                   <columnResizePolicy>
                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
