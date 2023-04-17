@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.*;
 
 public class GUI extends Application implements Initializable {
+
     public DialogPane messagePanel;
     public TableView<Book>booksTable;
     public TableColumn<Book, Integer>id;
@@ -21,6 +22,9 @@ public class GUI extends Application implements Initializable {
     public TableColumn<Book, String>author;
     public TableColumn<Book, String>category;
     public TableColumn<Book, String>borrowed;
+
+    public Object userData;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
@@ -39,6 +43,10 @@ public class GUI extends Application implements Initializable {
         borrowed.setCellValueFactory(new PropertyValueFactory<Book,String>("borrowed"));
     }
 
+    public void setUserData(Object userData) {
+        this.userData = userData;
+    }
+
     private void showMessage(String text){
         messagePanel.setContentText(text);
         Timer timer = new Timer();
@@ -50,14 +58,32 @@ public class GUI extends Application implements Initializable {
         }, 2000);
     }
 
-    public void onAddBookClick() {
-        showMessage("AddBook clicked.");
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający");
+    public void launchAddBookForm() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("addBookForm.fxml"));
+        Stage newStage = new Stage();
+        Scene scene = new Scene(loader.load(), 640, 480);
+        AddBookForm addBookFormController = loader.getController();
+        addBookFormController.setGUIController(this);
+        newStage.setScene(scene);
+        newStage.show();
+    }
+
+    public void addBook(Book book){
         booksTable.getItems().add(book);
+        System.out.println(booksTable.getItems());
+        booksTable.refresh();
+        book.showBook();
+    }
+
+    public void onAddBookClick() throws IOException {
+        showMessage("AddBook clicked.");
+        launchAddBookForm();
     }
 
     public void onAddUserClick() {
         showMessage("AddUser clicked.");
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający");
+        booksTable.getItems().add(book);
     }
 
     public void onBookClick(MouseEvent mouseEvent) {

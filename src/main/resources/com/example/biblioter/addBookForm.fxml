@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.biblioter.AddBookForm"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.AddBookForm">
+   <children>
+      <TextField fx:id="titleField" layoutX="71.0" layoutY="112.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="92.0" prefHeight="18.0" prefWidth="73.0" text="Tytuł">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="authorField" layoutX="71.0" layoutY="168.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="148.0" prefHeight="12.0" prefWidth="74.0" text="Autor">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="categoryField" layoutX="71.0" layoutY="224.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="204.0" prefHeight="18.0" prefWidth="73.0" text="Kategoria">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="borrowedField" layoutX="71.0" layoutY="281.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="261.0" prefHeight="18.0" prefWidth="73.0" text="Wypożyczył">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idField" layoutX="71.0" layoutY="65.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="45.0" prefHeight="18.0" prefWidth="73.0" text="ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="addBookButton" layoutX="256.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Dodaj książkę" />
+   </children>
 </AnchorPane>
