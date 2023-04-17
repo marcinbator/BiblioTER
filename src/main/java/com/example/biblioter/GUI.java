@@ -54,11 +54,12 @@ public class GUI extends Application implements Initializable {
 
     public void launchAddBookForm() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("addBookForm.fxml"));
-        Stage newStage = new Stage();
         Scene scene = new Scene(loader.load(), 700, 500);
-        AddBookForm addBookFormController = loader.getController(); //constructor
-        addBookFormController.setParentController(this);
+        Stage newStage = new Stage();
+        newStage.setTitle("Dodaj książkę");
         newStage.setScene(scene);
+        AddBookForm addBookFormController = loader.getController();
+        addBookFormController.setParentController(this);
         newStage.show();
     }
 

@@ -1,14 +1,11 @@
 package com.example.biblioter;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddBookForm extends Application {
+public class AddBookForm {
     @FXML
     private Button addBookButton;
     @FXML
@@ -27,22 +24,13 @@ public class AddBookForm extends Application {
         this.parentController = parentController;
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("addBookForm.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setTitle("Dodaj książkę");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     void closeForm(){
         Stage stage = (Stage) addBookButton.getScene().getWindow();
         stage.close();
     }
 
     public void onAddBookButtonClicked() {
-        Book book=new Book();
+        Book book = new Book();
         book.setId(Integer.parseInt(idField.getText()));
         book.setTitle(titleField.getText());
         book.setAuthor(authorField.getText());
