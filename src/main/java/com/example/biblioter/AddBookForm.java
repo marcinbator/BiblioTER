@@ -3,39 +3,28 @@ package com.example.biblioter;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class AddBookForm extends Application {
     @FXML
     private Button addBookButton;
-
     @FXML
     private TextField authorField;
-
     @FXML
     private TextField borrowedField;
-
     @FXML
     private TextField categoryField;
-
     @FXML
     private TextField idField;
-
     @FXML
     private TextField titleField;
+    private GUI parentController;
 
-    private GUI guiController;
-
-    public void setGUIController(GUI guiController) {
-        this.guiController = guiController;
+    public void setParentController(GUI parentController) {
+        this.parentController = parentController;
     }
 
     @Override
@@ -47,15 +36,19 @@ public class AddBookForm extends Application {
         stage.show();
     }
 
-    public void onAddBookButtonClicked() throws IOException {
+    void closeForm(){
+        Stage stage = (Stage) addBookButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void onAddBookButtonClicked() {
         Book book=new Book();
         book.setId(Integer.parseInt(idField.getText()));
         book.setTitle(titleField.getText());
         book.setAuthor(authorField.getText());
         book.setCategory(categoryField.getText());
         book.setBorrowed(borrowedField.getText());
-        guiController.addBook(book);
-        Stage stage = (Stage) addBookButton.getScene().getWindow();
-        stage.close();
+        parentController.booksTable.getItems().add(book);
+        closeForm();
     }
 }

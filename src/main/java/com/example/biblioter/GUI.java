@@ -23,8 +23,6 @@ public class GUI extends Application implements Initializable {
     public TableColumn<Book, String>category;
     public TableColumn<Book, String>borrowed;
 
-    public Object userData;
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
@@ -36,15 +34,11 @@ public class GUI extends Application implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        id.setCellValueFactory(new PropertyValueFactory<Book,Integer>("id"));
-        title.setCellValueFactory(new PropertyValueFactory<Book,String>("title"));
-        author.setCellValueFactory(new PropertyValueFactory<Book,String>("author"));
-        category.setCellValueFactory(new PropertyValueFactory<Book,String>("category"));
-        borrowed.setCellValueFactory(new PropertyValueFactory<Book,String>("borrowed"));
-    }
-
-    public void setUserData(Object userData) {
-        this.userData = userData;
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        author.setCellValueFactory(new PropertyValueFactory<>("author"));
+        category.setCellValueFactory(new PropertyValueFactory<>("category"));
+        borrowed.setCellValueFactory(new PropertyValueFactory<>("borrowed"));
     }
 
     private void showMessage(String text){
@@ -61,19 +55,14 @@ public class GUI extends Application implements Initializable {
     public void launchAddBookForm() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("addBookForm.fxml"));
         Stage newStage = new Stage();
-        Scene scene = new Scene(loader.load(), 640, 480);
-        AddBookForm addBookFormController = loader.getController();
-        addBookFormController.setGUIController(this);
+        Scene scene = new Scene(loader.load(), 700, 500);
+        AddBookForm addBookFormController = loader.getController(); //constructor
+        addBookFormController.setParentController(this);
         newStage.setScene(scene);
         newStage.show();
     }
 
-    public void addBook(Book book){
-        booksTable.getItems().add(book);
-        System.out.println(booksTable.getItems());
-        booksTable.refresh();
-        book.showBook();
-    }
+    //Listeners
 
     public void onAddBookClick() throws IOException {
         showMessage("AddBook clicked.");

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -76,6 +77,7 @@
       <workItem from="1681641423512" duration="1647000" />
       <workItem from="1681669035352" duration="3440000" />
       <workItem from="1681717334685" duration="4659000" />
+      <workItem from="1681727088475" duration="1495000" />
     </task>
     <servers />
   </component>
