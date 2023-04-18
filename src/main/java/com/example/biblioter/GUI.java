@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -65,12 +66,21 @@ public class GUI extends Application implements Initializable {
         booksTable.getItems().add(book);
     }
 
-    public void onBookClick(MouseEvent mouseEvent) {
-        if(mouseEvent.getClickCount()==2){
+    public void onBookClick(MouseEvent mouseEvent) throws Exception {
+        if(mouseEvent.getClickCount()==2 && mouseEvent.getButton()== MouseButton.PRIMARY){
             List<Book> books=booksTable.getSelectionModel().getSelectedItems();
             for(Book book:books){
-                book.showBook();
+                BookDetailsForm.launchBookDetails(this, book);
             }
+        }
+        else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
+            ContextMenu contextMenu = new ContextMenu();
+            MenuItem menuItem1 = new MenuItem("Edytuj");
+            MenuItem menuItem2 = new MenuItem("Usuń");
+            MenuItem menuItem3 = new MenuItem("Oznacz jako dostępną");
+            MenuItem menuItem4 = new MenuItem("Dodaj osobę wypożyczającą");
+            contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4);
+            booksTable.setContextMenu(contextMenu);
         }
     }
 }
