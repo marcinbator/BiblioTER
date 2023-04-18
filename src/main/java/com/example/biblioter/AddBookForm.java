@@ -1,9 +1,13 @@
 package com.example.biblioter;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class AddBookForm {
     @FXML
@@ -18,10 +22,20 @@ public class AddBookForm {
     private TextField idField;
     @FXML
     private TextField titleField;
+
     private GUI parentController;
 
-    public void setParentController(GUI parentController) {
+    void setParentController(GUI parentController) {
         this.parentController = parentController;
+    }
+    public static void launchAddBookForm(GUI parentController) throws IOException {
+        FXMLLoader loader = new FXMLLoader(AddBookForm.class.getResource("addBookForm.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Dodaj książkę");
+        stage.setScene(new Scene(loader.load(), 700, 500));
+        AddBookForm addBookFormController = loader.getController();
+        addBookFormController.setParentController(parentController);
+        stage.show();
     }
 
     void closeForm(){

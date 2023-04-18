@@ -52,22 +52,11 @@ public class GUI extends Application implements Initializable {
         }, 2000);
     }
 
-    public void launchAddBookForm() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("addBookForm.fxml"));
-        Scene scene = new Scene(loader.load(), 700, 500);
-        Stage newStage = new Stage();
-        newStage.setTitle("Dodaj książkę");
-        newStage.setScene(scene);
-        AddBookForm addBookFormController = loader.getController();
-        addBookFormController.setParentController(this);
-        newStage.show();
-    }
-
     //Listeners
 
     public void onAddBookClick() throws IOException {
         showMessage("AddBook clicked.");
-        launchAddBookForm();
+        AddBookForm.launchAddBookForm(this);
     }
 
     public void onAddUserClick() {
