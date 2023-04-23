@@ -30,12 +30,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="idField" layoutX="71.0" layoutY="65.0" prefHeight="26.0" prefWidth="458.0" />
-      <Label layoutX="71.0" layoutY="45.0" prefHeight="18.0" prefWidth="73.0" text="ID">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Button fx:id="addBookButton" layoutX="256.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Dodaj książkę" />
    </children>
 </AnchorPane>

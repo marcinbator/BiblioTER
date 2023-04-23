@@ -1,25 +1,40 @@
 package com.example.biblioter;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class BookDetailsForm {
     @FXML
     TextFlow textPanel;
+    @FXML
+    private Button addUserButton;
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private Button editButton;
+    @FXML
+    private Button setAvailableButton;
 
     GUI parentController;
     Book book;
+    DBConnect connecttion;
 
     void setBook(Book book) {
         this.book = book;
     }
 
-    void setParentController(GUI parentController){
+    void setParentController(GUI parentController) throws SQLException, ClassNotFoundException {
         this.parentController=parentController;
+        this.connecttion=new DBConnect();
     }
 
     void showBook(Book book){
@@ -46,5 +61,21 @@ public class BookDetailsForm {
         bookDetailsForm.setBook(book);
         bookDetailsForm.showBook(book);
         stage.show();
+    }
+
+    void closeForm(){
+        Stage stage = (Stage) editButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
+        AddBookForm.launchAddBookForm(parentController, book);
+        closeForm();
+    }
+
+    public void onDeleteBookClick() throws SQLException {
+        connecttion.deleteBook(book);
+        parentController.booksTable.getItems().remove(book);
+        closeForm();
     }
 }

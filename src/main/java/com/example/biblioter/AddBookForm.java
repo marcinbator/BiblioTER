@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AddBookForm {
     @FXML
@@ -19,23 +20,33 @@ public class AddBookForm {
     @FXML
     private TextField categoryField;
     @FXML
-    private TextField idField;
-    @FXML
     private TextField titleField;
 
     private GUI parentController;
+    private Book defaultBook;
+    private DBConnect connection;
 
-    void setParentController(GUI parentController) {
+    void setForm(GUI parentController, Book book) throws SQLException, ClassNotFoundException {
         this.parentController = parentController;
+        this.defaultBook=book;
+        this.connection=new DBConnect();
     }
-    public static void launchAddBookForm(GUI parentController) throws IOException {
+    public static void launchAddBookForm(GUI parentController, Book defaultBook) throws IOException, SQLException, ClassNotFoundException {
         FXMLLoader loader = new FXMLLoader(AddBookForm.class.getResource("addBookForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Dodaj książkę");
         stage.setScene(new Scene(loader.load(), 700, 500));
         AddBookForm addBookFormController = loader.getController();
-        addBookFormController.setParentController(parentController);
+        addBookFormController.setForm(parentController, defaultBook);
+        addBookFormController.setDefaults();
         stage.show();
+    }
+
+    void setDefaults(){
+        this.titleField.setText(defaultBook.getTitle());
+        this.authorField.setText(defaultBook.getAuthor());
+        this.categoryField.setText(defaultBook.getCategory());
+        this.borrowedField.setText(defaultBook.getBorrowed());
     }
 
     void closeForm(){
@@ -43,14 +54,17 @@ public class AddBookForm {
         stage.close();
     }
 
-    public void onAddBookButtonClicked() {
-        Book book = new Book();
-        book.setId(Integer.parseInt(idField.getText()));
-        book.setTitle(titleField.getText());
-        book.setAuthor(authorField.getText());
-        book.setCategory(categoryField.getText());
-        book.setBorrowed(borrowedField.getText());
-        parentController.booksTable.getItems().add(book);
+    public void onAddBookButtonClicked() throws SQLException {
+        defaultBook.setId(DBConnect.booksAmount+1);
+        DBConnect.booksAmount++;
+        defaultBook.setTitle(titleField.getText());
+        defaultBook.setAuthor(authorField.getText());
+        defaultBook.setCategory(categoryField.getText());
+        defaultBook.setBorrowed(borrowedField.getText());
+        parentController.booksTable.getItems().add(defaultBook);
+        connection.addBook(defaultBook);
         closeForm();
     }
+
+
 }

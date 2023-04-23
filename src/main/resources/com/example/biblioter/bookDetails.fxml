@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.BookDetailsForm">
    <children>
-      <TextFlow fx:id="textPanel" prefHeight="446.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TextFlow fx:id="textPanel" prefHeight="42.0" prefWidth="626.0" AnchorPane.bottomAnchor="358.0" AnchorPane.topAnchor="0.0">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding></TextFlow>
+      <Button fx:id="editButton" layoutX="45.0" layoutY="252.0" mnemonicParsing="false" onAction="#onEditBookClick" text="Edytuj" />
+      <Button fx:id="deleteButton" layoutX="102.0" layoutY="252.0" mnemonicParsing="false" onAction="#onDeleteBookClick" text="Usuń" />
+      <Button fx:id="setAvailableButton" layoutX="276.0" layoutY="252.0" mnemonicParsing="false" text="Oznacz jako dostępną" />
+      <Button fx:id="addUserButton" layoutX="419.0" layoutY="252.0" mnemonicParsing="false" text="Dodaj osobę wypożyczającą" />
    </children>
 </AnchorPane>
