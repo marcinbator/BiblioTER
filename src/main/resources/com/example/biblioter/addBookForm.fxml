@@ -30,6 +30,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="addBookButton" layoutX="256.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Dodaj książkę" />
+      <Button fx:id="addBookButton" layoutX="256.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Zapisz" />
    </children>
 </AnchorPane>

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 public class DBConnect {
     Connection connection;
     public static int booksAmount=0;
@@ -51,7 +52,7 @@ public class DBConnect {
         statement.setString(3, book.getCategory());
         statement.setString(4, book.getBorrowed());
         statement.setString(5, Integer.toString(book.getId()));
-        statement.executeQuery();
+        statement.executeUpdate();
         connection.close();
     }
 

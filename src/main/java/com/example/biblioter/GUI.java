@@ -30,7 +30,7 @@ public class GUI extends Application implements Initializable {
     DBConnect connection;
 
     @Override
-    public void start(Stage stage) throws IOException{
+    public void start(Stage stage) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("BiblioTER");
@@ -126,10 +126,8 @@ public class GUI extends Application implements Initializable {
         booksTable.getItems().remove(book);
     }
 
-
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         AddBookForm.launchAddBookForm(this, book);
     }
-
 
 }

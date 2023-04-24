@@ -1,5 +1,6 @@
 package com.example.biblioter;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -54,17 +55,38 @@ public class AddBookForm {
         stage.close();
     }
 
-    public void onAddBookButtonClicked() throws SQLException {
+    void addBook() throws SQLException {
         defaultBook.setId(DBConnect.booksAmount+1);
         DBConnect.booksAmount++;
+        parentController.booksTable.getItems().add(defaultBook);
+        connection.addBook(defaultBook);
+    }
+
+    void editBook() throws SQLException {
+        ObservableList<Book> books=parentController.booksTable.getItems();
+        for(Book book:books){
+            if(book.getId()==defaultBook.getId()){
+                book.setTitle(defaultBook.title);
+                book.setAuthor(defaultBook.author);
+                book.setCategory(defaultBook.category);
+                book.setBorrowed(defaultBook.borrowed);
+            }
+        }
+        parentController.booksTable.setItems(books);
+        parentController.booksTable.refresh();
+        connection.editBook(defaultBook);
+    }
+
+    public void onAddBookButtonClicked() throws SQLException {
         defaultBook.setTitle(titleField.getText());
         defaultBook.setAuthor(authorField.getText());
         defaultBook.setCategory(categoryField.getText());
         defaultBook.setBorrowed(borrowedField.getText());
-        parentController.booksTable.getItems().add(defaultBook);
-        connection.addBook(defaultBook);
+        if (defaultBook.getId() != 0) {
+            editBook();
+        } else {
+            addBook();
+        }
         closeForm();
     }
-
-
 }
