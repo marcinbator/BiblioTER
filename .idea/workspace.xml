@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="editbook" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +86,7 @@
       <workItem from="1681727088475" duration="3483000" />
       <workItem from="1682075803071" duration="37000" />
       <workItem from="1682269551027" duration="6335000" />
-      <workItem from="1682324283210" duration="2328000" />
+      <workItem from="1682324283210" duration="2349000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
@@ -102,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681728611526</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="editbook">
+      <created>1682327210962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682327210962</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +122,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="editbook" />
+    <option name="LAST_COMMIT_MESSAGE" value="editbook" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
