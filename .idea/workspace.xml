@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="Update workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="Code refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +90,7 @@
       <workItem from="1682324283210" duration="2349000" />
       <workItem from="1682362174329" duration="412000" />
       <workItem from="1682364977963" duration="387000" />
-      <workItem from="1682445703498" duration="6574000" />
+      <workItem from="1682445703498" duration="6896000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
@@ -129,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682362253299</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Code refactor">
+      <created>1682452592878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682452592878</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +149,8 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="editbook" />
     <MESSAGE value="Update workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml" />
+    <MESSAGE value="Code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
