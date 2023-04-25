@@ -1,8 +1,6 @@
 package com.example.biblioter;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -11,7 +9,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,10 +24,11 @@ public class GUI extends Application implements Initializable {
     public TableColumn<Book, String>author;
     public TableColumn<Book, String>category;
     public TableColumn<Book, String>borrowed;
+    public TableColumn<Book, String>accessible;
     DBConnect connection;
 
     @Override
-    public void start(Stage stage) throws IOException, SQLException {
+    public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("BiblioTER");
@@ -45,9 +43,10 @@ public class GUI extends Application implements Initializable {
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         category.setCellValueFactory(new PropertyValueFactory<>("category"));
         borrowed.setCellValueFactory(new PropertyValueFactory<>("borrowed"));
+        accessible.setCellValueFactory(new PropertyValueFactory<>("accessible"));
         try {
             this.connection=new DBConnect();
-            List<Book> books=connection.getRecords();
+            List<Book> books=connection.getBooks();
             for(Book book:books){
                 booksTable.getItems().add(book);
             }
@@ -70,14 +69,14 @@ public class GUI extends Application implements Initializable {
     //Listeners
 
     public void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
-        Book book=new Book(0, "", "", "", "");
+        Book book=new Book();
         showMessage("AddBook clicked.");
         AddBookForm.launchAddBookForm(this, book);
     }
 
     public void onAddUserClick() {
         showMessage("AddUser clicked.");
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający");
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający", true);
         booksTable.getItems().add(book);
     }
 
@@ -97,9 +96,13 @@ public class GUI extends Application implements Initializable {
         ContextMenu contextMenu = new ContextMenu();
         MenuItem menuItem1 = new MenuItem("Edytuj");
         MenuItem menuItem2 = new MenuItem("Usuń");
-        MenuItem menuItem3 = new MenuItem("Oznacz jako dostępną");
-        MenuItem menuItem4 = new MenuItem("Dodaj osobę wypożyczającą");
+        MenuItem menuItem3 = new MenuItem("");
         List<Book> books=booksTable.getSelectionModel().getSelectedItems();
+        if(books.get(0).isAccessible()){
+            menuItem3.setText("Oznacz jako wypożyczoną");
+        }else{
+            menuItem3.setText("Oznacz jako dostępną");
+        }
         menuItem1.setOnAction(event -> {
             try {
                 onEditBookClick(books.get(0));
@@ -114,7 +117,20 @@ public class GUI extends Application implements Initializable {
                 throw new RuntimeException(e);
             }
         });
-        contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4);
+        menuItem3.setOnAction(event -> {
+            try {
+                if(onSetAccessibleButtonClick(books.get(0))){
+                    menuItem3.setText("Oznacz jako wypożyczoną");
+                    System.out.println("Dodaj wypożyczającego!");
+                }
+                else{
+                    menuItem3.setText("Oznacz jako dostępną");
+                }
+            } catch (IOException | SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3);
         return contextMenu;
     }
 
@@ -128,6 +144,22 @@ public class GUI extends Application implements Initializable {
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         AddBookForm.launchAddBookForm(this, book);
+    }
+
+    private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
+        if(book.accessible){
+            book.setAccessible(false);
+            connection.editBook(book);
+            booksTable.refresh();
+            return false;
+        }
+        else{
+            book.setAccessible(true);
+            book.setBorrowed("");
+            connection.editBook(book);
+            booksTable.refresh();
+            return true;
+        }
     }
 
 }

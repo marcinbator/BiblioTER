@@ -12,43 +12,23 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class BookDetailsForm {
+
+
+    //Attributes
+
     @FXML
-    TextFlow textPanel;
-    @FXML
-    private Button addUserButton;
-    @FXML
-    private Button deleteButton;
+    private TextFlow textPanel;
     @FXML
     private Button editButton;
     @FXML
     private Button setAvailableButton;
 
-    GUI parentController;
-    Book book;
-    DBConnect connecttion;
+    public GUI parentController;
+    public Book book;
+    public DBConnect connection;
 
-    void setBook(Book book) {
-        this.book = book;
-    }
 
-    void setParentController(GUI parentController) throws SQLException, ClassNotFoundException {
-        this.parentController=parentController;
-        this.connecttion=new DBConnect();
-    }
-
-    void showBook(Book book){
-        Text id,title,author,category,borrowed;
-        id=new Text("ID książki: "+book.id +"\n");
-        title=new Text("Tytuł: "+book.title+"\n");
-        author=new Text("Autor: "+book.author+"\n");
-        category=new Text("Kategoria: "+book.category+"\n");
-        borrowed=new Text("Pożyczył: "+book.borrowed+"\n");
-        textPanel.getChildren().add(id);
-        textPanel.getChildren().add(title);
-        textPanel.getChildren().add(author);
-        textPanel.getChildren().add(category);
-        textPanel.getChildren().add(borrowed);
-    }
+    //WindowControllers
 
     public static void launchBookDetails(GUI parentController, Book book) throws Exception {
         FXMLLoader loader=new FXMLLoader(BookDetailsForm.class.getResource("bookDetails.fxml"));
@@ -56,10 +36,20 @@ public class BookDetailsForm {
         stage.setTitle(book.title);
         stage.setScene(new Scene(loader.load(), 600, 300));
         BookDetailsForm bookDetailsForm=loader.getController();
-        bookDetailsForm.setParentController(parentController);
-        bookDetailsForm.setBook(book);
+        bookDetailsForm.settings(book, parentController);
         bookDetailsForm.showBook(book);
         stage.show();
+    }
+
+    private void settings(Book book,GUI parentController) throws SQLException, ClassNotFoundException {
+        this.book = book;
+        if (book.isAccessible()) {
+            this.setAvailableButton.setText("Oznacz jako wypożyczoną");
+        } else {
+            this.setAvailableButton.setText("Oznacz jako dostępną");
+        }
+        this.parentController=parentController;
+        this.connection=new DBConnect();
     }
 
     void closeForm(){
@@ -67,14 +57,54 @@ public class BookDetailsForm {
         stage.close();
     }
 
-    public void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
+
+    //Operations
+
+    private void showBook(Book book){
+        textPanel.getChildren().clear();
+        Text id,title,author,category,borrowed, accessibility;
+        id=new Text("ID książki: "+book.getId() +"\n");
+        title=new Text("Tytuł: "+book.getTitle()+"\n");
+        author=new Text("Autor: "+book.getAuthor()+"\n");
+        category=new Text("Kategoria: "+book.getCategory()+"\n");
+        borrowed=new Text("Pożyczył: "+book.getBorrowed()+"\n");
+        accessibility=new Text("Dostępność: "+book.isAccessible()+"\n");
+        textPanel.getChildren().add(id);
+        textPanel.getChildren().add(title);
+        textPanel.getChildren().add(author);
+        textPanel.getChildren().add(category);
+        textPanel.getChildren().add(accessibility);
+        textPanel.getChildren().add(borrowed);
+    }
+
+
+    //Listeners
+    @FXML
+    private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
         AddBookForm.launchAddBookForm(parentController, book);
         closeForm();
     }
 
-    public void onDeleteBookClick() throws SQLException {
-        connecttion.deleteBook(book);
+    @FXML
+    private void onDeleteBookClick() throws SQLException {
+        connection.deleteBook(book);
         parentController.booksTable.getItems().remove(book);
         closeForm();
+    }
+
+    @FXML
+    private void onSetAccessibleButtonClick()throws SQLException {
+        if(book.accessible){
+            book.setAccessible(false);
+            setAvailableButton.setText("Oznacz jako wypożyczoną");
+        }
+        else{
+            book.setAccessible(true);
+            book.setBorrowed("");
+            setAvailableButton.setText("Oznacz jako dostępną");
+        }
+        connection.editBook(book);
+        parentController.booksTable.refresh();
+        showBook(book);
     }
 }

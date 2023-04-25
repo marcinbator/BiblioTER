@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="642.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.GUI">
+<VBox alignment="TOP_CENTER" prefHeight="531.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.GUI">
    <MenuBar prefHeight="15.0" prefWidth="564.0">
      <menus>
        <Menu mnemonicParsing="false" text="Menu">
@@ -41,20 +41,21 @@
          </Label>
          <Button mnemonicParsing="false" onAction="#onAddBookClick" text="Dodaj książkę" GridPane.columnIndex="1" />
          <Button mnemonicParsing="false" onAction="#onAddUserClick" prefWidth="90.0" text="Dodaj osobę" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         <DialogPane fx:id="messagePanel" GridPane.rowIndex="2" />
+         <DialogPane fx:id="messagePanel" prefHeight="40.0" prefWidth="462.0" GridPane.rowIndex="2" />
       </children>
    </GridPane>
    <TabPane prefHeight="384.0" prefWidth="564.0" tabClosingPolicy="UNAVAILABLE">
      <tabs>
        <Tab text="Książki">
             <content>
-               <TableView fx:id="booksTable" onMouseClicked="#onBookClick" prefHeight="479.0" prefWidth="964.0">
+               <TableView fx:id="booksTable" onMouseClicked="#onBookClick">
                  <columns>
                    <TableColumn fx:id="id" prefWidth="39.0" text="L.p." />
                    <TableColumn fx:id="title" prefWidth="123.0" text="Tytuł" />
                      <TableColumn fx:id="author" prefWidth="102.0" text="Autor" />
                      <TableColumn fx:id="category" prefWidth="102.0" text="Kategoria" />
-                     <TableColumn fx:id="borrowed" minWidth="9.0" prefWidth="104.0" text="Wypożyczył" />
+                     <TableColumn fx:id="accessible" prefWidth="102.0" text="Dostępność" />
+                     <TableColumn fx:id="borrowed" minWidth="9.0"  text="Wypożyczył" />
                  </columns>
                   <columnResizePolicy>
                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

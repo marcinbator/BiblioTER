@@ -6,19 +6,22 @@ public class Book {
     String author;
     String category;
     String borrowed;
+    boolean accessible;
     Book(){
         this.id=0;
-        this.title="unset";
-        this.author="unset";
-        this.borrowed="unset";
-        this.category="unset";
+        this.title="";
+        this.author="";
+        this.borrowed="";
+        this.category="";
+        this.accessible=false;
     }
-    Book(int id, String title, String author, String category, String borrowed){
+    Book(int id, String title, String author, String category, String borrowed, boolean accessible){
         this.id=id;
         this.title=title;
         this.author=author;
         this.borrowed=borrowed;
         this.category=category;
+        this.accessible=accessible;
     }
     public void showBook(){
         System.out.println(this.getId());
@@ -26,6 +29,7 @@ public class Book {
         System.out.println(this.getAuthor());
         System.out.println(this.getCategory());
         System.out.println(this.getBorrowed());
+        System.out.println(this.isAccessible());
     }
     public int getId() {
         return id;
@@ -66,4 +70,13 @@ public class Book {
     public void setBorrowed(String borrowed) {
         this.borrowed = borrowed;
     }
+
+    public boolean isAccessible() {
+        return accessible;
+    }
+
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
+
 }
