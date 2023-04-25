@@ -1,36 +1,56 @@
 package com.example.biblioter;
 
 public class Book {
+
+
+    //Attributes
+
     int id;
     String title;
     String author;
     String category;
-    String borrowed;
     boolean accessible;
+    String borrowed;
+
+
+    //Constructors
+
     Book(){
         this.id=0;
         this.title="";
         this.author="";
         this.borrowed="";
-        this.category="";
         this.accessible=false;
+        this.category="";
     }
-    Book(int id, String title, String author, String category, String borrowed, boolean accessible){
-        this.id=id;
-        this.title=title;
-        this.author=author;
-        this.borrowed=borrowed;
-        this.category=category;
-        this.accessible=accessible;
+
+    Book(int id, String title, String author, String category,boolean accessible, String borrowed){
+        this.setId(id);
+        this.setTitle(title);
+        this.setAuthor(author);
+        this.setCategory(category);
+        this.setAccessible(accessible);
+        this.setBorrowed(borrowed);
     }
-    public void showBook(){
-        System.out.println(this.getId());
-        System.out.println(this.getTitle());
-        System.out.println(this.getAuthor());
-        System.out.println(this.getCategory());
-        System.out.println(this.getBorrowed());
-        System.out.println(this.isAccessible());
+
+
+    //Operations
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", category='" + category + '\'' +
+                ", accessible=" + accessible +
+                ", borrowed='" + borrowed + '\'' +
+                '}';
     }
+
+
+    //Getters, setters
+
     public int getId() {
         return id;
     }

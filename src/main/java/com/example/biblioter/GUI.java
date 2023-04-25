@@ -1,6 +1,8 @@
 package com.example.biblioter;
+
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -17,15 +19,31 @@ import java.util.*;
 
 public class GUI extends Application implements Initializable {
 
-    public DialogPane messagePanel;
+
+    //Attributes
+
+    @FXML
+    private DialogPane messagePanel;
+    @FXML
+    private TableColumn<Book, Integer>id;
+    @FXML
+    private TableColumn<Book, String>title;
+    @FXML
+    private TableColumn<Book, String>author;
+    @FXML
+    private TableColumn<Book, String>category;
+    @FXML
+    private TableColumn<Book, String>borrowed;
+    @FXML
+    private TableColumn<Book, String>accessible;
+
+    @FXML
     public TableView<Book>booksTable;
-    public TableColumn<Book, Integer>id;
-    public TableColumn<Book, String>title;
-    public TableColumn<Book, String>author;
-    public TableColumn<Book, String>category;
-    public TableColumn<Book, String>borrowed;
-    public TableColumn<Book, String>accessible;
+
     DBConnect connection;
+
+
+    //Constructors
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -55,6 +73,9 @@ public class GUI extends Application implements Initializable {
         }
     }
 
+
+    //Operations
+
     private void showMessage(String text){
         messagePanel.setContentText(text);
         Timer timer = new Timer();
@@ -64,32 +85,6 @@ public class GUI extends Application implements Initializable {
                 Platform.runLater(() -> messagePanel.setContentText(""));
             }
         }, 2000);
-    }
-
-    //Listeners
-
-    public void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
-        Book book=new Book();
-        showMessage("AddBook clicked.");
-        AddBookForm.launchAddBookForm(this, book);
-    }
-
-    public void onAddUserClick() {
-        showMessage("AddUser clicked.");
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", "Przykładowy wypożyczający", true);
-        booksTable.getItems().add(book);
-    }
-
-    public void onBookClick(MouseEvent mouseEvent) throws Exception {
-        if(mouseEvent.getClickCount()==2 && mouseEvent.getButton()== MouseButton.PRIMARY){
-            List<Book> books=booksTable.getSelectionModel().getSelectedItems();
-            for(Book book:books){
-                BookDetailsForm.launchBookDetails(this, book);
-            }
-        }
-        else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
-            booksTable.setContextMenu(launchContextMenu());
-        }
     }
 
     private ContextMenu launchContextMenu(){
@@ -134,6 +129,36 @@ public class GUI extends Application implements Initializable {
         return contextMenu;
     }
 
+
+    //Listeners
+
+    @FXML
+    private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
+        Book book=new Book();
+        showMessage("AddBook clicked.");
+        AddBookWindow.launchAddBookForm(this, book);
+    }
+
+    @FXML
+    private void onAddUserClick() {
+        showMessage("AddUser clicked.");
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", true, "Przykładowy wypożyczający");
+        booksTable.getItems().add(book);
+    }
+
+    @FXML
+    private void onBookClick(MouseEvent mouseEvent) throws Exception {
+        if(mouseEvent.getClickCount()==2 && mouseEvent.getButton()== MouseButton.PRIMARY){
+            List<Book> books=booksTable.getSelectionModel().getSelectedItems();
+            for(Book book:books){
+                BookDetailsWindow.launchBookDetails(this, book);
+            }
+        }
+        else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
+            booksTable.setContextMenu(launchContextMenu());
+        }
+    }
+
     private void onDeleteBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         if (connection.isClosed()) {
             connection = new DBConnect();
@@ -143,7 +168,7 @@ public class GUI extends Application implements Initializable {
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
-        AddBookForm.launchAddBookForm(this, book);
+        AddBookWindow.launchAddBookForm(this, book);
     }
 
     private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
@@ -161,5 +186,4 @@ public class GUI extends Application implements Initializable {
             return true;
         }
     }
-
 }

@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class BookDetailsForm {
+public class BookDetailsWindow {
 
 
     //Attributes
@@ -31,13 +31,13 @@ public class BookDetailsForm {
     //WindowControllers
 
     public static void launchBookDetails(GUI parentController, Book book) throws Exception {
-        FXMLLoader loader=new FXMLLoader(BookDetailsForm.class.getResource("bookDetails.fxml"));
+        FXMLLoader loader=new FXMLLoader(BookDetailsWindow.class.getResource("bookDetails.fxml"));
         Stage stage=new Stage();
         stage.setTitle(book.title);
         stage.setScene(new Scene(loader.load(), 600, 300));
-        BookDetailsForm bookDetailsForm=loader.getController();
-        bookDetailsForm.settings(book, parentController);
-        bookDetailsForm.showBook(book);
+        BookDetailsWindow bookDetailsWindow =loader.getController();
+        bookDetailsWindow.settings(book, parentController);
+        bookDetailsWindow.showBook(book);
         stage.show();
     }
 
@@ -52,7 +52,7 @@ public class BookDetailsForm {
         this.connection=new DBConnect();
     }
 
-    void closeForm(){
+    private void closeWindow(){
         Stage stage = (Stage) editButton.getScene().getWindow();
         stage.close();
     }
@@ -81,15 +81,15 @@ public class BookDetailsForm {
     //Listeners
     @FXML
     private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
-        AddBookForm.launchAddBookForm(parentController, book);
-        closeForm();
+        AddBookWindow.launchAddBookForm(parentController, book);
+        closeWindow();
     }
 
     @FXML
     private void onDeleteBookClick() throws SQLException {
         connection.deleteBook(book);
         parentController.booksTable.getItems().remove(book);
-        closeForm();
+        closeWindow();
     }
 
     @FXML

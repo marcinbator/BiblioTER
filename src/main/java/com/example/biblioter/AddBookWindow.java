@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class AddBookForm {
+public class AddBookWindow {
 
 
     //Attributes
@@ -38,13 +38,13 @@ public class AddBookForm {
     //WindowControllers
 
     public static void launchAddBookForm(GUI parentController, Book defaultBook) throws IOException, SQLException, ClassNotFoundException {
-        FXMLLoader loader = new FXMLLoader(AddBookForm.class.getResource("addBookForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(AddBookWindow.class.getResource("addBookForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Dodaj książkę");
         stage.setScene(new Scene(loader.load(), 700, 500));
-        AddBookForm addBookFormController = loader.getController();
-        addBookFormController.setForm(parentController, defaultBook);
-        addBookFormController.setDefaults();
+        AddBookWindow addBookWindowController = loader.getController();
+        addBookWindowController.setForm(parentController, defaultBook);
+        addBookWindowController.setDefaults();
         stage.show();
     }
 
@@ -62,7 +62,7 @@ public class AddBookForm {
         this.accessField.setIndeterminate(defaultBook.isAccessible());
     }
 
-    private void closeForm() throws SQLException {
+    private void closeWindow() throws SQLException {
         Stage stage = (Stage) addBookButton.getScene().getWindow();
         connection.close();
         stage.close();
@@ -109,7 +109,7 @@ public class AddBookForm {
         } else {
             addBook();
         }
-        closeForm();
+        closeWindow();
     }
 
     @FXML

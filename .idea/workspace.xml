@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="Update workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BiblioTER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <workItem from="1682324283210" duration="2349000" />
       <workItem from="1682362174329" duration="412000" />
       <workItem from="1682364977963" duration="387000" />
-      <workItem from="1682445703498" duration="5184000" />
+      <workItem from="1682445703498" duration="6574000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
