@@ -89,43 +89,51 @@ public class GUI extends Application implements Initializable {
 
     private ContextMenu launchContextMenu(){
         ContextMenu contextMenu = new ContextMenu();
-        MenuItem menuItem1 = new MenuItem("Edytuj");
-        MenuItem menuItem2 = new MenuItem("Usuń");
-        MenuItem menuItem3 = new MenuItem("");
+        MenuItem contextEdit = new MenuItem("Edytuj");
+        MenuItem contextDelete = new MenuItem("Usuń");
+        MenuItem contextAccessibility = new MenuItem("");
+        MenuItem contextClone=new MenuItem("Sklonuj książkę");
         List<Book> books=booksTable.getSelectionModel().getSelectedItems();
         if(books.get(0).isAccessible()){
-            menuItem3.setText("Oznacz jako wypożyczoną");
+            contextAccessibility.setText("Oznacz jako wypożyczoną");
         }else{
-            menuItem3.setText("Oznacz jako dostępną");
+            contextAccessibility.setText("Oznacz jako dostępną");
         }
-        menuItem1.setOnAction(event -> {
+        contextEdit.setOnAction(event -> {
             try {
                 onEditBookClick(books.get(0));
             } catch (IOException | SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         });
-        menuItem2.setOnAction(event -> {
+        contextDelete.setOnAction(event -> {
             try {
                 onDeleteBookClick(books.get(0));
             } catch (IOException | SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         });
-        menuItem3.setOnAction(event -> {
+        contextAccessibility.setOnAction(event -> {
             try {
                 if(onSetAccessibleButtonClick(books.get(0))){
-                    menuItem3.setText("Oznacz jako wypożyczoną");
+                    contextAccessibility.setText("Oznacz jako wypożyczoną");
                     System.out.println("Dodaj wypożyczającego!");
                 }
                 else{
-                    menuItem3.setText("Oznacz jako dostępną");
+                    contextAccessibility.setText("Oznacz jako dostępną");
                 }
             } catch (IOException | SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         });
-        contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3);
+        contextClone.setOnAction(event->{
+            try {
+                onCloneBookClick(books.get(0));
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        contextMenu.getItems().addAll(contextEdit, contextDelete, contextAccessibility, contextClone);
         return contextMenu;
     }
 
@@ -186,5 +194,11 @@ public class GUI extends Application implements Initializable {
             booksTable.refresh();
             return true;
         }
+    }
+
+    private void onCloneBookClick(Book book) throws SQLException {
+        connection.addBook(book);
+        booksTable.getItems().add(book);
+        booksTable.refresh();
     }
 }
