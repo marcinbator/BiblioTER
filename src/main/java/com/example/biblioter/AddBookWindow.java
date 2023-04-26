@@ -82,10 +82,10 @@ public class AddBookWindow {
         ObservableList<Book> books=parentController.booksTable.getItems();
         for(Book book:books){
             if(book.getId()==defaultBook.getId()){
-                book.setTitle(defaultBook.title);
-                book.setAuthor(defaultBook.author);
-                book.setCategory(defaultBook.category);
-                book.setBorrowed(defaultBook.borrowed);
+                book.setTitle(defaultBook.getTitle());
+                book.setAuthor(defaultBook.getAuthor());
+                book.setCategory(defaultBook.getCategory());
+                book.setBorrowed(defaultBook.getBorrowed());
                 book.setAccessible(defaultBook.isAccessible());
             }
         }

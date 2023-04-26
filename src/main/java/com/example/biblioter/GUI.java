@@ -152,6 +152,7 @@ public class GUI extends Application implements Initializable {
             List<Book> books=booksTable.getSelectionModel().getSelectedItems();
             for(Book book:books){
                 BookDetailsWindow.launchBookDetails(this, book);
+                System.out.println(book.toString());
             }
         }
         else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
@@ -172,7 +173,7 @@ public class GUI extends Application implements Initializable {
     }
 
     private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
-        if(book.accessible){
+        if(book.isAccessible()){
             book.setAccessible(false);
             connection.editBook(book);
             booksTable.refresh();

@@ -33,7 +33,7 @@ public class BookDetailsWindow {
     public static void launchBookDetails(GUI parentController, Book book) throws Exception {
         FXMLLoader loader=new FXMLLoader(BookDetailsWindow.class.getResource("bookDetails.fxml"));
         Stage stage=new Stage();
-        stage.setTitle(book.title);
+        stage.setTitle(book.getTitle());
         stage.setScene(new Scene(loader.load(), 600, 300));
         BookDetailsWindow bookDetailsWindow =loader.getController();
         bookDetailsWindow.settings(book, parentController);
@@ -68,7 +68,7 @@ public class BookDetailsWindow {
         author=new Text("Autor: "+book.getAuthor()+"\n");
         category=new Text("Kategoria: "+book.getCategory()+"\n");
         borrowed=new Text("Pożyczył: "+book.getBorrowed()+"\n");
-        accessibility=new Text("Dostępność: "+book.isAccessible()+"\n");
+        accessibility=new Text("Dostępność: "+book.getAccessible()+"\n");
         textPanel.getChildren().add(id);
         textPanel.getChildren().add(title);
         textPanel.getChildren().add(author);
@@ -94,7 +94,7 @@ public class BookDetailsWindow {
 
     @FXML
     private void onSetAccessibleButtonClick()throws SQLException {
-        if(book.accessible){
+        if(book.isAccessible()){
             book.setAccessible(false);
             setAvailableButton.setText("Oznacz jako wypożyczoną");
         }

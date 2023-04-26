@@ -6,11 +6,11 @@ public class Book {
     //Attributes
 
     int id;
-    String title;
-    String author;
-    String category;
-    boolean accessible;
-    String borrowed;
+    private String title;
+    private String author;
+    private String category;
+    private String accessible;
+    private String borrowed;
 
 
     //Constructors
@@ -20,7 +20,7 @@ public class Book {
         this.title="";
         this.author="";
         this.borrowed="";
-        this.accessible=false;
+        this.accessible="Niedostępne";
         this.category="";
     }
 
@@ -91,12 +91,21 @@ public class Book {
         this.borrowed = borrowed;
     }
 
+    public String getAccessible(){
+        return this.accessible;
+    }
+
     public boolean isAccessible() {
-        return accessible;
+        return accessible.equals("Dostępna");
     }
 
     public void setAccessible(boolean accessible) {
-        this.accessible = accessible;
+        if(accessible){
+            this.accessible="Dostępna";
+        }
+        else{
+            this.accessible="Niedostępna";
+        }
     }
 
 }
