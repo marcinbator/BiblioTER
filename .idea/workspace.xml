@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="Code refactor" />
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="Code refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/DBConnect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/addBookForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/AddBookWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BiblioTER.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/BookDetailsWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/DBConnect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/biblioter/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/addBookForm.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/bookDetails.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/biblioter/gui.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +86,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,6 +119,10 @@
       <workItem from="1682445703498" duration="6896000" />
       <workItem from="1682510366178" duration="4875000" />
       <workItem from="1682613745294" duration="40000" />
+      <workItem from="1682614280416" duration="4000" />
+      <workItem from="1682614306653" duration="1859000" />
+      <workItem from="1682616178443" duration="225000" />
+      <workItem from="1682616436943" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

@@ -1,4 +1,4 @@
-package com.example.biblioter;
+package controllers;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -11,6 +11,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import service.BiblioTER;
+import service.Book;
+import service.DBConnect;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,7 +50,8 @@ public class GUI extends Application implements Initializable {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(BiblioTER.class.getResource("gui.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("BiblioTER");
         stage.setScene(scene);

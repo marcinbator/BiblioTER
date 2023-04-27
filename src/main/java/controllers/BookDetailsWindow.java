@@ -1,4 +1,4 @@
-package com.example.biblioter;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import service.Book;
+import service.DBConnect;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -31,7 +33,8 @@ public class BookDetailsWindow {
     //WindowControllers
 
     public static void launchBookDetails(GUI parentController, Book book) throws Exception {
-        FXMLLoader loader=new FXMLLoader(BookDetailsWindow.class.getResource("bookDetails.fxml"));
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(BookDetailsWindow.class.getResource("/view/bookDetails.fxml"));
         Stage stage=new Stage();
         stage.setTitle(book.getTitle());
         stage.setScene(new Scene(loader.load(), 600, 300));

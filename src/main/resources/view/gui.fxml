@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="531.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.GUI">
+<VBox alignment="TOP_CENTER" prefHeight="531.0" prefWidth="992.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GUI">
    <MenuBar prefHeight="15.0" prefWidth="564.0">
      <menus>
        <Menu mnemonicParsing="false" text="Menu">

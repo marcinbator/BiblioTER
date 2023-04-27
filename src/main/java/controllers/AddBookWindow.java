@@ -1,4 +1,4 @@
-package com.example.biblioter;
+package controllers;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import service.Book;
+import service.DBConnect;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -38,7 +40,8 @@ public class AddBookWindow {
     //WindowControllers
 
     public static void launchAddBookForm(GUI parentController, Book defaultBook) throws IOException, SQLException, ClassNotFoundException {
-        FXMLLoader loader = new FXMLLoader(AddBookWindow.class.getResource("addBookForm.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(BookDetailsWindow.class.getResource("/view/addBookForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Dodaj książkę");
         stage.setScene(new Scene(loader.load(), 700, 500));

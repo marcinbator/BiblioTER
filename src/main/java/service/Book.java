@@ -1,4 +1,4 @@
-package com.example.biblioter;
+package service;
 
 public class Book {
 
@@ -15,7 +15,7 @@ public class Book {
 
     //Constructors
 
-    Book(){
+    public Book(){
         this.id=0;
         this.title="";
         this.author="";
@@ -24,7 +24,7 @@ public class Book {
         this.category="";
     }
 
-    Book(int id, String title, String author, String category,boolean accessible, String borrowed){
+    public Book(int id, String title, String author, String category, boolean accessible, String borrowed){
         this.setId(id);
         this.setTitle(title);
         this.setAuthor(author);

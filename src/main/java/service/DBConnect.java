@@ -1,4 +1,4 @@
-package com.example.biblioter;
+package service;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class DBConnect {
 
     //Constructor
 
-    DBConnect() throws ClassNotFoundException, SQLException {
+    public DBConnect() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String username = "root";
         String password = "94541409MaR!";

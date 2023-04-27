@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblioter.BookDetailsWindow">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookDetailsWindow">
    <children>
       <TextFlow fx:id="textPanel" prefHeight="42.0" prefWidth="626.0" AnchorPane.bottomAnchor="358.0" AnchorPane.topAnchor="0.0">
          <padding>

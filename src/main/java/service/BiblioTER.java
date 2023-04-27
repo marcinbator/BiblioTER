@@ -1,4 +1,5 @@
-package com.example.biblioter;
+package service;
+import controllers.GUI;
 import javafx.application.Application;
 
 public class BiblioTER {
