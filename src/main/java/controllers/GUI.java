@@ -11,9 +11,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import service.BiblioTER;
 import service.Book;
 import service.DBConnect;
+import service.LogOutput;
 
 import java.io.IOException;
 import java.net.URL;
@@ -55,6 +57,7 @@ public class GUI extends Application implements Initializable {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("BiblioTER");
         stage.setScene(scene);
+        LogOutput.logEvent("GUI established.");
         stage.show();
     }
 
