@@ -1,1 +1,5 @@
-1682677779658: GUI established.
+13:45:38: BiblioTER launched.
+13:45:39: Database connection established.
+13:45:39: Books downloaded from database.
+13:45:39: GUI initialized.
+13:45:39: GUI established.

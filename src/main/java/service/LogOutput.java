@@ -22,7 +22,7 @@ public class LogOutput {
         }
         FileWriter writer = new FileWriter(file, true);
         try {
-            writer.append("ERROR: ").append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
+            writer.append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
             System.out.println("Log created.");
         } catch (IOException e) {
             System.out.println("Error writing to a file: " + e.getMessage());
@@ -37,7 +37,7 @@ public class LogOutput {
         }
         FileWriter writer = new FileWriter(file, true);
         try {
-            writer.append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
+            writer.append("ERROR: ").append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
