@@ -12,6 +12,7 @@ public class BorrowRecord {
     private int id;
     private Book book;
     private Reader reader;
+    private boolean active;
 
 
     //Constructors
@@ -20,12 +21,14 @@ public class BorrowRecord {
         this.id=0;
         this.book=new Book();
         this.reader=new Reader();
+        this.active=true;
     }
 
-    public BorrowRecord(int id, Book book, Reader reader) throws IOException {
+    public BorrowRecord(int id, Book book, Reader reader, boolean active) throws IOException {
         this.setId(id);
         this.setBook(book);
         this.setReader(reader);
+        this.setActive(active);
     }
 
 
@@ -63,6 +66,21 @@ public class BorrowRecord {
         else{
             LogOutput.logError("BorrowRecord - book is not set properly.");
         }
+    }
+
+    public boolean isActive(){
+        return  active;
+    }
+
+    public String getActive(){
+        if(active){
+            return "Aktywne";
+        }
+        return "Nieaktywne";
+    }
+
+    public void setActive(boolean active){
+        this.active=active;
     }
 
 }

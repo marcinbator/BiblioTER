@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="minor changes">
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="readerDB class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +109,8 @@
       <workItem from="1682616178443" duration="225000" />
       <workItem from="1682616436943" duration="56000" />
       <workItem from="1682626479278" duration="2521000" />
-      <workItem from="1682689724736" duration="1907000" />
+      <workItem from="1682689724736" duration="5205000" />
+      <workItem from="1682712683818" duration="2292000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682452592878</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="readerDB class">
+      <created>1682691647955</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682691647955</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +177,8 @@
     <MESSAGE value="editbook" />
     <MESSAGE value="Update workspace.xml" />
     <MESSAGE value="Code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
+    <MESSAGE value="readerDB class" />
+    <option name="LAST_COMMIT_MESSAGE" value="readerDB class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
