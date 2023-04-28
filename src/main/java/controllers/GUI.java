@@ -11,9 +11,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import service.BiblioTER;
 import service.Book;
 import service.DBConnect;
+import service.LogOutput;
 
 import java.io.IOException;
 import java.net.URL;
@@ -55,6 +55,7 @@ public class GUI extends Application implements Initializable {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("BiblioTER");
         stage.setScene(scene);
+        LogOutput.logEvent("GUI established.");
         stage.show();
     }
 
@@ -164,7 +165,7 @@ public class GUI extends Application implements Initializable {
             List<Book> books=booksTable.getSelectionModel().getSelectedItems();
             for(Book book:books){
                 BookDetailsWindow.launchBookDetails(this, book);
-                System.out.println(book.toString());
+                System.out.println(book);
             }
         }
         else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
