@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="minor changes">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/DBConnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/LogOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/LogOutput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +109,8 @@
       <workItem from="1682616178443" duration="225000" />
       <workItem from="1682616436943" duration="56000" />
       <workItem from="1682626479278" duration="2521000" />
+      <workItem from="1682681923627" duration="29000" />
+      <workItem from="1682681963294" duration="54000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
