@@ -11,8 +11,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import service.Book;
-import service.DBConnect;
+import service.objects.Book;
+import service.database.DBBook;
 import service.LogOutput;
 
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class GUI extends Application implements Initializable {
     @FXML
     public TableView<Book>booksTable;
 
-    public DBConnect connection;
+    public DBBook connection;
 
 
     //Constructors
@@ -68,7 +68,7 @@ public class GUI extends Application implements Initializable {
         borrowed.setCellValueFactory(new PropertyValueFactory<>("borrowed"));
         accessible.setCellValueFactory(new PropertyValueFactory<>("accessible"));
         try {
-            this.connection=new DBConnect();
+            this.connection=new DBBook();
             List<Book> books=connection.getBooks();
             for(Book book:books){
                 booksTable.getItems().add(book);
@@ -162,7 +162,7 @@ public class GUI extends Application implements Initializable {
     @FXML
     private void onAddUserClick() throws IOException {
         showMessage("AddUser clicked.");
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", true, "Przykładowy wypożyczający");
+        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", true, 0);
         booksTable.getItems().add(book);
     }
 
@@ -182,7 +182,7 @@ public class GUI extends Application implements Initializable {
 
     private void onDeleteBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         if (connection.isClosed()) {
-            connection = new DBConnect();
+            connection = new DBBook();
         }
         connection.deleteBook(book);
         booksTable.getItems().remove(book);
@@ -202,7 +202,7 @@ public class GUI extends Application implements Initializable {
         }
         else{
             book.setAccessible(true);
-            book.setBorrowed("");
+            book.setBorrowed(0);
             connection.editBook(book);
             booksTable.refresh();
             return true;

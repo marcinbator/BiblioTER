@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import service.Book;
-import service.DBConnect;
+import service.objects.Book;
+import service.database.DBBook;
 import service.LogOutput;
 
 import java.io.IOException;
@@ -25,8 +25,6 @@ public class AddBookWindow {
     @FXML
     private TextField authorField;
     @FXML
-    private TextField borrowedField;
-    @FXML
     private TextField categoryField;
     @FXML
     private TextField titleField;
@@ -35,7 +33,7 @@ public class AddBookWindow {
 
     private GUI parentController;
     private Book defaultBook;
-    private DBConnect connection;
+    private DBBook connection;
 
 
     //WindowControllers
@@ -56,14 +54,13 @@ public class AddBookWindow {
     private void setForm(GUI parentController, Book book) throws SQLException, ClassNotFoundException, IOException {
         this.parentController = parentController;
         this.defaultBook=book;
-        this.connection=new DBConnect();
+        this.connection=new DBBook();
     }
 
     private void setDefaults(){
         this.titleField.setText(defaultBook.getTitle());
         this.authorField.setText(defaultBook.getAuthor());
         this.categoryField.setText(defaultBook.getCategory());
-        this.borrowedField.setText(defaultBook.getBorrowed());
         this.accessField.setIndeterminate(defaultBook.isAccessible());
     }
 
@@ -109,7 +106,6 @@ public class AddBookWindow {
         defaultBook.setTitle(titleField.getText());
         defaultBook.setAuthor(authorField.getText());
         defaultBook.setCategory(categoryField.getText());
-        defaultBook.setBorrowed(borrowedField.getText());
         defaultBook.setAccessible(accessField.isSelected());
         if (defaultBook.getId() != 0) {
             editBook();
@@ -117,16 +113,5 @@ public class AddBookWindow {
             addBook();
         }
         closeWindow();
-    }
-
-    @FXML
-    private void onAccessibilityCheckboxChange(){
-        if(accessField.isSelected()){
-            borrowedField.setDisable(true);
-            borrowedField.setText("");
-        }
-        else{
-            borrowedField.setDisable(false);
-        }
     }
 }

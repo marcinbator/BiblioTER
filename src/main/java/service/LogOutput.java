@@ -23,7 +23,6 @@ public class LogOutput {
         FileWriter writer = new FileWriter(file, true);
         try {
             writer.append(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"))).append(": ").append(message).append("\n");
-            System.out.println("Log created.");
         } catch (IOException e) {
             System.out.println("Error writing to a file: " + e.getMessage());
         }

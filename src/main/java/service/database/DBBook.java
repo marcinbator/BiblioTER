@@ -1,50 +1,33 @@
-package service;
+package service.database;
+
+import service.objects.Book;
+import service.LogOutput;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBConnect {
-
-
-    //Attributes
-
-    public Connection connection;
-    public static int booksAmount=0;
+public class DBBook extends DBConnect {
 
 
     //Constructor
 
-    public DBConnect() throws ClassNotFoundException, SQLException, IOException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        String username = "root";
-        String password = "94541409MaR!";
-        String url = "jdbc:mysql://localhost:3306/javadatabase";
-        connection = DriverManager.getConnection(url, username, password);
-        LogOutput.logEvent("Database connection established.");
+    public DBBook() throws ClassNotFoundException, SQLException, IOException {
+        this.connect();
     }
 
 
-    //Connection operations
-
-    public boolean isClosed() throws SQLException {
-        return connection.isClosed();
-    }
-    public void close() throws SQLException, IOException {
-        connection.close();
-        LogOutput.logEvent("Database connection closed.");
-    }
-
-
-    //Database utilities
+    //Utilities
 
     private void downloadBook(Book book, ResultSet result) throws SQLException, IOException {
         book.setId(result.getInt("id"));
         book.setTitle(result.getString("title"));
         book.setAuthor(result.getString("author"));
         book.setCategory(result.getString("category"));
-        book.setBorrowed(result.getString("borrowed"));
+        book.setBorrowed(result.getInt("borrowed"));
         book.setAccessible(result.getBoolean("accessibility"));
     }
 
@@ -52,7 +35,7 @@ public class DBConnect {
         statement.setString(1, book.getTitle());
         statement.setString(2, book.getAuthor());
         statement.setString(3, book.getCategory());
-        statement.setString(4, book.getBorrowed());
+        statement.setInt(4, book.getBorrowed());
         statement.setBoolean(5,book.isAccessible());
         LogOutput.logEvent("Book "+book.getId() +" uploaded to database.");
     }
@@ -115,5 +98,4 @@ public class DBConnect {
         statement.executeUpdate();
         LogOutput.logEvent("Book "+book.getId() +" deleted from database.");
     }
-
 }

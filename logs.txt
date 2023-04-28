@@ -1,72 +1,50 @@
-13:58:10: BiblioTER launched.
-13:58:11: Database connection established.
-13:58:11: Books downloaded from database.
-13:58:11: GUI initialized.
-13:58:11: GUI established.
-13:58:22: Database connection established.
-13:58:22: Add book window launched.
-13:58:25: Book 29 edited.
-13:58:25: Book 29 uploaded to database.
-13:58:25: Book 29 edited in database.
-13:58:25: Database connection closed.
-13:58:25: Add book window closed.
-13:58:44: Book 30 uploaded to database.
-13:58:44: Book 30 added to database.
-13:58:44: Book 30 cloned properly.
-13:59:58: Database connection established.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper title detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: ERROR: Book - not proper author detected.
-13:59:58: Books downloaded from database.
-13:59:58: GUI initialized.
-13:59:58: GUI established.
+14:43:04: BiblioTER launched.
+14:43:05: Database connection established.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: ERROR: Book - not proper title detected.
+14:43:05: ERROR: Book - not proper author detected.
+14:43:05: Books downloaded from database.
+14:43:05: GUI initialized.
+14:43:05: GUI established.
+14:43:10: Database connection established.
+14:43:10: Add book window launched.
+14:43:10: Book  added properly.
+14:43:13: ERROR: Book - not proper title detected.
+14:43:13: ERROR: Book - not proper author detected.
+14:43:13: Book 0 uploaded to database.
+14:43:13: Book 0 added to database.
+14:43:13: ERROR: Book - not proper title detected.
+14:43:13: ERROR: Book - not proper author detected.
+14:43:13: ERROR: Book - not proper title detected.
+14:43:13: ERROR: Book - not proper author detected.
+14:43:13: Book 42 downloaded from database.
+14:43:13: Database connection closed.
+14:43:13: Add book window closed.
+14:43:20: Database connection established.
+14:43:20: Add book window launched.
+14:43:20: Book  added properly.
+14:43:24: Book 0 uploaded to database.
+14:43:24: Book 0 added to database.
+14:43:24: Book 43 downloaded from database.
+14:43:24: Database connection closed.
+14:43:24: Add book window closed.
+14:43:32: Book 29 deleted from database.
+14:43:32: Book 29 deleted properly.

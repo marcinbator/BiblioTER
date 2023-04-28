@@ -29,13 +29,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="borrowedField" layoutX="71.0" layoutY="247.0" prefHeight="26.0" prefWidth="458.0" />
-      <Label layoutX="71.0" layoutY="227.0" prefHeight="18.0" prefWidth="73.0" text="Wypożyczył">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="accessField" layoutX="155.0" layoutY="198.0" mnemonicParsing="false" onAction="#onAccessibilityCheckboxChange"/>
+      <CheckBox fx:id="accessField" layoutX="155.0" layoutY="198.0" mnemonicParsing="false" />
       <Button fx:id="addBookButton" layoutX="275.0" layoutY="333.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Zapisz" />
    </children>
 </AnchorPane>

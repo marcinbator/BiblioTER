@@ -7,4 +7,6 @@ module view {
     opens controllers to javafx.fxml;
     exports service;
     exports controllers;
+    exports service.database;
+    exports service.objects;
 }

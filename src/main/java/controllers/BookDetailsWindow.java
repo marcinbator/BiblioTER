@@ -7,8 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import service.Book;
-import service.DBConnect;
+import service.objects.Book;
+import service.database.DBBook;
 import service.LogOutput;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class BookDetailsWindow {
 
     public GUI parentController;
     public Book book;
-    public DBConnect connection;
+    public DBBook connection;
 
 
     //WindowControllers
@@ -54,7 +54,7 @@ public class BookDetailsWindow {
             this.setAvailableButton.setText("Oznacz jako dostępną");
         }
         this.parentController=parentController;
-        this.connection=new DBConnect();
+        this.connection=new DBBook();
     }
 
     private void closeWindow() throws IOException {
@@ -107,11 +107,15 @@ public class BookDetailsWindow {
         }
         else{
             book.setAccessible(true);
-            book.setBorrowed("");
+            book.setBorrowed(0);
             setAvailableButton.setText("Oznacz jako dostępną");
         }
         connection.editBook(book);
         parentController.booksTable.refresh();
         showBook(book);
+    }
+
+    public void onBorrowHistoryClick() {
+
     }
 }
