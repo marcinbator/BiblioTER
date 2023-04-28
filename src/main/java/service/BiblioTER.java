@@ -6,7 +6,9 @@ import java.io.IOException;
 
 public class BiblioTER {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        LogOutput.clearLog();
+        LogOutput.logEvent("BiblioTER launched.");
         Application.launch(GUI.class);
     }
 

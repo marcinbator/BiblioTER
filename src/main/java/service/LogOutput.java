@@ -3,23 +3,41 @@ package service;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class LogOutput {
 
-    public static void logEvent(String message) throws IOException {
-        FileWriter writer=null;
-        try {
-            File logFile = new File("logs.txt");
-            writer = new FileWriter(logFile);
-            System.out.println("Logs file created in " + logFile.getPath());
-        } catch (IOException e) {
-            System.out.println("Error generating logs file: " + e.getMessage());
+    public static void clearLog() throws IOException {
+        File file=new File("logs.txt");
+        if(new File("logs.txt").exists()){
+            new FileWriter(file).write("");
         }
-        long time = System.currentTimeMillis();//todo
+    }
 
+    public static void logEvent(String message) throws IOException {
+        File file=new File("logs.txt");
+        if(!new File("logs.txt").exists()){
+            System.out.println("Logs file created in " + file.getPath());
+        }
+        FileWriter writer=new FileWriter(file, true);
         try {
-            assert writer != null;
-            writer.append(String.valueOf(time)).append(": ").append(message).append("\n");
+            writer.append("ERROR: ").append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
+            System.out.println("Log created.");
+        } catch (IOException e) {
+            System.out.println("Error writing to a file: " + e.getMessage());
+        }
+        writer.close();
+    }
+
+    public static void logError(String message) throws IOException {
+        File file=new File("logs.txt");
+        if(!new File("logs.txt").exists()){
+            System.out.println("Logs file created in " + file.getPath());
+        }
+        FileWriter writer=new FileWriter(file, true);
+        try {
+            writer.append(String.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")))).append(": ").append(message).append("\n");
             System.out.println("Log created.");
         } catch (IOException e) {
             System.out.println("Error writing to a file: " + e.getMessage());

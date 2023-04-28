@@ -34,21 +34,6 @@ public class Book {
     }
 
 
-    //Operations
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", category='" + category + '\'' +
-                ", accessible=" + accessible +
-                ", borrowed='" + borrowed + '\'' +
-                '}';
-    }
-
-
     //Getters, setters
 
     public int getId() {

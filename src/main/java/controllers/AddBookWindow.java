@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import service.Book;
 import service.DBConnect;
+import service.LogOutput;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -39,7 +40,7 @@ public class AddBookWindow {
 
     //WindowControllers
 
-    public static void launchAddBookForm(GUI parentController, Book defaultBook) throws IOException, SQLException, ClassNotFoundException {
+    public static void launchAddBookWindow(GUI parentController, Book defaultBook) throws IOException, SQLException, ClassNotFoundException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(BookDetailsWindow.class.getResource("/view/addBookForm.fxml"));
         Stage stage = new Stage();
@@ -49,9 +50,10 @@ public class AddBookWindow {
         addBookWindowController.setForm(parentController, defaultBook);
         addBookWindowController.setDefaults();
         stage.show();
+        LogOutput.logEvent("Add book window launched.");
     }
 
-    private void setForm(GUI parentController, Book book) throws SQLException, ClassNotFoundException {
+    private void setForm(GUI parentController, Book book) throws SQLException, ClassNotFoundException, IOException {
         this.parentController = parentController;
         this.defaultBook=book;
         this.connection=new DBConnect();
@@ -65,23 +67,24 @@ public class AddBookWindow {
         this.accessField.setIndeterminate(defaultBook.isAccessible());
     }
 
-    private void closeWindow() throws SQLException {
+    private void closeWindow() throws SQLException, IOException {
         Stage stage = (Stage) addBookButton.getScene().getWindow();
         connection.close();
         stage.close();
+        LogOutput.logEvent("Add book window closed.");
     }
 
 
     //Operations
 
-    private void addBook() throws SQLException {
+    private void addBook() throws SQLException, IOException {
         parentController.booksTable.getItems().add(defaultBook);
         connection.addBook(defaultBook);
         int id=connection.getBook(defaultBook.getTitle()).getId();
         defaultBook.setId(id);
     }
 
-    private void editBook() throws SQLException {
+    private void editBook() throws SQLException, IOException {
         ObservableList<Book> books=parentController.booksTable.getItems();
         for(Book book:books){
             if(book.getId()==defaultBook.getId()){
@@ -90,6 +93,7 @@ public class AddBookWindow {
                 book.setCategory(defaultBook.getCategory());
                 book.setBorrowed(defaultBook.getBorrowed());
                 book.setAccessible(defaultBook.isAccessible());
+                LogOutput.logEvent("Book "+book.getId()+" edited.");
             }
         }
         parentController.booksTable.setItems(books);
@@ -101,7 +105,7 @@ public class AddBookWindow {
     //Listeners
 
     @FXML
-    private void onAddBookButtonClicked() throws SQLException {
+    private void onAddBookButtonClicked() throws SQLException, IOException {
         defaultBook.setTitle(titleField.getText());
         defaultBook.setAuthor(authorField.getText());
         defaultBook.setCategory(categoryField.getText());

@@ -43,7 +43,7 @@ public class GUI extends Application implements Initializable {
     @FXML
     public TableView<Book>booksTable;
 
-    DBConnect connection;
+    public DBConnect connection;
 
 
     //Constructors
@@ -73,7 +73,13 @@ public class GUI extends Application implements Initializable {
             for(Book book:books){
                 booksTable.getItems().add(book);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+            LogOutput.logEvent("GUI initialized.");
+        } catch (SQLException | ClassNotFoundException | IOException e) {
+            try {
+                LogOutput.logError("GUI initialization failed.");
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
             throw new RuntimeException(e);
         }
     }
@@ -134,7 +140,7 @@ public class GUI extends Application implements Initializable {
         contextClone.setOnAction(event->{
             try {
                 onCloneBookClick(books.get(0));
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -149,7 +155,8 @@ public class GUI extends Application implements Initializable {
     private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
         Book book=new Book();
         showMessage("AddBook clicked.");
-        AddBookWindow.launchAddBookForm(this, book);
+        AddBookWindow.launchAddBookWindow(this, book);
+        LogOutput.logEvent("Book "+book.getTitle()+" added properly.");
     }
 
     @FXML
@@ -179,10 +186,11 @@ public class GUI extends Application implements Initializable {
         }
         connection.deleteBook(book);
         booksTable.getItems().remove(book);
+        LogOutput.logEvent("Book "+book.getId()+" deleted properly.");
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
-        AddBookWindow.launchAddBookForm(this, book);
+        AddBookWindow.launchAddBookWindow(this, book);
     }
 
     private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
@@ -201,9 +209,10 @@ public class GUI extends Application implements Initializable {
         }
     }
 
-    private void onCloneBookClick(Book book) throws SQLException {
+    private void onCloneBookClick(Book book) throws SQLException, IOException {
         connection.addBook(book);
         booksTable.getItems().add(book);
         booksTable.refresh();
+        LogOutput.logEvent("Book "+book.getId()+" cloned properly.");
     }
 }

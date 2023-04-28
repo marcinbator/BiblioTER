@@ -9,6 +9,7 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import service.Book;
 import service.DBConnect;
+import service.LogOutput;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -42,9 +43,10 @@ public class BookDetailsWindow {
         bookDetailsWindow.settings(book, parentController);
         bookDetailsWindow.showBook(book);
         stage.show();
+        LogOutput.logEvent("Book details window launched.");
     }
 
-    private void settings(Book book,GUI parentController) throws SQLException, ClassNotFoundException {
+    private void settings(Book book,GUI parentController) throws SQLException, ClassNotFoundException, IOException {
         this.book = book;
         if (book.isAccessible()) {
             this.setAvailableButton.setText("Oznacz jako wypożyczoną");
@@ -55,15 +57,16 @@ public class BookDetailsWindow {
         this.connection=new DBConnect();
     }
 
-    private void closeWindow(){
+    private void closeWindow() throws IOException {
         Stage stage = (Stage) editButton.getScene().getWindow();
         stage.close();
+        LogOutput.logEvent("Book details window closed.");
     }
 
 
     //Operations
 
-    private void showBook(Book book){
+    private void showBook(Book book) throws IOException {
         textPanel.getChildren().clear();
         Text id,title,author,category,borrowed, accessibility;
         id=new Text("ID książki: "+book.getId() +"\n");
@@ -78,25 +81,26 @@ public class BookDetailsWindow {
         textPanel.getChildren().add(category);
         textPanel.getChildren().add(accessibility);
         textPanel.getChildren().add(borrowed);
+        LogOutput.logEvent("Book "+book.getId()+" shown.");
     }
 
 
     //Listeners
     @FXML
     private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
-        AddBookWindow.launchAddBookForm(parentController, book);
+        AddBookWindow.launchAddBookWindow(parentController, book);
         closeWindow();
     }
 
     @FXML
-    private void onDeleteBookClick() throws SQLException {
+    private void onDeleteBookClick() throws SQLException, IOException {
         connection.deleteBook(book);
         parentController.booksTable.getItems().remove(book);
         closeWindow();
     }
 
     @FXML
-    private void onSetAccessibleButtonClick()throws SQLException {
+    private void onSetAccessibleButtonClick() throws SQLException, IOException {
         if(book.isAccessible()){
             book.setAccessible(false);
             setAvailableButton.setText("Oznacz jako wypożyczoną");
