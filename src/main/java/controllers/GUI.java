@@ -160,7 +160,7 @@ public class GUI extends Application implements Initializable {
     }
 
     @FXML
-    private void onAddUserClick() {
+    private void onAddUserClick() throws IOException {
         showMessage("AddUser clicked.");
         Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", true, "Przykładowy wypożyczający");
         booksTable.getItems().add(book);

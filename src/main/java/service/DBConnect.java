@@ -39,7 +39,7 @@ public class DBConnect {
 
     //Database utilities
 
-    private void downloadBook(Book book, ResultSet result) throws SQLException {
+    private void downloadBook(Book book, ResultSet result) throws SQLException, IOException {
         book.setId(result.getInt("id"));
         book.setTitle(result.getString("title"));
         book.setAuthor(result.getString("author"));

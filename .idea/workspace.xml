@@ -7,13 +7,9 @@
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/LogOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/LogOutput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

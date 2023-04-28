@@ -1,5 +1,8 @@
 package service;
 
+import java.io.IOException;
+import java.util.regex.Matcher;
+
 public class Book {
 
 
@@ -24,7 +27,7 @@ public class Book {
         this.category="";
     }
 
-    public Book(int id, String title, String author, String category, boolean accessible, String borrowed){
+    public Book(int id, String title, String author, String category, boolean accessible, String borrowed) throws IOException {
         this.setId(id);
         this.setTitle(title);
         this.setAuthor(author);
@@ -48,32 +51,52 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String title) throws IOException {
+        if(stringValidate(title)){
+            this.title = title;
+        }
+        else{
+            LogOutput.logError("Book - not proper title detected.");
+        }
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String author) throws IOException {
+        if(stringValidate(author)){
+            this.author = author;
+        }
+        else{
+            LogOutput.logError("Book - not proper author detected.");
+        }
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory(String category) throws IOException {
+        if(stringValidate(category)){
+            this.category = category;
+        }
+        else{
+            LogOutput.logError("Book - not proper author detected.");
+        }
     }
 
     public String getBorrowed() {
         return borrowed;
     }
 
-    public void setBorrowed(String borrowed) {
-        this.borrowed = borrowed;
+    public void setBorrowed(String borrowed) throws IOException {
+        if(stringValidate(borrowed)){
+            this.borrowed = borrowed;
+        }
+        else{
+            LogOutput.logError("Book - not proper author detected.");
+        }
     }
 
     public String getAccessible(){
@@ -91,6 +114,13 @@ public class Book {
         else{
             this.accessible="Niedostępna";
         }
+    }
+
+
+    //Validation
+
+    private static boolean stringValidate(String line){
+        return line.matches("[a-zA-Z ]{5,20}");
     }
 
 }
