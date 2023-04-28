@@ -31,13 +31,12 @@ public class DBBook extends DBConnect {
         book.setAccessible(result.getBoolean("accessibility"));
     }
 
-    private void uploadBook(PreparedStatement statement, Book book) throws SQLException, IOException {
+    private void uploadBook(PreparedStatement statement, Book book) throws SQLException{
         statement.setString(1, book.getTitle());
         statement.setString(2, book.getAuthor());
         statement.setString(3, book.getCategory());
         statement.setInt(4, book.getBorrowed());
         statement.setBoolean(5,book.isAccessible());
-        LogOutput.logEvent("Book "+book.getId() +" uploaded to database.");
     }
 
     private Book getBook(Book book, PreparedStatement statement) throws SQLException, IOException {
@@ -45,7 +44,7 @@ public class DBBook extends DBConnect {
         while(result.next()){
             downloadBook(book, result);
         }
-        LogOutput.logEvent("Book "+book.getId() +" downloaded from database.");
+        LogOutput.logEvent("Book "+book.getId()+" downloaded from database.");
         return book;
     }
 
