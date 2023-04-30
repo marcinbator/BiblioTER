@@ -15,6 +15,10 @@ import java.util.List;
 public class DBBorrows extends DBConnect{
 
 
+    //Attributes
+    private String readerQuery = "SELECT readerstable.id, readerstable.name, readerstable.surname, readerstable.phone  FROM readerstable";
+
+
     //Constructor
 
     public DBBorrows() throws SQLException, IOException, ClassNotFoundException {
@@ -72,7 +76,6 @@ public class DBBorrows extends DBConnect{
 
     public List<Reader> getReadersByBook(Book book) throws SQLException, IOException {
         List<Reader> readers=new ArrayList<>();
-        String readerQuery = "SELECT readerstable.id, readerstable.name, readerstable.surname, readerstable.phone  FROM readerstable";
         String query= readerQuery +" JOIN borrowstable ON readerstable.id=borrowstable.borrowerid WHERE bookid=? AND borrowstable.active=1";
         PreparedStatement statement= connection.prepareStatement(query);
         statement.setInt(1,book.getId());
@@ -102,6 +105,18 @@ public class DBBorrows extends DBConnect{
         return books;
     }
 
+    public Reader getCurrentReader(Book book) throws SQLException, IOException {
+        Reader reader=new Reader();
+        String query=readerQuery+" JOIN borrowstable ON readerstable.id=borrowstable.id WHERE bookid=? AND active=1";
+        PreparedStatement statement=connection.prepareStatement(query);
+        statement.setInt(1,book.getId());
+        ResultSet resultSet=statement.executeQuery();
+        while(resultSet.next()){
+            downloadReader(resultSet, reader);
+        }
+        return reader;
+    }
+
     public void addBorrow(BorrowRecord record) throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("INSERT INTO borrowstable (bookid, borrowerid, active) VALUES(?,?,?)");
         uploadBorrow(record, statement);
@@ -112,6 +127,12 @@ public class DBBorrows extends DBConnect{
         PreparedStatement statement=connection.prepareStatement("UPDATE borrowstable SET bookid=?, borrowerid=?, active=? WHERE id=?");
         uploadBorrow(record, statement);
         LogOutput.logEvent("Borrow "+record.getId()+" updated successfully in database.");
+    }
+
+    public void deactivateAllBorrows(Book book) throws SQLException, IOException {
+        PreparedStatement statement=connection.prepareStatement("UPDATE borrowstable SET active=0 WHERE bookid=?");
+        statement.setInt(1,book.getId());
+        LogOutput.logEvent("All borrows for book "+book.getId()+" deactivated.");
     }
 
     public List<BorrowRecord> getAllBorrows(Boolean active) throws SQLException, IOException {

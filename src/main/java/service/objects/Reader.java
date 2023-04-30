@@ -85,7 +85,7 @@ public class Reader {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-Z ]{5,20}");
+        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{5,20}");
     }
 
     private static boolean phoneValidate(String phone){

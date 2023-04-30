@@ -13,8 +13,8 @@
          </padding></TextFlow>
       <Button fx:id="editButton" layoutX="14.0" layoutY="252.0" mnemonicParsing="false" onAction="#onEditBookClick" text="Edytuj" />
       <Button fx:id="deleteButton" layoutX="71.0" layoutY="252.0" mnemonicParsing="false" onAction="#onDeleteBookClick" text="Usuń" />
-      <Button fx:id="setAvailableButton" layoutX="305.0" layoutY="252.0" mnemonicParsing="false" onAction="#onSetAccessibleButtonClick" />
-      <Button fx:id="addUserButton" layoutX="447.0" layoutY="252.0" mnemonicParsing="false" text="Dodaj osobę wypożyczającą" />
+      <Button fx:id="setAvailableButton" layoutX="313.0" layoutY="215.0" mnemonicParsing="false" onAction="#onSetAccessibleButtonClick" text="Oznacz jako dostępną (Anuluj wypożyczenie)" />
+      <Button fx:id="addUserButton" layoutX="447.0" layoutY="252.0" mnemonicParsing="false" onAction="#onAddBorrowButtonClick" text="Wypożycz" />
       <Button fx:id="borrowHistoryButton" layoutX="121.0" layoutY="252.0" mnemonicParsing="false" onAction="#onBorrowHistoryClick" text="Historia wypożyczeń" />
    </children>
 </AnchorPane>

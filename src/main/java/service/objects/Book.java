@@ -14,7 +14,6 @@ public class Book {
     private String author;
     private String category;
     private String accessible;
-    private int borrowed;
 
 
     //Constructors
@@ -23,18 +22,16 @@ public class Book {
         this.id=0;
         this.title="";
         this.author="";
-        this.borrowed=0;
-        this.accessible="Niedostępne";
+        this.accessible="Dostępna";
         this.category="";
     }
 
-    public Book(int id, String title, String author, String category, boolean accessible, int borrowed) throws IOException {
+    public Book(int id, String title, String author, String category, boolean accessible) throws IOException {
         this.setId(id);
         this.setTitle(title);
         this.setAuthor(author);
         this.setCategory(category);
         this.setAccessible(accessible);
-        this.setBorrowed(borrowed);
     }
 
 
@@ -87,14 +84,6 @@ public class Book {
         }
     }
 
-    public int getBorrowed() {
-        return borrowed;
-    }
-
-    public void setBorrowed(int borrowed) throws IOException {
-        this.borrowed=borrowed;
-    }
-
     public String getAccessible(){
         return this.accessible;
     }
@@ -116,7 +105,7 @@ public class Book {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-Z ]{5,20}");
+        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{5,20}");
     }
 
 }

@@ -75,6 +75,13 @@ public class DBReader extends DBConnect{
         return getReader(reader, statement);
     }
 
+    public Reader getReader(String name) throws SQLException, IOException {
+        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE name=?");
+        statement.setString(1, name);
+        Reader reader=new Reader();
+        return getReader(reader, statement);
+    }
+
     public List<Reader> getReaders() throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable");
         ResultSet results=statement.executeQuery();

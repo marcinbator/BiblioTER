@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import service.database.DBBorrows;
 import service.objects.Book;
 import service.database.DBBook;
 import service.LogOutput;
@@ -29,6 +31,7 @@ public class BookDetailsWindow {
     public GUI parentController;
     public Book book;
     public DBBook connection;
+    public DBBorrows borrowsConnection;
 
 
     //WindowControllers
@@ -48,13 +51,9 @@ public class BookDetailsWindow {
 
     private void settings(Book book,GUI parentController) throws SQLException, ClassNotFoundException, IOException {
         this.book = book;
-        if (book.isAccessible()) {
-            this.setAvailableButton.setText("Oznacz jako wypożyczoną");
-        } else {
-            this.setAvailableButton.setText("Oznacz jako dostępną");
-        }
         this.parentController=parentController;
         this.connection=new DBBook();
+        this.borrowsConnection=new DBBorrows();
     }
 
     private void closeWindow() throws IOException {
@@ -73,14 +72,12 @@ public class BookDetailsWindow {
         title=new Text("Tytuł: "+book.getTitle()+"\n");
         author=new Text("Autor: "+book.getAuthor()+"\n");
         category=new Text("Kategoria: "+book.getCategory()+"\n");
-        borrowed=new Text("Pożyczył: "+book.getBorrowed()+"\n");
         accessibility=new Text("Dostępność: "+book.getAccessible()+"\n");
         textPanel.getChildren().add(id);
         textPanel.getChildren().add(title);
         textPanel.getChildren().add(author);
         textPanel.getChildren().add(category);
         textPanel.getChildren().add(accessibility);
-        textPanel.getChildren().add(borrowed);
         LogOutput.logEvent("Book "+book.getId()+" shown.");
     }
 
@@ -101,15 +98,9 @@ public class BookDetailsWindow {
 
     @FXML
     private void onSetAccessibleButtonClick() throws SQLException, IOException {
-        if(book.isAccessible()){
-            book.setAccessible(false);
-            setAvailableButton.setText("Oznacz jako wypożyczoną");
-        }
-        else{
-            book.setAccessible(true);
-            book.setBorrowed(0);
-            setAvailableButton.setText("Oznacz jako dostępną");
-        }
+        book.setAccessible(true);
+        setAvailableButton.setText("Oznacz jako dostępną");
+        borrowsConnection.deactivateAllBorrows(book);
         connection.editBook(book);
         parentController.booksTable.refresh();
         showBook(book);
@@ -117,5 +108,9 @@ public class BookDetailsWindow {
 
     public void onBorrowHistoryClick() {
 
+    }
+
+    public void onAddBorrowButtonClick() {
+        
     }
 }

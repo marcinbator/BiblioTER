@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="readerDB class">
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,35 +55,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/libs/mysql-connector-j-8.0.32.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_directory_selection": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter",
+    "last_opened_file_path": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/resources/view",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources\view" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controllers" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,7 +126,11 @@
       <workItem from="1682616436943" duration="56000" />
       <workItem from="1682626479278" duration="2521000" />
       <workItem from="1682689724736" duration="5205000" />
-      <workItem from="1682712683818" duration="2292000" />
+      <workItem from="1682712683818" duration="2538000" />
+      <workItem from="1682764444040" duration="781000" />
+      <workItem from="1682838481912" duration="40000" />
+      <workItem from="1682858630433" duration="218000" />
+      <workItem from="1682868498143" duration="4961000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
@@ -154,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682691647955</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DBBorrows class implementation">
+      <created>1682715196390</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682715196390</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +205,8 @@
     <MESSAGE value="Update workspace.xml" />
     <MESSAGE value="Code refactor" />
     <MESSAGE value="readerDB class" />
-    <option name="LAST_COMMIT_MESSAGE" value="readerDB class" />
+    <MESSAGE value="DBBorrows class implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="DBBorrows class implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

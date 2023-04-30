@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddReaderWindow">
+   <children>
+      <TextField fx:id="nameField" layoutX="71.0" layoutY="47.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="27.0" prefHeight="18.0" prefWidth="73.0" text="Imię">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="surnameField" layoutX="71.0" layoutY="103.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="83.0" prefHeight="12.0" prefWidth="74.0" text="Nazwisko">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="phoneField" layoutX="71.0" layoutY="159.0" prefHeight="26.0" prefWidth="458.0" />
+      <Label layoutX="71.0" layoutY="139.0" prefHeight="18.0" prefWidth="73.0" text="Telefon">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="addReaderButton" layoutX="275.0" layoutY="333.0" mnemonicParsing="false" onAction="#onAddReaderButtonClicked" text="Zapisz" />
+   </children>
+</AnchorPane>

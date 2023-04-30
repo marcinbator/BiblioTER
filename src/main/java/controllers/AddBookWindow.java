@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import service.database.DBBorrows;
 import service.objects.Book;
 import service.database.DBBook;
 import service.LogOutput;
@@ -34,6 +35,7 @@ public class AddBookWindow {
     private GUI parentController;
     private Book defaultBook;
     private DBBook connection;
+    private DBBorrows borrowsConnection;
 
 
     //WindowControllers
@@ -55,6 +57,7 @@ public class AddBookWindow {
         this.parentController = parentController;
         this.defaultBook=book;
         this.connection=new DBBook();
+        this.borrowsConnection=new DBBorrows();
     }
 
     private void setDefaults(){
@@ -88,7 +91,6 @@ public class AddBookWindow {
                 book.setTitle(defaultBook.getTitle());
                 book.setAuthor(defaultBook.getAuthor());
                 book.setCategory(defaultBook.getCategory());
-                book.setBorrowed(defaultBook.getBorrowed());
                 book.setAccessible(defaultBook.isAccessible());
                 LogOutput.logEvent("Book "+book.getId()+" edited.");
             }

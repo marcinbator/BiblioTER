@@ -1,7 +1,6 @@
 package controllers;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,9 +10,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import service.database.DBReader;
 import service.objects.Book;
 import service.database.DBBook;
 import service.LogOutput;
+import service.objects.Reader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,9 +27,9 @@ public class GUI extends Application implements Initializable {
     //Attributes
 
     @FXML
-    private DialogPane messagePanel;
+    public TableView<Book>booksTable;
     @FXML
-    private TableColumn<Book, Integer>id;
+    private TableColumn<Book, Integer>bookId;
     @FXML
     private TableColumn<Book, String>title;
     @FXML
@@ -36,14 +37,20 @@ public class GUI extends Application implements Initializable {
     @FXML
     private TableColumn<Book, String>category;
     @FXML
-    private TableColumn<Book, String>borrowed;
-    @FXML
     private TableColumn<Book, String>accessible;
-
     @FXML
-    public TableView<Book>booksTable;
+    public TableView<Reader> readersTable;
+    @FXML
+    private TableColumn<Reader, Integer>readerId;
+    @FXML
+    private TableColumn<Reader, String>name;
+    @FXML
+    private TableColumn<Reader, String>surname;
+    @FXML
+    private TableColumn<Reader, String>phone;
 
-    public DBBook connection;
+    public DBBook bookConnection;
+    public DBReader readerConnection;
 
 
     //Constructors
@@ -61,25 +68,38 @@ public class GUI extends Application implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        //init books table
+        bookId.setCellValueFactory(new PropertyValueFactory<>("id"));
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         category.setCellValueFactory(new PropertyValueFactory<>("category"));
-        borrowed.setCellValueFactory(new PropertyValueFactory<>("borrowed"));
         accessible.setCellValueFactory(new PropertyValueFactory<>("accessible"));
         try {
-            this.connection=new DBBook();
-            List<Book> books=connection.getBooks();
+            this.bookConnection =new DBBook();
+            List<Book> books= bookConnection.getBooks();
             for(Book book:books){
                 booksTable.getItems().add(book);
             }
-            LogOutput.logEvent("GUI initialized.");
         } catch (SQLException | ClassNotFoundException | IOException e) {
-            try {
-                LogOutput.logError("GUI initialization failed.");
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
+            throw new RuntimeException(e);
+        }
+        //init readers table
+        readerId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surname.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        try {
+            this.readerConnection=new DBReader();
+            List<Reader> readers=readerConnection.getReaders();
+            for(Reader reader:readers){
+                readersTable.getItems().add(reader);
             }
+        } catch (SQLException | IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            LogOutput.logEvent("GUI initialized.");
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -87,29 +107,13 @@ public class GUI extends Application implements Initializable {
 
     //Operations
 
-    private void showMessage(String text){
-        messagePanel.setContentText(text);
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Platform.runLater(() -> messagePanel.setContentText(""));
-            }
-        }, 2000);
-    }
-
-    private ContextMenu launchContextMenu(){
+    private ContextMenu launchBookContextMenu(){
         ContextMenu contextMenu = new ContextMenu();
         MenuItem contextEdit = new MenuItem("Edytuj");
         MenuItem contextDelete = new MenuItem("Usuń");
-        MenuItem contextAccessibility = new MenuItem("");
-        MenuItem contextClone=new MenuItem("Sklonuj książkę");
+        MenuItem contextAccessibility = new MenuItem("Oznacz jako dostępną");
+        MenuItem contextClone=new MenuItem("Sklonuj");
         List<Book> books=booksTable.getSelectionModel().getSelectedItems();
-        if(books.get(0).isAccessible()){
-            contextAccessibility.setText("Oznacz jako wypożyczoną");
-        }else{
-            contextAccessibility.setText("Oznacz jako dostępną");
-        }
         contextEdit.setOnAction(event -> {
             try {
                 onEditBookClick(books.get(0));
@@ -126,13 +130,7 @@ public class GUI extends Application implements Initializable {
         });
         contextAccessibility.setOnAction(event -> {
             try {
-                if(onSetAccessibleButtonClick(books.get(0))){
-                    contextAccessibility.setText("Oznacz jako wypożyczoną");
-                    System.out.println("Dodaj wypożyczającego!");
-                }
-                else{
-                    contextAccessibility.setText("Oznacz jako dostępną");
-                }
+                onSetAccessibleButtonClick(books.get(0));
             } catch (IOException | SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -148,22 +146,44 @@ public class GUI extends Application implements Initializable {
         return contextMenu;
     }
 
+    private ContextMenu launchReaderContextMenu(){
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem contextEdit = new MenuItem("Edytuj");
+        MenuItem contextDelete = new MenuItem("Usuń");
+        List<Reader> readers=readersTable.getSelectionModel().getSelectedItems();
+        contextEdit.setOnAction(event -> {
+            try {
+                onEditReaderClick(readers.get(0));
+            } catch (IOException | SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        contextDelete.setOnAction(event -> {
+            try {
+                onDeleteReaderClick(readers.get(0));
+            } catch (IOException | SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        contextMenu.getItems().addAll(contextEdit, contextDelete);
+        return contextMenu;
+    }
+
 
     //Listeners
 
     @FXML
     private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
         Book book=new Book();
-        showMessage("AddBook clicked.");
         AddBookWindow.launchAddBookWindow(this, book);
         LogOutput.logEvent("Book "+book.getTitle()+" added properly.");
     }
 
     @FXML
-    private void onAddUserClick() throws IOException {
-        showMessage("AddUser clicked.");
-        Book book = new Book(1, "Przykładowa książka", "Przykładowy autor", "Przykładowa kategoria", true, 0);
-        booksTable.getItems().add(book);
+    private void onAddReaderClick() throws IOException, SQLException, ClassNotFoundException {
+        Reader reader=new Reader();
+        AddReaderWindow.launchAddReaderWindow(this, reader);
+        LogOutput.logEvent("Reader "+reader.getId()+" added properly.");
     }
 
     @FXML
@@ -172,47 +192,57 @@ public class GUI extends Application implements Initializable {
             List<Book> books=booksTable.getSelectionModel().getSelectedItems();
             for(Book book:books){
                 BookDetailsWindow.launchBookDetails(this, book);
-                System.out.println(book);
             }
         }
         else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
-            booksTable.setContextMenu(launchContextMenu());
+            booksTable.setContextMenu(launchBookContextMenu());
         }
     }
 
+    @FXML
+    private void onReaderClick() {
+        readersTable.setContextMenu(launchReaderContextMenu());
+    }
+
     private void onDeleteBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
-        if (connection.isClosed()) {
-            connection = new DBBook();
+        if (bookConnection.isClosed()) {
+            bookConnection = new DBBook();
         }
-        connection.deleteBook(book);
+        bookConnection.deleteBook(book);
         booksTable.getItems().remove(book);
         LogOutput.logEvent("Book "+book.getId()+" deleted properly.");
+    }
+
+    private void onDeleteReaderClick(Reader reader) throws SQLException, IOException, ClassNotFoundException {
+        if (readerConnection.isClosed()) {
+            readerConnection = new DBReader();
+        }
+        readerConnection.deleteReader(reader);
+        readersTable.getItems().remove(reader);
+        LogOutput.logEvent("Reader "+reader.getId()+" deleted properly.");
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         AddBookWindow.launchAddBookWindow(this, book);
     }
 
+    private void onEditReaderClick(Reader reader) throws SQLException, IOException, ClassNotFoundException {
+        AddReaderWindow.launchAddReaderWindow(this, reader);
+    }
+
     private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
-        if(book.isAccessible()){
-            book.setAccessible(false);
-            connection.editBook(book);
-            booksTable.refresh();
-            return false;
-        }
-        else{
-            book.setAccessible(true);
-            book.setBorrowed(0);
-            connection.editBook(book);
-            booksTable.refresh();
-            return true;
-        }
+        book.setAccessible(true);
+        bookConnection.editBook(book);
+        booksTable.refresh();
+        return true;
     }
 
     private void onCloneBookClick(Book book) throws SQLException, IOException {
-        connection.addBook(book);
+        bookConnection.addBook(book);
         booksTable.getItems().add(book);
         booksTable.refresh();
         LogOutput.logEvent("Book "+book.getId()+" cloned properly.");
     }
+
+
 }

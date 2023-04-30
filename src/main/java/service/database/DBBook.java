@@ -27,7 +27,6 @@ public class DBBook extends DBConnect {
         book.setTitle(result.getString("title"));
         book.setAuthor(result.getString("author"));
         book.setCategory(result.getString("category"));
-        book.setBorrowed(result.getInt("borrowed"));
         book.setAccessible(result.getBoolean("accessibility"));
     }
 
@@ -35,8 +34,7 @@ public class DBBook extends DBConnect {
         statement.setString(1, book.getTitle());
         statement.setString(2, book.getAuthor());
         statement.setString(3, book.getCategory());
-        statement.setInt(4, book.getBorrowed());
-        statement.setBoolean(5,book.isAccessible());
+        statement.setBoolean(4,book.isAccessible());
     }
 
     private Book getBook(Book book, PreparedStatement statement) throws SQLException, IOException {
@@ -79,15 +77,15 @@ public class DBBook extends DBConnect {
     }
 
     public void addBook(Book book) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO bookstable (title, author, category, borrowed, accessibility) VALUES(?, ?, ?, ?, ?)");
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO bookstable (title, author, category, accessibility) VALUES(?, ?,  ?, ?)");
         uploadBook(statement, book);
         statement.executeUpdate();
         LogOutput.logEvent("Book "+book.getId() +" added to database.");
     }
     public void editBook(Book book) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("UPDATE bookstable SET title=?, author=?, category=?, borrowed=?, accessibility=? WHERE id=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE bookstable SET title=?, author=?, category=?, accessibility=? WHERE id=?");
         uploadBook(statement, book);
-        statement.setString(6, Integer.toString(book.getId()));
+        statement.setString(5, Integer.toString(book.getId()));
         statement.executeUpdate();
         LogOutput.logEvent("Book "+book.getId() +" edited in database.");
     }
