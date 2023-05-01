@@ -24,12 +24,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="71.0" layoutY="196.0" prefHeight="18.0" prefWidth="73.0" text="Dostępność">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="accessField" layoutX="155.0" layoutY="198.0" mnemonicParsing="false" />
       <Button fx:id="addBookButton" layoutX="275.0" layoutY="333.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Zapisz" />
    </children>
 </AnchorPane>

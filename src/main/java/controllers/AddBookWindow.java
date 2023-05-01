@@ -29,8 +29,6 @@ public class AddBookWindow {
     private TextField categoryField;
     @FXML
     private TextField titleField;
-    @FXML
-    private CheckBox accessField;
 
     private GUI parentController;
     private Book defaultBook;
@@ -64,7 +62,6 @@ public class AddBookWindow {
         this.titleField.setText(defaultBook.getTitle());
         this.authorField.setText(defaultBook.getAuthor());
         this.categoryField.setText(defaultBook.getCategory());
-        this.accessField.setIndeterminate(defaultBook.isAccessible());
     }
 
     private void closeWindow() throws SQLException, IOException {
@@ -108,7 +105,7 @@ public class AddBookWindow {
         defaultBook.setTitle(titleField.getText());
         defaultBook.setAuthor(authorField.getText());
         defaultBook.setCategory(categoryField.getText());
-        defaultBook.setAccessible(accessField.isSelected());
+        defaultBook.setAccessible(true);
         if (defaultBook.getId() != 0) {
             editBook();
         } else {

@@ -1,17 +1,15 @@
 package controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import service.LogOutput;
+import service.database.DBBook;
 import service.database.DBBorrows;
 import service.objects.Book;
-import service.database.DBBook;
-import service.LogOutput;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -66,19 +64,7 @@ public class BookDetailsWindow {
     //Operations
 
     private void showBook(Book book) throws IOException {
-        textPanel.getChildren().clear();
-        Text id,title,author,category,borrowed, accessibility;
-        id=new Text("ID książki: "+book.getId() +"\n");
-        title=new Text("Tytuł: "+book.getTitle()+"\n");
-        author=new Text("Autor: "+book.getAuthor()+"\n");
-        category=new Text("Kategoria: "+book.getCategory()+"\n");
-        accessibility=new Text("Dostępność: "+book.getAccessible()+"\n");
-        textPanel.getChildren().add(id);
-        textPanel.getChildren().add(title);
-        textPanel.getChildren().add(author);
-        textPanel.getChildren().add(category);
-        textPanel.getChildren().add(accessibility);
-        LogOutput.logEvent("Book "+book.getId()+" shown.");
+        BorrowBookView.showBookDetails(book, textPanel);
     }
 
 
@@ -110,7 +96,7 @@ public class BookDetailsWindow {
 
     }
 
-    public void onAddBorrowButtonClick() {
-        
+    public void onAddBorrowButtonClick() throws Exception {
+        BorrowBookView.launchBorrowBookView(parentController, book);
     }
 }

@@ -230,14 +230,14 @@ public class GUI extends Application implements Initializable {
         AddReaderWindow.launchAddReaderWindow(this, reader);
     }
 
-    private boolean onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
+    private void onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
         book.setAccessible(true);
         bookConnection.editBook(book);
         booksTable.refresh();
-        return true;
     }
 
     private void onCloneBookClick(Book book) throws SQLException, IOException {
+        book.setAccessible(true);
         bookConnection.addBook(book);
         booksTable.getItems().add(book);
         booksTable.refresh();
