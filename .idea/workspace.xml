@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,8 @@
       <workItem from="1682970938629" duration="2465000" />
       <workItem from="1683002611949" duration="4819000" />
       <workItem from="1683016197650" duration="6890000" />
-      <workItem from="1683038520630" duration="2509000" />
+      <workItem from="1683038520630" duration="2570000" />
+      <workItem from="1683043058019" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

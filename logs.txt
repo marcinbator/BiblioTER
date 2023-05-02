@@ -1,13 +1,19 @@
-17:00:36: BiblioTER launched.
-17:00:37: Database connection established.
-17:00:37: Database connection established.
-17:00:37: Books downloaded from database.
-17:00:37: Database connection established.
-17:00:37: Readers downloaded from database.
-17:00:37: GUI initialized.
-17:00:37: GUI established.
-17:00:42: Database connection established.
-17:00:42: Add reader window launched.
-17:00:42: Reader 0 added properly.
-17:00:43: ERROR: Reader - not proper name detected
-17:00:43: ERROR: Reader not added - invalid parameters.
+18:02:02: BiblioTER launched.
+18:02:03: Database connection established.
+18:02:03: Database connection established.
+18:02:03: Books downloaded from database.
+18:02:03: Database connection established.
+18:02:03: Readers downloaded from database.
+18:02:03: GUI initialized.
+18:02:03: GUI established.
+18:02:11: Book 63 edited in database.
+18:02:13: Database connection established.
+18:02:13: Database connection established.
+18:02:13: Database connection established.
+18:02:13: Book 65 shown.
+18:02:13: Book details window launched.
+18:02:16: Book 65 edited in database.
+18:02:18: Book 50 edited in database.
+18:02:19: Book 56 edited in database.
+18:02:21: Book 59 edited in database.
+18:02:22: Book 60 edited in database.
