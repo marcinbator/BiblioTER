@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/gui.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addBookForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/infoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/infoView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +32,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -43,37 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/libs/mysql-connector-j-8.0.32.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_directory_selection": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter",
+    "last_opened_file_path": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/libs/mysql-connector-j-8.0.32.jar",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources" />
       <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\java\controllers" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -127,6 +143,7 @@
       <workItem from="1683016197650" duration="6890000" />
       <workItem from="1683038520630" duration="2570000" />
       <workItem from="1683043058019" duration="346000" />
+      <workItem from="1683045690959" duration="8148000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

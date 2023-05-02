@@ -1,0 +1,59 @@
+.table-cell {
+    -fx-padding: 0.5em;
+    -fx-border-color: transparent -fx-box-border transparent transparent;
+    -fx-text-fill: #212121;
+    -fx-background-color: #FCF7FF;
+}
+.table-cell :focused {
+    -fx-border-color: transparent -fx-box-border transparent transparent;
+    -fx-background-color: #878C8F;
+}
+.table-view {
+    -fx-table-header-border-color: #959595;
+    -fx-table-cell-border-color: -fx-box-border;
+}
+
+.table-view:focused {
+    -fx-background-color: -fx-box-border, -fx-box-border, white;
+}
+
+.menu-bar {
+    -fx-background-color: #C4CAD0;
+    -fx-text-fill: black;
+}
+
+.menu-item .label, .menu-item{
+    -fx-text-fill: black!important;
+    -fx-background-color: #FCF7FF!important;
+}
+.menu-item:hover, .menu-item:hover .label, .menu-item:focused, .menu-item:focused .label,.menu-item.label:focused .menu-item .label:hover{
+    -fx-background-color: #C4CAD0!important;
+    -fx-cursor: hand;
+}
+
+.menu:hover .label,.menu:hover, .menu,menu:focused, .menu:focused .label, .menu:selected .label, .menu:selected{
+    -fx-background-color: #C4CAD0;
+}
+
+.button{
+    -fx-background-color: #A4969B;
+}
+.button:hover{
+    -fx-background-color: #878C8F;
+    -fx-cursor: hand;
+}
+.button2{
+    -fx-background-color: #655560;
+    -fx-text-fill: white;
+}
+.button2:hover{
+    -fx-background-color: #878C8F;
+    -fx-cursor: hand;
+}
+.choice-box, .choice-box .label{
+    -fx-text-fill: white;
+}
+.input:selected, .input:focused, .input{
+    -fx-text-box-border: #655560;
+    -fx-focus-color: #655560;
+}

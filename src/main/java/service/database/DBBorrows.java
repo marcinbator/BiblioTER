@@ -76,7 +76,7 @@ public class DBBorrows extends DBConnect{
 
     public List<Reader> getReadersByBook(Book book) throws SQLException, IOException {
         List<Reader> readers=new ArrayList<>();
-        String query= readerQuery +" JOIN borrowstable ON readerstable.id=borrowstable.borrowerid WHERE bookid=? AND borrowstable.active=1";
+        String query= readerQuery +" JOIN borrowstable ON readerstable.id=borrowstable.borrowerid WHERE bookid=? ";
         PreparedStatement statement= connection.prepareStatement(query);
         statement.setInt(1,book.getId());
         ResultSet results=statement.executeQuery();
@@ -92,7 +92,7 @@ public class DBBorrows extends DBConnect{
     public List<Book> getBooksByReader(Reader reader) throws SQLException, IOException {
         List<Book> books=new ArrayList<>();
         String bookQuery = "SELECT bookstable.id, bookstable.title, bookstable.author, bookstable.category, bookstable.accessibility FROM bookstable";
-        String query= bookQuery +" JOIN borrowstable ON bookstable.id=borrowstable.bookid WHERE borrowerid=?";
+        String query= bookQuery +" JOIN borrowstable ON bookstable.id=borrowstable.bookid WHERE borrowerid=? AND borrowstable.active=1";
         PreparedStatement statement= connection.prepareStatement(query);
         statement.setInt(1, reader.getId());
         ResultSet results=statement.executeQuery();
@@ -121,12 +121,6 @@ public class DBBorrows extends DBConnect{
         PreparedStatement statement=connection.prepareStatement("INSERT INTO borrowstable (bookid, borrowerid, active) VALUES(?,?,?)");
         uploadBorrow(record, statement);
         LogOutput.logEvent("Borrow "+record.getId()+" created successfully in database.");
-    }
-
-    public void editBorrow(BorrowRecord record) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("UPDATE borrowstable SET bookid=?, borrowerid=?, active=? WHERE id=?");
-        uploadBorrow(record, statement);
-        LogOutput.logEvent("Borrow "+record.getId()+" updated successfully in database.");
     }
 
     public void deactivateAllBorrows(Book book) throws SQLException, IOException {

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -46,7 +47,8 @@ public class AddReaderWindow {
         loader.setLocation(BookDetailsWindow.class.getResource("/view/addReaderForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Dodaj czytelnika");
-        stage.setScene(new Scene(loader.load(), 700, 500));
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
         AddReaderWindow addReaderWindowController = loader.getController();
         addReaderWindowController.setForm(parentController, defaultReader);
         addReaderWindowController.setDefaults();
@@ -105,7 +107,9 @@ public class AddReaderWindow {
     private void onAddReaderButtonClicked() throws SQLException, IOException {
         if(!defaultReader.setName(nameField.getText())|| !defaultReader.setSurname(surnameField.getText())|| !defaultReader.setPhone(phoneField.getText())){
             LogOutput.logError("Reader not added - invalid parameters.");
-            messageField.getChildren().add(new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a telefon od 9 do 11 cyfr i spacji."));
+            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a telefon od 9 do 11 cyfr i spacji.");
+            text.setFill(Color.WHITE);
+            messageField.getChildren().add(text);
             return;
         }
         if (defaultReader.getId() != 0) {

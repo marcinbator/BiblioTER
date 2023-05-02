@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-
-
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BorrowBookView">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BorrowBookView">
    <children>
-      <ChoiceBox fx:id="selectBorrower" layoutX="203.0" layoutY="188.0" prefWidth="150.0" />
-      <Button fx:id="borrowButton" layoutX="243.0" layoutY="263.0" mnemonicParsing="false" text="Wypożycz" onAction="#onBorrowButtonClick"/>
-      <Label layoutX="229.0" layoutY="157.0" text="Wybierz czytelnika" />
-      <TextFlow fx:id="bookDetails" layoutX="121.0" layoutY="44.0" prefHeight="73.0" prefWidth="314.0"  />
+      <ChoiceBox fx:id="selectBorrower" layoutX="225.0" layoutY="188.0" prefWidth="150.0" style="-fx-background-color: #655560;" styleClass="choice-box" stylesheets="@../css/gui.css" />
+      <Button fx:id="borrowButton" layoutX="265.0" layoutY="266.0" mnemonicParsing="false" onAction="#onBorrowButtonClick" styleClass="button2" stylesheets="@../css/gui.css" text="Wypożycz" textFill="WHITE">
+         <styleClass>
+            <String fx:value="button" />
+            <String fx:value="button" />
+         </styleClass></Button>
+      <Label layoutX="235.0" layoutY="149.0" text="Wybierz czytelnika" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextFlow fx:id="bookDetails" layoutX="143.0" layoutY="21.0" prefHeight="73.0" prefWidth="314.0" style="-fx-text-fill: white;" />
    </children>
 </AnchorPane>

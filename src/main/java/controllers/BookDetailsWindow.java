@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -44,7 +46,8 @@ public class BookDetailsWindow {
         loader.setLocation(BookDetailsWindow.class.getResource("/view/bookDetails.fxml"));
         Stage stage=new Stage();
         stage.setTitle(book.getTitle());
-        stage.setScene(new Scene(loader.load(), 600, 300));
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
         BookDetailsWindow bookDetailsWindow =loader.getController();
         bookDetailsWindow.settings(book, parentController);
         bookDetailsWindow.showBook(book);
@@ -72,24 +75,19 @@ public class BookDetailsWindow {
 
     public static void showBookDetails(Book book, TextFlow bookDetails) throws IOException, SQLException, ClassNotFoundException {
         bookDetails.getChildren().clear();
-        Text id,title,author,category, accessibility, currentReader;
-        id=new Text("ID książki: "+book.getId() +"\n");
-        title=new Text("Tytuł: "+book.getTitle()+"\n");
-        author=new Text("Autor: "+book.getAuthor()+"\n");
-        category=new Text("Kategoria: "+book.getCategory()+"\n");
-        accessibility=new Text("Dostępność: "+book.getAccessible()+"\n");
-        bookDetails.getChildren().add(id);
-        bookDetails.getChildren().add(title);
-        bookDetails.getChildren().add(author);
-        bookDetails.getChildren().add(category);
-        bookDetails.getChildren().add(accessibility);
+        String text="ID książki: "+book.getId() +"\n"+"Tytuł: "+book.getTitle()+"\n"+"Autor: "+book.getAuthor()+"\n"+"Kategoria: "+book.getCategory()+"\n"+"Dostępność: "+book.getAccessible()+"\n";
+
+
         if(!book.isAccessible()){
             DBBorrows borrowConnection=new DBBorrows();
             Reader reader=borrowConnection.getCurrentReader(book);
-            String text="Obecnie u: "+reader.getName()+" "+reader.getSurname()+"\n";
-            currentReader=new Text(text);
-            bookDetails.getChildren().add(currentReader);
+            String text2="Obecnie u: "+reader.getName()+" "+reader.getSurname()+"\n";
+            text+=text2;
         }
+        Text textFlow=new Text(text);
+        textFlow.setFill(Color.WHITE);
+        textFlow.setFont(Font.font(15));
+        bookDetails.getChildren().add(textFlow);
         LogOutput.logEvent("Book "+book.getId()+" shown.");
     }
 

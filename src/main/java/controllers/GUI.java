@@ -62,7 +62,7 @@ public class GUI extends Application implements Initializable {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("BiblioTER");
         stage.setScene(scene);
         LogOutput.logEvent("GUI established.");
@@ -274,6 +274,7 @@ public class GUI extends Application implements Initializable {
     private void onSetAccessibleButtonClick(Book book)throws IOException, SQLException, ClassNotFoundException{
         book.setAccessible(true);
         bookConnection.editBook(book);
+        borrowsConnection.deactivateAllBorrows(book);
         booksTable.refresh();
     }
 

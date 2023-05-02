@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -46,7 +47,8 @@ public class AddBookWindow {
         loader.setLocation(BookDetailsWindow.class.getResource("/view/addBookForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Dodaj książkę");
-        stage.setScene(new Scene(loader.load(), 700, 500));
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
         AddBookWindow addBookWindowController = loader.getController();
         addBookWindowController.setForm(parentController, defaultBook);
         addBookWindowController.setDefaults();
@@ -106,7 +108,9 @@ public class AddBookWindow {
     private void onAddBookButtonClicked() throws SQLException, IOException {
         if(!defaultBook.setTitle(titleField.getText())|| !defaultBook.setAuthor(authorField.getText())|| !defaultBook.setCategory(categoryField.getText())){
             LogOutput.logError("Book not added - invalid parameters.");
-            messageField.getChildren().add(new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery, cyfry oraz spacje oraz być długości od 2 do 30 znaków."));
+            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery, cyfry oraz spacje oraz być długości od 2 do 30 znaków.");
+            text.setFill(Color.WHITE);
+            messageField.getChildren().add(text);
             return;
         }
         defaultBook.setAccessible(true);

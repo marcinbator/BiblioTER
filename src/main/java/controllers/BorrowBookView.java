@@ -53,7 +53,8 @@ public class BorrowBookView {
         loader.setLocation(BookDetailsWindow.class.getResource("/view/borrowBookView.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Wypożycz "+book.getTitle());
-        stage.setScene(new Scene(loader.load(), 600, 300));
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
         BorrowBookView borrowBookView =loader.getController();
         borrowBookView.settings(book, grandParentController);
         borrowBookView.showBook(book);

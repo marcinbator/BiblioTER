@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookDetailsWindow">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookDetailsWindow">
    <children>
-      <TextFlow fx:id="textPanel" prefHeight="42.0" prefWidth="626.0" AnchorPane.bottomAnchor="358.0" AnchorPane.topAnchor="0.0">
+      <TextFlow fx:id="textPanel" prefHeight="300.0" prefWidth="612.0" style="-fx-background-color: #655560;" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="0.0">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding></TextFlow>
-      <Button fx:id="editButton" layoutX="14.0" layoutY="252.0" mnemonicParsing="false" onAction="#onEditBookClick" text="Edytuj" />
-      <Button fx:id="deleteButton" layoutX="71.0" layoutY="252.0" mnemonicParsing="false" onAction="#onDeleteBookClick" text="Usuń" />
-      <Button fx:id="setAvailableButton" layoutX="313.0" layoutY="215.0" mnemonicParsing="false" onAction="#onSetAccessibleButtonClick" text="Oznacz jako dostępną (Anuluj wypożyczenie)" />
-      <Button fx:id="borrowButton" layoutX="447.0" layoutY="252.0" mnemonicParsing="false" onAction="#onAddBorrowButtonClick" text="Wypożycz" />
-      <Button fx:id="borrowHistoryButton" layoutX="121.0" layoutY="252.0" mnemonicParsing="false" onAction="#onBorrowHistoryClick" text="Historia wypożyczeń" />
+      <Button fx:id="editButton" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#onEditBookClick" styleClass="button2" stylesheets="@../css/gui.css" text="Edytuj" />
+      <Button fx:id="deleteButton" layoutX="70.0" layoutY="351.0" mnemonicParsing="false" onAction="#onDeleteBookClick" styleClass="button2" stylesheets="@../css/gui.css" text="Usuń" />
+      <Button fx:id="setAvailableButton" layoutX="338.0" layoutY="351.0" mnemonicParsing="false" onAction="#onSetAccessibleButtonClick" styleClass="button2" stylesheets="@../css/gui.css" text="Oznacz jako dostępną (Anuluj wypożyczenie)" />
+      <Button fx:id="borrowButton" layoutX="522.0" layoutY="314.0" mnemonicParsing="false" onAction="#onAddBorrowButtonClick" styleClass="button2" stylesheets="@../css/gui.css" text="Wypożycz" />
+      <Button fx:id="borrowHistoryButton" layoutX="125.0" layoutY="351.0" mnemonicParsing="false" onAction="#onBorrowHistoryClick" styleClass="button2" stylesheets="@../css/gui.css" text="Historia wypożyczeń" />
    </children>
 </AnchorPane>
