@@ -29,6 +29,9 @@ public class InfoView {
     public DBReader readersConnection;
     private String content;
 
+
+    //methods
+
     public static void launchBookDetails(GUI parentController,String title, String text) throws Exception {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(BookDetailsWindow.class.getResource("/view/infoView.fxml"));

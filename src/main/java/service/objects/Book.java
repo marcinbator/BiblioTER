@@ -49,12 +49,14 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) throws IOException {
+    public boolean setTitle(String title) throws IOException {
         if(stringValidate(title)){
             this.title = title;
+            return true;
         }
         else{
             LogOutput.logError("Book - not proper title detected.");
+            return false;
         }
     }
 
@@ -62,12 +64,14 @@ public class Book {
         return author;
     }
 
-    public void setAuthor(String author) throws IOException {
+    public boolean setAuthor(String author) throws IOException {
         if(stringValidate(author)){
             this.author = author;
+            return true;
         }
         else{
             LogOutput.logError("Book - not proper author detected.");
+            return false;
         }
     }
 
@@ -75,12 +79,14 @@ public class Book {
         return category;
     }
 
-    public void setCategory(String category) throws IOException {
+    public boolean setCategory(String category) throws IOException {
         if(stringValidate(category)){
             this.category = category;
+            return true;
         }
         else{
             LogOutput.logError("Book - not proper author detected.");
+            return false;
         }
     }
 
@@ -105,7 +111,7 @@ public class Book {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,30}");
+        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,30}");
     }
 
 }

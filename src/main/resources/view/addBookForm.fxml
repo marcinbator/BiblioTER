@@ -25,5 +25,6 @@
          </font>
       </Label>
       <Button fx:id="addBookButton" layoutX="275.0" layoutY="333.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" text="Zapisz" />
+      <TextFlow fx:id="messageField" layoutX="200.0" layoutY="218.0" prefHeight="26.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

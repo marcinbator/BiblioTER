@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import service.database.DBBorrows;
 import service.objects.Book;
@@ -29,11 +31,12 @@ public class AddBookWindow {
     private TextField categoryField;
     @FXML
     private TextField titleField;
+    @FXML
+    private TextFlow messageField;
 
     private GUI parentController;
     private Book defaultBook;
     private DBBook connection;
-    private DBBorrows borrowsConnection;
 
 
     //WindowControllers
@@ -55,7 +58,6 @@ public class AddBookWindow {
         this.parentController = parentController;
         this.defaultBook=book;
         this.connection=new DBBook();
-        this.borrowsConnection=new DBBorrows();
     }
 
     private void setDefaults(){
@@ -102,11 +104,9 @@ public class AddBookWindow {
 
     @FXML
     private void onAddBookButtonClicked() throws SQLException, IOException {
-        defaultBook.setTitle(titleField.getText());
-        defaultBook.setAuthor(authorField.getText());
-        defaultBook.setCategory(categoryField.getText());
-        if(defaultBook.getTitle().isBlank()||defaultBook.getAuthor().isBlank()||defaultBook.getCategory().isBlank()){
+        if(!defaultBook.setTitle(titleField.getText())|| !defaultBook.setAuthor(authorField.getText())|| !defaultBook.setCategory(categoryField.getText())){
             LogOutput.logError("Book not added - invalid parameters.");
+            messageField.getChildren().add(new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery, cyfry oraz spacje oraz być długości od 2 do 30 znaków."));
             return;
         }
         defaultBook.setAccessible(true);

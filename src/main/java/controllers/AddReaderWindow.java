@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import service.database.DBReader;
 import service.objects.Book;
@@ -29,6 +31,8 @@ public class AddReaderWindow {
     private TextField surnameField;
     @FXML
     private TextField phoneField;
+    @FXML
+    private TextFlow messageField;
 
     private GUI parentController;
     private Reader defaultReader;
@@ -99,11 +103,9 @@ public class AddReaderWindow {
 
     @FXML
     private void onAddReaderButtonClicked() throws SQLException, IOException {
-        defaultReader.setName(nameField.getText());
-        defaultReader.setSurname(surnameField.getText());
-        defaultReader.setPhone(phoneField.getText());
-        if(defaultReader.getName().isBlank()||defaultReader.getSurname().isBlank()||defaultReader.getPhone().isBlank()){
+        if(!defaultReader.setName(nameField.getText())|| !defaultReader.setSurname(surnameField.getText())|| !defaultReader.setPhone(phoneField.getText())){
             LogOutput.logError("Reader not added - invalid parameters.");
+            messageField.getChildren().add(new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a telefon od 9 do 11 cyfr i spacji."));
             return;
         }
         if (defaultReader.getId() != 0) {

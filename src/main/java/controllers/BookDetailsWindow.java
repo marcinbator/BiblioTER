@@ -99,6 +99,7 @@ public class BookDetailsWindow {
 
 
     //Listeners
+
     @FXML
     private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
         AddBookWindow.launchAddBookWindow(parentController, book);

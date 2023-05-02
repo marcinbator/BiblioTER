@@ -46,39 +46,39 @@ public class Reader {
         return name;
     }
 
-    public void setName(String name) throws IOException {
+    public boolean setName(String name) throws IOException {
         if(stringValidate(name)){
             this.name = name;
+            return true;
         }
-        else{
-            LogOutput.logError("Reader - not proper name detected");
-        }
+        LogOutput.logError("Reader - not proper name detected");
+        return false;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) throws IOException {
+    public boolean setSurname(String surname) throws IOException {
         if(stringValidate(surname)){
             this.surname = surname;
+            return true;
         }
-        else{
-            LogOutput.logError("Reader - not proper surname detected");
-        }
+        LogOutput.logError("Reader - not proper surname detected");
+        return false;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) throws IOException {
+    public boolean setPhone(String phone) throws IOException {
         if(phoneValidate(phone)){
             this.phone = phone;
+            return true;
         }
-        else{
-            LogOutput.logError("Reader - not proper phone detected");
-        }
+        LogOutput.logError("Reader - not proper phone detected");
+        return false;
     }
 
 
@@ -87,7 +87,6 @@ public class Reader {
     private static boolean stringValidate(String line){
         return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,20}");
     }
-
     private static boolean phoneValidate(String phone){
         return phone.matches("[0-9 ]{9,11}");
     }
