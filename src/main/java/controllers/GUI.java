@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import service.database.DBBorrows;
 import service.database.DBReader;
 import service.objects.Book;
 import service.database.DBBook;
@@ -52,6 +53,7 @@ public class GUI extends Application implements Initializable {
 
     public DBBook bookConnection;
     public DBReader readerConnection;
+    public DBBorrows borrowsConnection;
 
 
     //Constructors
@@ -77,6 +79,7 @@ public class GUI extends Application implements Initializable {
         accessible.setCellValueFactory(new PropertyValueFactory<>("accessible"));
         try {
             this.bookConnection =new DBBook();
+            this.borrowsConnection=new DBBorrows();
             List<Book> books= bookConnection.getBooks();
             for(Book book:books){
                 booksTable.getItems().add(book);
@@ -162,9 +165,17 @@ public class GUI extends Application implements Initializable {
 
     private ContextMenu launchReaderContextMenu(){
         ContextMenu contextMenu = new ContextMenu();
+        MenuItem contextBooks = new MenuItem("Pokaż wypożyczenia");
         MenuItem contextEdit = new MenuItem("Edytuj");
         MenuItem contextDelete = new MenuItem("Usuń");
         List<Reader> readers=readersTable.getSelectionModel().getSelectedItems();
+        contextBooks.setOnAction(event->{
+            try {
+                onShowBorrowsByReaderClick(readers.get(0));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
         contextEdit.setOnAction(event -> {
             try {
                 onEditReaderClick(readers.get(0));
@@ -179,7 +190,7 @@ public class GUI extends Application implements Initializable {
                 throw new RuntimeException(e);
             }
         });
-        contextMenu.getItems().addAll(contextEdit, contextDelete);
+        contextMenu.getItems().addAll(contextBooks,contextEdit, contextDelete);
         return contextMenu;
     }
 
@@ -234,6 +245,20 @@ public class GUI extends Application implements Initializable {
         readerConnection.deleteReader(reader);
         readersTable.getItems().remove(reader);
         LogOutput.logEvent("Reader "+reader.getId()+" deleted properly.");
+    }
+
+    private void onShowBorrowsByReaderClick(Reader reader) throws Exception {
+        List<Book> books=borrowsConnection.getBooksByReader(reader);
+        String title="Wypożyczenia czytelnika "+reader.getName();
+        StringBuilder text= new StringBuilder();
+        for(Book book:books){
+            text.append(book.getId()).append(" ");
+            text.append(book.getTitle()).append(" ");
+            text.append(book.getAuthor()).append(" ");
+            text.append(book.getCategory());
+            text.append("\n");
+        }
+        InfoView.launchBookDetails(this, title, text.toString());
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {

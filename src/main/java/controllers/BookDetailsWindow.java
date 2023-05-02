@@ -15,6 +15,7 @@ import service.objects.Reader;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class BookDetailsWindow {
 
@@ -122,8 +123,18 @@ public class BookDetailsWindow {
         showBook(book);
     }
 
-    public void onBorrowHistoryClick() {
-
+    public void onBorrowHistoryClick() throws Exception {
+        String title="Historia wypożyczeń książki "+book.getTitle();
+        List<Reader> readers=borrowsConnection.getReadersByBook(book);
+        StringBuilder text= new StringBuilder();
+        for(Reader reader:readers){
+            text.append(reader.getId()).append(" ");
+            text.append(reader.getName()).append(" ");
+            text.append(reader.getPhone()).append(" ");
+            text.append(reader.getSurname());
+            text.append("\n");
+        }
+        InfoView.launchBookDetails(parentController, title, text.toString());
     }
 
     public void onAddBorrowButtonClick() throws Exception {
