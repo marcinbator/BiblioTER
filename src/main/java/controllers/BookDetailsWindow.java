@@ -25,6 +25,8 @@ public class BookDetailsWindow {
     private Button editButton;
     @FXML
     private Button setAvailableButton;
+    @FXML
+    private Button borrowButton;
 
     public GUI parentController;
     public Book book;
@@ -52,9 +54,11 @@ public class BookDetailsWindow {
         this.parentController=parentController;
         this.connection=new DBBook();
         this.borrowsConnection=new DBBorrows();
+        borrowButton.setVisible(book.isAccessible());
+        setAvailableButton.setVisible(!book.isAccessible());
     }
 
-    private void closeWindow() throws IOException {
+    public void closeWindow() throws IOException {
         Stage stage = (Stage) editButton.getScene().getWindow();
         stage.close();
         LogOutput.logEvent("Book details window closed.");
@@ -85,10 +89,11 @@ public class BookDetailsWindow {
     @FXML
     private void onSetAccessibleButtonClick() throws SQLException, IOException {
         book.setAccessible(true);
-        setAvailableButton.setText("Oznacz jako dostępną");
         borrowsConnection.deactivateAllBorrows(book);
         connection.editBook(book);
         parentController.booksTable.refresh();
+        borrowButton.setVisible(true);
+        setAvailableButton.setVisible(false);
         showBook(book);
     }
 
@@ -97,6 +102,7 @@ public class BookDetailsWindow {
     }
 
     public void onAddBorrowButtonClick() throws Exception {
-        BorrowBookView.launchBorrowBookView(parentController, book);
+        BorrowBookView.launchBorrowBookView(parentController,this, book);
+        setAvailableButton.setVisible(true);
     }
 }

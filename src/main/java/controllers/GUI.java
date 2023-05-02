@@ -14,6 +14,7 @@ import service.database.DBReader;
 import service.objects.Book;
 import service.database.DBBook;
 import service.LogOutput;
+import service.objects.BorrowRecord;
 import service.objects.Reader;
 
 import java.io.IOException;
@@ -111,9 +112,29 @@ public class GUI extends Application implements Initializable {
         ContextMenu contextMenu = new ContextMenu();
         MenuItem contextEdit = new MenuItem("Edytuj");
         MenuItem contextDelete = new MenuItem("Usuń");
-        MenuItem contextAccessibility = new MenuItem("Oznacz jako dostępną");
+        MenuItem contextAccessibility = new MenuItem("");
         MenuItem contextClone=new MenuItem("Sklonuj");
         List<Book> books=booksTable.getSelectionModel().getSelectedItems();
+        if(books.get(0).isAccessible()){
+            contextAccessibility.setText("Wypożycz");
+            contextAccessibility.setOnAction(event->{
+                try {
+                    BorrowBookView.launchBorrowBookView(this, null, books.get(0));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+        else{
+            contextAccessibility.setText("Oznacz jako dostępną");
+            contextAccessibility.setOnAction(event -> {
+                try {
+                    onSetAccessibleButtonClick(books.get(0));
+                } catch (IOException | SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
         contextEdit.setOnAction(event -> {
             try {
                 onEditBookClick(books.get(0));
@@ -124,13 +145,6 @@ public class GUI extends Application implements Initializable {
         contextDelete.setOnAction(event -> {
             try {
                 onDeleteBookClick(books.get(0));
-            } catch (IOException | SQLException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        });
-        contextAccessibility.setOnAction(event -> {
-            try {
-                onSetAccessibleButtonClick(books.get(0));
             } catch (IOException | SQLException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

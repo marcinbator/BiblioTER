@@ -1,56 +1,28 @@
-22:26:34: BiblioTER launched.
-22:26:35: Database connection established.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper author detected.
-22:26:35: ERROR: Book - not proper title detected.
-22:26:35: Books downloaded from database.
-22:26:35: Database connection established.
-22:26:35: Readers downloaded from database.
-22:26:35: GUI initialized.
-22:26:35: GUI established.
-22:26:44: Database connection established.
-22:26:44: Database connection established.
-22:26:44: Book 2 shown.
-22:26:44: Book details window launched.
-22:26:46: Database connection established.
-22:26:46: Database connection established.
-22:26:46: Database connection established.
-22:26:46: Book 2 shown.
-22:26:46: Readers downloaded from database.
-22:26:46: Borrow creator window launched.
+07:52:02: BiblioTER launched.
+07:52:03: Database connection established.
+07:52:03: Books downloaded from database.
+07:52:03: Database connection established.
+07:52:03: Readers downloaded from database.
+07:52:03: GUI initialized.
+07:52:03: GUI established.
+07:52:06: Database connection established.
+07:52:06: Database connection established.
+07:52:06: Book 7 shown.
+07:52:06: Book details window launched.
+07:52:08: Book details window closed.
+07:52:08: Database connection established.
+07:52:08: Database connection established.
+07:52:08: Database connection established.
+07:52:08: Book 7 shown.
+07:52:08: Readers downloaded from database.
+07:52:08: Borrow creator window launched.
+07:52:10: Borrow 0 created successfully in database.
+07:52:10: Borrow creator window closed.
+07:52:10: Borrow added.
+07:52:12: Database connection established.
+07:52:12: Database connection established.
+07:52:12: Book 7 shown.
+07:52:12: Book details window launched.
+07:52:12: All borrows for book 7 deactivated.
+07:52:12: Book 7 edited in database.
+07:52:12: Book 7 shown.

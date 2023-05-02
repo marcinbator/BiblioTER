@@ -105,6 +105,10 @@ public class AddBookWindow {
         defaultBook.setTitle(titleField.getText());
         defaultBook.setAuthor(authorField.getText());
         defaultBook.setCategory(categoryField.getText());
+        if(defaultBook.getTitle().isBlank()||defaultBook.getAuthor().isBlank()||defaultBook.getCategory().isBlank()){
+            LogOutput.logError("Book not added - invalid parameters.");
+            return;
+        }
         defaultBook.setAccessible(true);
         if (defaultBook.getId() != 0) {
             editBook();

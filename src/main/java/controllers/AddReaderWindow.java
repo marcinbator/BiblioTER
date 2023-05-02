@@ -102,6 +102,10 @@ public class AddReaderWindow {
         defaultReader.setName(nameField.getText());
         defaultReader.setSurname(surnameField.getText());
         defaultReader.setPhone(phoneField.getText());
+        if(defaultReader.getName().isBlank()||defaultReader.getSurname().isBlank()||defaultReader.getPhone().isBlank()){
+            LogOutput.logError("Reader not added - invalid parameters.");
+            return;
+        }
         if (defaultReader.getId() != 0) {
             editReader();
         } else {
