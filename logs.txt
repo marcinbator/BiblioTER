@@ -1,28 +1,48 @@
-07:52:02: BiblioTER launched.
-07:52:03: Database connection established.
-07:52:03: Books downloaded from database.
-07:52:03: Database connection established.
-07:52:03: Readers downloaded from database.
-07:52:03: GUI initialized.
-07:52:03: GUI established.
-07:52:06: Database connection established.
-07:52:06: Database connection established.
-07:52:06: Book 7 shown.
-07:52:06: Book details window launched.
-07:52:08: Book details window closed.
-07:52:08: Database connection established.
-07:52:08: Database connection established.
-07:52:08: Database connection established.
-07:52:08: Book 7 shown.
-07:52:08: Readers downloaded from database.
-07:52:08: Borrow creator window launched.
-07:52:10: Borrow 0 created successfully in database.
-07:52:10: Borrow creator window closed.
-07:52:10: Borrow added.
-07:52:12: Database connection established.
-07:52:12: Database connection established.
-07:52:12: Book 7 shown.
-07:52:12: Book details window launched.
-07:52:12: All borrows for book 7 deactivated.
-07:52:12: Book 7 edited in database.
-07:52:12: Book 7 shown.
+11:05:31: BiblioTER launched.
+11:05:32: Database connection established.
+11:05:32: Books downloaded from database.
+11:05:32: Database connection established.
+11:05:32: Readers downloaded from database.
+11:05:32: GUI initialized.
+11:05:32: GUI established.
+11:05:35: Book 31 edited in database.
+11:05:47: Database connection established.
+11:05:47: Database connection established.
+11:05:47: Database connection established.
+11:05:47: Book 28 shown.
+11:05:47: Readers downloaded from database.
+11:05:47: Borrow creator window launched.
+11:05:49: Borrow 0 created successfully in database.
+11:05:49: Book 28 edited in database.
+11:05:49: Borrow creator window closed.
+11:05:49: Borrow added.
+11:05:55: Database connection established.
+11:05:55: Database connection established.
+11:05:55: Database connection established.
+11:05:55: Reader 4 downloaded from database.
+11:05:55: Reader 1 downloaded from database.
+11:05:55: Book 28 shown.
+11:05:55: Book details window launched.
+11:05:57: All borrows for book 28 deactivated.
+11:05:57: Book 28 edited in database.
+11:05:57: Book 28 shown.
+11:06:09: Database connection established.
+11:06:09: Database connection established.
+11:06:09: Database connection established.
+11:06:09: Book 31 shown.
+11:06:09: Readers downloaded from database.
+11:06:09: Borrow creator window launched.
+11:06:11: Borrow 0 created successfully in database.
+11:06:11: Book 31 edited in database.
+11:06:11: Borrow creator window closed.
+11:06:11: Borrow added.
+11:06:17: Database connection established.
+11:06:17: Database connection established.
+11:06:17: Database connection established.
+11:06:17: Book 35 shown.
+11:06:17: Readers downloaded from database.
+11:06:17: Borrow creator window launched.
+11:06:20: Borrow 0 created successfully in database.
+11:06:20: Book 35 edited in database.
+11:06:20: Borrow creator window closed.
+11:06:20: Borrow added.

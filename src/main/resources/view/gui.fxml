@@ -52,7 +52,7 @@
             </effect>
          </Label>
          <Button mnemonicParsing="false" onAction="#onAddBookClick" text="Dodaj książkę" GridPane.columnIndex="1" />
-         <Button mnemonicParsing="false" onAction="#onAddReaderClick" prefWidth="90.0" text="Dodaj osobę" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Button mnemonicParsing="false" onAction="#onAddReaderClick" prefWidth="90.0" text="Dodaj czytelnika" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       </children>
    </GridPane>
    <TabPane prefHeight="384.0" prefWidth="564.0" tabClosingPolicy="UNAVAILABLE">
@@ -72,7 +72,7 @@
                   </columnResizePolicy>
                </TableView>
             </content></Tab>
-       <Tab text="Osoby">
+       <Tab text="Czytelnicy">
             <content>
                <TableView fx:id="readersTable" prefHeight="200.0" prefWidth="200.0" onMouseClicked="#onReaderClick">
                   <columns>

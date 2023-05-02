@@ -79,25 +79,8 @@ public class BorrowBookView {
         LogOutput.logEvent("Borrow creator window closed.");
     }
 
-    private void showBook(Book book) throws IOException {
-        showBookDetails(book, bookDetails);
-        return;
-    }
-
-    public static void showBookDetails(Book book, TextFlow bookDetails) throws IOException {
-        bookDetails.getChildren().clear();
-        Text id,title,author,category, accessibility;
-        id=new Text("ID książki: "+book.getId() +"\n");
-        title=new Text("Tytuł: "+book.getTitle()+"\n");
-        author=new Text("Autor: "+book.getAuthor()+"\n");
-        category=new Text("Kategoria: "+book.getCategory()+"\n");
-        accessibility=new Text("Dostępność: "+book.getAccessible()+"\n");
-        bookDetails.getChildren().add(id);
-        bookDetails.getChildren().add(title);
-        bookDetails.getChildren().add(author);
-        bookDetails.getChildren().add(category);
-        bookDetails.getChildren().add(accessibility);
-        LogOutput.logEvent("Book "+book.getId()+" shown.");
+    private void showBook(Book book) throws IOException, SQLException, ClassNotFoundException {
+        BookDetailsWindow.showBookDetails(book, bookDetails);
     }
 
     private void setReaderList() throws SQLException, IOException {
@@ -132,6 +115,7 @@ public class BorrowBookView {
                 listBook.setAccessible(false);
             }
         }
+        bookConnection.editBook(book);
         grandParentController.booksTable.setItems(books);
         grandParentController.booksTable.refresh();
         this.closeWindow();

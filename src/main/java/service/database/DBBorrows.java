@@ -16,7 +16,7 @@ public class DBBorrows extends DBConnect{
 
 
     //Attributes
-    private String readerQuery = "SELECT readerstable.id, readerstable.name, readerstable.surname, readerstable.phone  FROM readerstable";
+    private final String readerQuery = "SELECT readerstable.id, readerstable.name, readerstable.surname, readerstable.phone  FROM readerstable";
 
 
     //Constructor
@@ -38,11 +38,11 @@ public class DBBorrows extends DBConnect{
     }
 
     private void downloadBook(ResultSet result, Book book) throws SQLException, IOException {
-        book.setId(result.getInt("id"));
-        book.setTitle(result.getString("title"));
-        book.setAuthor(result.getString("author"));
-        book.setCategory(result.getString("category"));
-        book.setAccessible(result.getBoolean("accessibility"));
+        book.setId(result.getInt("bookstable.id"));
+        book.setTitle(result.getString("bookstable.title"));
+        book.setAuthor(result.getString("bookstable.author"));
+        book.setCategory(result.getString("bookstable.category"));
+        book.setAccessible(result.getBoolean("bookstable.accessibility"));
         LogOutput.logEvent("Book "+book.getId()+" downloaded from database.");
     }
 
@@ -107,7 +107,7 @@ public class DBBorrows extends DBConnect{
 
     public Reader getCurrentReader(Book book) throws SQLException, IOException {
         Reader reader=new Reader();
-        String query=readerQuery+" JOIN borrowstable ON readerstable.id=borrowstable.id WHERE bookid=? AND active=1";
+        String query=readerQuery+" JOIN borrowstable ON readerstable.id=borrowstable.borrowerid WHERE bookid=? AND active=1";
         PreparedStatement statement=connection.prepareStatement(query);
         statement.setInt(1,book.getId());
         ResultSet resultSet=statement.executeQuery();
@@ -132,6 +132,7 @@ public class DBBorrows extends DBConnect{
     public void deactivateAllBorrows(Book book) throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("UPDATE borrowstable SET active=0 WHERE bookid=?");
         statement.setInt(1,book.getId());
+        statement.executeUpdate();
         LogOutput.logEvent("All borrows for book "+book.getId()+" deactivated.");
     }
 
