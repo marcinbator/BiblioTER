@@ -1,74 +1,8 @@
-11:59:22: BiblioTER launched.
-11:59:23: Database connection established.
-11:59:23: Database connection established.
-11:59:23: Books downloaded from database.
-11:59:23: Database connection established.
-11:59:23: Readers downloaded from database.
-11:59:23: GUI initialized.
-11:59:23: GUI established.
-11:59:30: Book 22 edited in database.
-11:59:31: Book 24 edited in database.
-11:59:33: Database connection established.
-11:59:33: Database connection established.
-11:59:33: Book 24 shown.
-11:59:33: Book details window launched.
-11:59:33: Reader 4 downloaded from database.
-11:59:33: Reader 3 downloaded from database.
-11:59:33: Reader 2 downloaded from database.
-11:59:33: Reader 2 downloaded from database.
-11:59:33: Reader 2 downloaded from database.
-11:59:33: Reader 1 downloaded from database.
-11:59:33: Reader 8 downloaded from database.
-11:59:33: Readers of book 24 downloaded from database.
-11:59:33: Database connection established.
-11:59:33: Database connection established.
-11:59:33: Database connection established.
-11:59:33: Details window launched.
-11:59:47: Book 2 downloaded from database.
-11:59:47: Book 2 downloaded from database.
-11:59:47: Book 28 downloaded from database.
-11:59:47: Book 24 downloaded from database.
-11:59:47: Book 43 downloaded from database.
-11:59:47: Books that has reader 4 in history downloaded from database.
-11:59:47: Database connection established.
-11:59:47: Database connection established.
-11:59:47: Database connection established.
-11:59:47: Details window launched.
-11:59:52: Database connection established.
-11:59:52: Database connection established.
-11:59:52: Book 24 shown.
-11:59:52: Book details window launched.
-11:59:53: Reader 4 downloaded from database.
-11:59:53: Reader 3 downloaded from database.
-11:59:53: Reader 2 downloaded from database.
-11:59:53: Reader 2 downloaded from database.
-11:59:53: Reader 2 downloaded from database.
-11:59:53: Reader 1 downloaded from database.
-11:59:53: Reader 8 downloaded from database.
-11:59:53: Readers of book 24 downloaded from database.
-11:59:53: Database connection established.
-11:59:53: Database connection established.
-11:59:53: Database connection established.
-11:59:53: Details window launched.
-11:59:59: Database connection established.
-11:59:59: Database connection established.
-11:59:59: Database connection established.
-11:59:59: Reader 1 downloaded from database.
-11:59:59: Reader 6 downloaded from database.
-11:59:59: Reader 1 downloaded from database.
-11:59:59: Reader 2 downloaded from database.
-11:59:59: Reader 1 downloaded from database.
-11:59:59: Book 7 shown.
-11:59:59: Book details window launched.
-12:00:02: Database connection established.
-12:00:02: Database connection established.
-12:00:02: Database connection established.
-12:00:02: Reader 1 downloaded from database.
-12:00:02: Book 28 shown.
-12:00:02: Book details window launched.
-12:00:03: Reader 1 downloaded from database.
-12:00:03: Readers of book 28 downloaded from database.
-12:00:03: Database connection established.
-12:00:03: Database connection established.
-12:00:03: Database connection established.
-12:00:03: Details window launched.
+12:24:37: BiblioTER launched.
+12:24:38: Database connection established.
+12:24:38: Database connection established.
+12:24:38: Books downloaded from database.
+12:24:38: Database connection established.
+12:24:38: Readers downloaded from database.
+12:24:38: GUI initialized.
+12:24:38: GUI established.

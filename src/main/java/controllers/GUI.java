@@ -106,6 +106,8 @@ public class GUI extends Application implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        booksTable.getSortOrder().add(title);
+        readersTable.getSortOrder().add(surname);
     }
 
 

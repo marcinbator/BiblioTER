@@ -105,7 +105,7 @@ public class Book {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{5,20}");
+        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,30}");
     }
 
 }
