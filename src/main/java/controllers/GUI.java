@@ -66,7 +66,8 @@ public class GUI extends Application implements Initializable {
         fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("BiblioTER");
-        stage.getIcons().add(new Image("file:img/logo2.png"));
+        Image image = new Image(Objects.requireNonNull(getClass().getResource("/img/logo2.png")).toString());
+        stage.getIcons().add(image);
         stage.setScene(scene);
         LogOutput.logEvent("GUI established.");
         stage.setOnCloseRequest(event->{

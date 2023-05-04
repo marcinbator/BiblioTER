@@ -1,9 +1,9 @@
-18:59:53: BiblioTER launched.
-18:59:54: Database connection established.
-18:59:54: Database connection established.
-18:59:54: Books downloaded from database.
-18:59:54: Database connection established.
-18:59:54: Readers downloaded from database.
-18:59:54: GUI initialized.
-18:59:55: GUI established.
-18:59:58: BiblioTER closed.
+21:29:51: BiblioTER launched.
+21:29:52: Database connection established.
+21:29:52: Database connection established.
+21:29:52: Books downloaded from database.
+21:29:52: Database connection established.
+21:29:52: Readers downloaded from database.
+21:29:52: GUI initialized.
+21:29:52: GUI established.
+21:29:54: BiblioTER closed.
