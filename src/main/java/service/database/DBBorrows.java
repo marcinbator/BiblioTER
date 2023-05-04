@@ -123,9 +123,12 @@ public class DBBorrows extends DBConnect{
         LogOutput.logEvent("Borrow "+record.getId()+" created successfully in database.");
     }
 
-    public void deactivateAllBorrows(Book book) throws SQLException, IOException {
+    public void deactivateAllBorrows(Book book) throws SQLException, IOException, ClassNotFoundException {
         PreparedStatement statement=connection.prepareStatement("UPDATE borrowstable SET active=0 WHERE bookid=?");
         statement.setInt(1,book.getId());
+        DBBook books=new DBBook();
+        book.setAccessible(true);
+        books.editBook(book);
         statement.executeUpdate();
         LogOutput.logEvent("All borrows for book "+book.getId()+" deactivated.");
     }

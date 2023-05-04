@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/gui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addBookForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addBookForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/gui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/gui.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/infoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/infoView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +64,16 @@
     "last_opened_file_path": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/libs/mysql-connector-j-8.0.32.jar",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "settings.css.dialects",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -144,6 +142,7 @@
       <workItem from="1683038520630" duration="2570000" />
       <workItem from="1683043058019" duration="346000" />
       <workItem from="1683045690959" duration="8148000" />
+      <workItem from="1683211466071" duration="5855000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

@@ -1,5 +1,7 @@
 package service.database;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import service.objects.Book;
 import service.LogOutput;
 
@@ -62,8 +64,8 @@ public class DBBook extends DBConnect {
         return getBook(book, statement);
     }
 
-    public List<Book> getBooks() throws SQLException, IOException {
-        List<Book> books = new ArrayList<>();
+    public ObservableList<Book> getBooks() throws SQLException, IOException {
+        ObservableList<Book> books = FXCollections.observableArrayList();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM bookstable");
         ResultSet result=statement.executeQuery();
         while(result.next()){

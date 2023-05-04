@@ -1,83 +1,9 @@
-21:00:38: BiblioTER launched.
-21:00:39: Database connection established.
-21:00:39: Database connection established.
-21:00:39: Books downloaded from database.
-21:00:39: Database connection established.
-21:00:39: Readers downloaded from database.
-21:00:39: GUI initialized.
-21:00:39: GUI established.
-21:02:01: Database connection established.
-21:02:01: Add book window launched.
-21:02:01: Book  added properly.
-21:02:37: Book 0 added to database.
-21:02:37: Book 68 downloaded from database.
-21:02:37: Database connection closed.
-21:02:37: Add book window closed.
-21:02:48: Database connection established.
-21:02:48: Database connection established.
-21:02:48: Book 68 shown.
-21:02:48: Book details window launched.
-21:03:09: Readers of book 68 downloaded from database.
-21:03:09: Database connection established.
-21:03:09: Database connection established.
-21:03:09: Database connection established.
-21:03:09: Details window launched.
-21:03:21: Book details window closed.
-21:03:21: Database connection established.
-21:03:21: Database connection established.
-21:03:21: Database connection established.
-21:03:21: Book 68 shown.
-21:03:21: Readers downloaded from database.
-21:03:21: Borrow creator window launched.
-21:03:28: Borrow 0 created successfully in database.
-21:03:28: Book 68 edited in database.
-21:03:28: Borrow creator window closed.
-21:03:28: Borrow added.
-21:03:34: Database connection established.
-21:03:34: Database connection established.
-21:03:34: Database connection established.
-21:03:34: Reader 16 downloaded from database.
-21:03:34: Book 68 shown.
-21:03:34: Book details window launched.
-21:04:08: Database connection established.
-21:04:09: Add reader window launched.
-21:04:09: Reader 0 added properly.
-21:04:30: Reader 0 added to database.
-21:04:30: Reader 21 downloaded from database.
-21:04:30: Database connection closed.
-21:04:30: Add reader window closed.
-21:04:38: Books that has reader 21 in history downloaded from database.
-21:04:38: Database connection established.
-21:04:38: Database connection established.
-21:04:38: Database connection established.
-21:04:38: Details window launched.
-21:05:07: Database connection established.
-21:05:07: Database connection established.
-21:05:07: Database connection established.
-21:05:07: Book 57 shown.
-21:05:07: Readers downloaded from database.
-21:05:07: Borrow creator window launched.
-21:05:10: Borrow 0 created successfully in database.
-21:05:10: Book 57 edited in database.
-21:05:10: Borrow creator window closed.
-21:05:10: Borrow added.
-21:05:22: Book 68 added to database.
-21:05:22: Book 68 cloned properly.
-21:10:16: Database connection established.
-21:10:16: Database connection established.
-21:10:16: Book 58 shown.
-21:10:16: Book details window launched.
-21:10:18: Book details window closed.
-21:10:18: Database connection established.
-21:10:18: Database connection established.
-21:10:18: Database connection established.
-21:10:18: Book 58 shown.
-21:10:18: Readers downloaded from database.
-21:10:18: Borrow creator window launched.
-21:10:23: Borrow 0 created successfully in database.
-21:10:23: Book 58 edited in database.
-21:10:23: Borrow creator window closed.
-21:10:23: Borrow added.
-21:10:31: Database connection established.
-21:10:31: Add book window launched.
-21:10:31: Book  added properly.
+18:59:53: BiblioTER launched.
+18:59:54: Database connection established.
+18:59:54: Database connection established.
+18:59:54: Books downloaded from database.
+18:59:54: Database connection established.
+18:59:54: Readers downloaded from database.
+18:59:54: GUI initialized.
+18:59:55: GUI established.
+18:59:58: BiblioTER closed.

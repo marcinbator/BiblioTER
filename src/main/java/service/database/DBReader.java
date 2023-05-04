@@ -1,6 +1,7 @@
 package service.database;
 
 import service.LogOutput;
+import service.objects.Book;
 import service.objects.Reader;
 
 import java.io.IOException;
@@ -61,10 +62,15 @@ public class DBReader extends DBConnect{
         statement.executeUpdate();
         LogOutput.logEvent("Reader "+reader.getId() +" edited in database.");
     }
-    public void deleteReader(Reader reader) throws SQLException, IOException {
+    public void deleteReader(Reader reader) throws SQLException, IOException, ClassNotFoundException {
         PreparedStatement statement=connection.prepareStatement("DELETE FROM readerstable WHERE id=?");
         statement.setString(1,Integer.toString(reader.getId()));
         statement.executeUpdate();
+        DBBorrows borrows=new DBBorrows();
+        List<Book> books=borrows.getBooksByReader(reader);
+        for(Book book:books){
+            borrows.deactivateAllBorrows(book);
+        }
         LogOutput.logEvent("Reader "+reader.getId() +" deleted from database.");
     }
 

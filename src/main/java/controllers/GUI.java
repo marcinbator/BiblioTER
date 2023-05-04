@@ -1,12 +1,14 @@
 package controllers;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -64,8 +66,16 @@ public class GUI extends Application implements Initializable {
         fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("BiblioTER");
+        stage.getIcons().add(new Image("file:img/logo2.png"));
         stage.setScene(scene);
         LogOutput.logEvent("GUI established.");
+        stage.setOnCloseRequest(event->{
+            try {
+                LogOutput.logEvent("BiblioTER closed.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         stage.show();
     }
 
@@ -80,10 +90,8 @@ public class GUI extends Application implements Initializable {
         try {
             this.bookConnection =new DBBook();
             this.borrowsConnection=new DBBorrows();
-            List<Book> books= bookConnection.getBooks();
-            for(Book book:books){
-                booksTable.getItems().add(book);
-            }
+            ObservableList<Book> books= bookConnection.getBooks();
+            booksTable.setItems(books);
         } catch (SQLException | ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -246,6 +254,7 @@ public class GUI extends Application implements Initializable {
         }
         readerConnection.deleteReader(reader);
         readersTable.getItems().remove(reader);
+        booksTable.setItems( bookConnection.getBooks());
         LogOutput.logEvent("Reader "+reader.getId()+" deleted properly.");
     }
 
