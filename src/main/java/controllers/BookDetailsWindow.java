@@ -48,6 +48,7 @@ public class BookDetailsWindow {
         stage.setTitle(book.getTitle());
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
+        stage.getIcons().add(GUI.image);
         BookDetailsWindow bookDetailsWindow =loader.getController();
         bookDetailsWindow.settings(book, parentController);
         bookDetailsWindow.showBook(book);

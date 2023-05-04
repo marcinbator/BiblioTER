@@ -49,6 +49,7 @@ public class AddReaderWindow {
         stage.setTitle("Dodaj czytelnika");
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
+        stage.getIcons().add(GUI.image);
         AddReaderWindow addReaderWindowController = loader.getController();
         addReaderWindowController.setForm(parentController, defaultReader);
         addReaderWindowController.setDefaults();

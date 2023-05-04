@@ -55,6 +55,7 @@ public class BorrowBookView {
         stage.setTitle("Wypożycz "+book.getTitle());
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
+        stage.getIcons().add(GUI.image);
         BorrowBookView borrowBookView =loader.getController();
         borrowBookView.settings(book, grandParentController);
         borrowBookView.showBook(book);

@@ -38,6 +38,8 @@ public class InfoView {
         Stage stage=new Stage();
         stage.setTitle(title);
         stage.setScene(new Scene(loader.load(), 600, 300));
+        stage.setResizable(false);
+        stage.getIcons().add(GUI.image);
         InfoView infoView = loader.getController();
         infoView.settings(parentController, title, text);
         infoView.showContent();

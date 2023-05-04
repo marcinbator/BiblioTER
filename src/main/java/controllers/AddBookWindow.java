@@ -49,6 +49,7 @@ public class AddBookWindow {
         stage.setTitle("Dodaj książkę");
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
+        stage.getIcons().add(GUI.image);
         AddBookWindow addBookWindowController = loader.getController();
         addBookWindowController.setForm(parentController, defaultBook);
         addBookWindowController.setDefaults();

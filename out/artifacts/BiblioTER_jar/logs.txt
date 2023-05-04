@@ -1,0 +1,9 @@
+21:41:10: BiblioTER launched.
+21:41:11: Database connection established.
+21:41:11: Database connection established.
+21:41:11: Books downloaded from database.
+21:41:11: Database connection established.
+21:41:11: Readers downloaded from database.
+21:41:11: GUI initialized.
+21:41:11: GUI established.
+21:41:13: BiblioTER closed.

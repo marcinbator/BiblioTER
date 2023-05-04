@@ -56,6 +56,7 @@ public class GUI extends Application implements Initializable {
     public DBBook bookConnection;
     public DBReader readerConnection;
     public DBBorrows borrowsConnection;
+    public static Image image = new Image(Objects.requireNonNull(GUI.class.getResource("/img/logo2.png")).toString());
 
 
     //Constructors
@@ -66,7 +67,6 @@ public class GUI extends Application implements Initializable {
         fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("BiblioTER");
-        Image image = new Image(Objects.requireNonNull(getClass().getResource("/img/logo2.png")).toString());
         stage.getIcons().add(image);
         stage.setScene(scene);
         LogOutput.logEvent("GUI established.");
