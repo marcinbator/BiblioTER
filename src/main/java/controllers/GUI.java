@@ -25,7 +25,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
 
-public class GUI extends Application implements Initializable {
+public class GUI implements Initializable {
 
 
     //Attributes
@@ -61,24 +61,6 @@ public class GUI extends Application implements Initializable {
 
     //Constructors
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("BiblioTER");
-        stage.getIcons().add(image);
-        stage.setScene(scene);
-        LogOutput.logEvent("GUI established.");
-        stage.setOnCloseRequest(event->{
-            try {
-                LogOutput.logEvent("BiblioTER closed.");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
-        stage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

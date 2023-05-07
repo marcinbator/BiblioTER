@@ -32,7 +32,7 @@ public class DBUser extends DBConnect{
     }
 
     public void registerUser(User user) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("INSERT INTO userstable (id, password, username) VALUES (?, ?, ?)");
+        PreparedStatement statement=connection.prepareStatement("INSERT INTO userstable (id, username, password) VALUES (?, ?, ?)");
         statement.setInt(1,user.getId());
         statement.setString(2,user.getUserName());
         statement.setString(3,user.getPassword());

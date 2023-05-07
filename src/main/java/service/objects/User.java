@@ -69,9 +69,9 @@ public class User {
     //Authentication
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{5,30}");
+        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9]{5,30}");
     }
     private static boolean passwordValidate(String line){
-        return line.matches("[a-zA-Zą]{8,30}");
+        return line.matches("[a-zA-Z0-9]{4,30}");
     }
 }

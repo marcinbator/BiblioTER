@@ -10,15 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BiblioTER_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/loginForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/registerForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/BiblioTER.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/BiblioTER.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/logs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/InfoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/InfoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -55,43 +59,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_directory_selection": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter",
-    "last_opened_file_path": "C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/libs/mysql-connector-j-8.0.32.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.css.dialects",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/java/com/example/biblioter&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marci/Desktop/Repozytorium/Projekty desktopowe/BiblioTER/src/main/resources/view&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.css.dialects&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources" />
       <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\java\controllers" />
+      <recent name="C:\Users\marci\Desktop\Repozytorium\Projekty desktopowe\BiblioTER\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -146,6 +150,11 @@
       <workItem from="1683043058019" duration="346000" />
       <workItem from="1683045690959" duration="8148000" />
       <workItem from="1683211466071" duration="5855000" />
+      <workItem from="1683230524230" duration="96000" />
+      <workItem from="1683287181753" duration="149000" />
+      <workItem from="1683484943395" duration="378000" />
+      <workItem from="1683485347941" duration="105000" />
+      <workItem from="1683485462862" duration="3901000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
