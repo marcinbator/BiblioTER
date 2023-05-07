@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/loginForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/registerForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/BiblioTER.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/BiblioTER.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BiblioTER.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/User.java" afterDir="false" />
-    </list>
+    <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +140,7 @@
       <workItem from="1683287181753" duration="149000" />
       <workItem from="1683484943395" duration="378000" />
       <workItem from="1683485347941" duration="105000" />
-      <workItem from="1683485462862" duration="3901000" />
+      <workItem from="1683485462862" duration="4649000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
