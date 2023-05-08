@@ -10,24 +10,26 @@ public class Book {
     //Attributes
 
     int id;
+    private String number;
     private String title;
     private String author;
     private String category;
     private String accessible;
 
-
     //Constructors
 
     public Book(){
         this.id=0;
+        this.number="";
         this.title="";
         this.author="";
         this.accessible="Dostępna";
         this.category="";
     }
 
-    public Book(int id, String title, String author, String category, boolean accessible) throws IOException {
+    public Book(int id, String number, String title, String author, String category, boolean accessible) throws IOException {
         this.setId(id);
+        this.setNumber(number);
         this.setTitle(title);
         this.setAuthor(author);
         this.setCategory(category);
@@ -43,6 +45,14 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNumber(){
+        return number;
+    }
+
+    public void setNumber(String number){
+        this.number=number;
     }
 
     public String getTitle() {

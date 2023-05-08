@@ -35,6 +35,8 @@ public class GUI implements Initializable {
     @FXML
     private TableColumn<Book, Integer>bookId;
     @FXML
+    private TableColumn<Book, String>number;
+    @FXML
     private TableColumn<Book, String>title;
     @FXML
     private TableColumn<Book, String>author;
@@ -66,6 +68,7 @@ public class GUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //init books table
         bookId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        number.setCellValueFactory(new PropertyValueFactory<>("number"));
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         category.setCellValueFactory(new PropertyValueFactory<>("category"));
@@ -247,6 +250,7 @@ public class GUI implements Initializable {
         StringBuilder text= new StringBuilder();
         for(Book book:books){
             text.append(book.getId()).append(" ");
+            text.append(book.getNumber()).append(" ");
             text.append(book.getTitle()).append(" ");
             text.append(book.getAuthor()).append(" ");
             text.append(book.getCategory());

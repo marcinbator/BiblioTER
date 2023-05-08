@@ -33,6 +33,8 @@ public class AddBookWindow {
     @FXML
     private TextField titleField;
     @FXML
+    private TextField numberField;
+    @FXML
     private TextFlow messageField;
 
     private GUI parentController;
@@ -64,6 +66,7 @@ public class AddBookWindow {
     }
 
     private void setDefaults(){
+        this.numberField.setText(defaultBook.getNumber());
         this.titleField.setText(defaultBook.getTitle());
         this.authorField.setText(defaultBook.getAuthor());
         this.categoryField.setText(defaultBook.getCategory());
@@ -90,6 +93,7 @@ public class AddBookWindow {
         ObservableList<Book> books=parentController.booksTable.getItems();
         for(Book book:books){
             if(book.getId()==defaultBook.getId()){
+                book.setNumber(defaultBook.getNumber());
                 book.setTitle(defaultBook.getTitle());
                 book.setAuthor(defaultBook.getAuthor());
                 book.setCategory(defaultBook.getCategory());
@@ -114,6 +118,7 @@ public class AddBookWindow {
             messageField.getChildren().add(text);
             return;
         }
+        defaultBook.setNumber(numberField.getText());
         defaultBook.setAccessible(true);
         if (defaultBook.getId() != 0) {
             editBook();

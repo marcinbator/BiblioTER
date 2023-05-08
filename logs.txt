@@ -1,17 +1,13 @@
-21:55:04: BiblioTER launched.
-21:55:05: Login window launched.
-21:55:17: Database connection established.
-21:55:17: User Marcinek2 registered successfully.
-21:55:17: User Marcinek2 registered successfully.
-21:55:17: Login window launched.
-21:55:28: Database connection established.
-21:55:28: User Marcinek2 authenticated.
-21:55:28: Database connection established.
-21:55:28: Database connection established.
-21:55:28: Books downloaded from database.
-21:55:29: Database connection established.
-21:55:29: Readers downloaded from database.
-21:55:29: GUI initialized.
-21:55:29: GUI established.
-21:55:29: Login successfull.
-21:55:30: BiblioTER closed.
+08:58:49: BiblioTER launched.
+08:58:50: Login window launched.
+08:58:57: Database connection established.
+08:58:57: User Marcinek authenticated.
+08:58:57: Database connection established.
+08:58:58: Database connection established.
+08:58:58: Books downloaded from database.
+08:58:58: Database connection established.
+08:58:58: Readers downloaded from database.
+08:58:58: GUI initialized.
+08:58:58: GUI established.
+08:58:58: Login successfull.
+08:59:00: BiblioTER closed.

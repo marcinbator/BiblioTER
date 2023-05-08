@@ -44,6 +44,7 @@
                <TableView fx:id="booksTable" onMouseClicked="#onBookClick" style="-fx-background-color: #C4CAD0;" styleClass="table-cell" stylesheets="@../css/gui.css">
                  <columns>
                    <TableColumn fx:id="bookId" editable="false" prefWidth="39.0" text="ID" />
+                     <TableColumn fx:id="number" editable="false" prefWidth="123.0" text="Numer" />
                    <TableColumn fx:id="title" editable="false" prefWidth="123.0" text="Tytuł" />
                      <TableColumn fx:id="author" editable="false" prefWidth="102.0" text="Autor" />
                      <TableColumn fx:id="category" editable="false" prefWidth="102.0" text="Kategoria" />

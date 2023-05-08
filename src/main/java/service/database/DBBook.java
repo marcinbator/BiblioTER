@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DBBook extends DBConnect {
 
@@ -26,6 +24,7 @@ public class DBBook extends DBConnect {
 
     private void downloadBook(Book book, ResultSet result) throws SQLException, IOException {
         book.setId(result.getInt("id"));
+        book.setNumber(result.getString("number"));
         book.setTitle(result.getString("title"));
         book.setAuthor(result.getString("author"));
         book.setCategory(result.getString("category"));
@@ -33,10 +32,11 @@ public class DBBook extends DBConnect {
     }
 
     private void uploadBook(PreparedStatement statement, Book book) throws SQLException{
-        statement.setString(1, book.getTitle());
-        statement.setString(2, book.getAuthor());
-        statement.setString(3, book.getCategory());
-        statement.setBoolean(4,book.isAccessible());
+        statement.setString(1, book.getNumber());
+        statement.setString(2, book.getTitle());
+        statement.setString(3, book.getAuthor());
+        statement.setString(4, book.getCategory());
+        statement.setBoolean(5,book.isAccessible());
     }
 
     private Book getBook(Book book, PreparedStatement statement) throws SQLException, IOException {
@@ -79,15 +79,15 @@ public class DBBook extends DBConnect {
     }
 
     public void addBook(Book book) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO bookstable (title, author, category, accessibility) VALUES(?, ?,  ?, ?)");
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO bookstable (number,title, author, category, accessibility) VALUES(?,?, ?,  ?, ?)");
         uploadBook(statement, book);
         statement.executeUpdate();
         LogOutput.logEvent("Book "+book.getId() +" added to database.");
     }
     public void editBook(Book book) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("UPDATE bookstable SET title=?, author=?, category=?, accessibility=? WHERE id=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE bookstable SET number=?, title=?, author=?, category=?, accessibility=? WHERE id=?");
         uploadBook(statement, book);
-        statement.setString(5, Integer.toString(book.getId()));
+        statement.setString(6, Integer.toString(book.getId()));
         statement.executeUpdate();
         LogOutput.logEvent("Book "+book.getId() +" edited in database.");
     }
