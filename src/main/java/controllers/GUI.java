@@ -275,12 +275,13 @@ public class GUI implements Initializable {
             if(diff>30){
                 text.append("!");
             }
-            text.append(")\n");
+            text.append(")\n\n");
         }
         InfoView.launchBookDetails(this, title, text.toString());
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
+        System.out.println(book.isAccessible());
         AddBookWindow.launchAddBookWindow(this, book);
     }
 

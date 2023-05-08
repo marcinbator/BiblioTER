@@ -97,7 +97,6 @@ public class AddBookWindow {
                 book.setTitle(defaultBook.getTitle());
                 book.setAuthor(defaultBook.getAuthor());
                 book.setCategory(defaultBook.getCategory());
-                book.setAccessible(defaultBook.isAccessible());
                 LogOutput.logEvent("Book "+book.getId()+" edited.");
             }
         }
@@ -119,7 +118,6 @@ public class AddBookWindow {
             return;
         }
         defaultBook.setNumber(numberField.getText());
-        defaultBook.setAccessible(true);
         if (defaultBook.getId() != 0) {
             editBook();
         } else {
