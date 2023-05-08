@@ -76,7 +76,7 @@ public class BookDetailsWindow {
 
     public static void showBookDetails(Book book, TextFlow bookDetails) throws IOException, SQLException, ClassNotFoundException {
         bookDetails.getChildren().clear();
-        String text="ID książki: "+book.getId() +"Numer: "+book.getNumber()+"\n"+"Tytuł: "+book.getTitle()+"\n"+"Autor: "+book.getAuthor()+"\n"+"Kategoria: "+book.getCategory()+"\n"+"Dostępność: "+book.getAccessible()+"\n";
+        String text="ID książki: "+book.getId()+"\n" +"Numer: "+book.getNumber()+"\n"+"Tytuł: "+book.getTitle()+"\n"+"Autor: "+book.getAuthor()+"\n"+"Kategoria: "+book.getCategory()+"\n"+"Dostępność: "+book.getAccessible()+"\n";
         if(!book.isAccessible()){
             DBBorrows borrowConnection=new DBBorrows();
             Reader reader=borrowConnection.getCurrentReader(book);

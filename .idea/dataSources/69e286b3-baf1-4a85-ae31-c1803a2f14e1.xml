@@ -676,7 +676,7 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
       <CollationName>utf8_polish_ci</CollationName>
     </table>
     <column id="206" parent="202" name="id">
-      <AutoIncrement>70</AutoIncrement>
+      <AutoIncrement>72</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -767,36 +767,42 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
       <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="225" parent="204" name="PRIMARY">
+    <column id="225" parent="204" name="userId">
+      <DasType>int(11)|0s</DasType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="226" parent="204" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="226" parent="204" name="PRIMARY">
+    <key id="227" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="227" parent="205" name="id">
+    <column id="228" parent="205" name="id">
       <AutoIncrement>6</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="228" parent="205" name="username">
+    <column id="229" parent="205" name="username">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="229" parent="205" name="password">
+    <column id="230" parent="205" name="password">
       <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="230" parent="205" name="PRIMARY">
+    <index id="231" parent="205" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="231" parent="205" name="PRIMARY">
+    <key id="232" parent="205" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

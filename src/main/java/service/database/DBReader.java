@@ -27,6 +27,7 @@ public class DBReader extends DBConnect{
         statement.setString(1,reader.getName());
         statement.setString(2, reader.getSurname());
         statement.setString(3, reader.getPhone());
+        statement.setInt(4, user.getId());
     }
 
     private void downloadReader(ResultSet results, Reader reader) throws SQLException, IOException {
@@ -49,22 +50,23 @@ public class DBReader extends DBConnect{
     //DB operations
 
     public void addReader(Reader reader) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO readerstable (name, surname, phone) VALUES(?,?,?) ");
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO readerstable (name, surname, phone, userId) VALUES(?,?,?,?) ");
         uploadReader(statement, reader);
         statement.executeUpdate();
         LogOutput.logEvent("Reader "+reader.getId()+" added to database.");
     }
 
     public void editReader(Reader reader) throws SQLException, IOException {
-        PreparedStatement statement = connection.prepareStatement("UPDATE readerstable SET name=?, surname=?, phone=? WHERE id=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE readerstable SET name=?, surname=?, phone=? WHERE userId=? AND id=?");
         uploadReader(statement, reader);
-        statement.setInt(4, reader.getId());
+        statement.setInt(5, reader.getId());
         statement.executeUpdate();
         LogOutput.logEvent("Reader "+reader.getId() +" edited in database.");
     }
     public void deleteReader(Reader reader) throws SQLException, IOException, ClassNotFoundException {
-        PreparedStatement statement=connection.prepareStatement("DELETE FROM readerstable WHERE id=?");
+        PreparedStatement statement=connection.prepareStatement("DELETE FROM readerstable WHERE id=? AND userId=?");
         statement.setString(1,Integer.toString(reader.getId()));
+        statement.setInt(2, user.getId());
         statement.executeUpdate();
         DBBorrows borrows=new DBBorrows();
         List<Book> books=borrows.getBooksByReader(reader);
@@ -75,21 +77,24 @@ public class DBReader extends DBConnect{
     }
 
     public Reader getReader(int id) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE id=?");
+        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE id=? AND userId=?");
         statement.setInt(1, id);
+        statement.setInt(2, user.getId());
         Reader reader=new Reader();
         return getReader(reader, statement);
     }
 
     public Reader getReader(String name) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE name=?");
+        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE name=? AND userId=?");
         statement.setString(1, name);
+        statement.setInt(2, user.getId());
         Reader reader=new Reader();
         return getReader(reader, statement);
     }
 
     public List<Reader> getReaders() throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable");
+        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE userId=?");
+        statement.setInt(1, user.getId());
         ResultSet results=statement.executeQuery();
         List<Reader> readers=new ArrayList<>();
         while(results.next()){

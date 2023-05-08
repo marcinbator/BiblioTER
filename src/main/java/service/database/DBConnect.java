@@ -1,6 +1,8 @@
 package service.database;
 
+import controllers.LoginWindow;
 import service.LogOutput;
+import service.objects.User;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,6 +15,7 @@ public class DBConnect {
     //Attributes
 
     protected Connection connection;
+    protected User user;
     public static int booksAmount=0;
 
 
@@ -27,6 +30,7 @@ public class DBConnect {
         //String password="javademo";
         //String url="jdbc:mysql://localhost:3306/javadatabase";
         connection = DriverManager.getConnection(url, username, password);
+        user=LoginWindow.user;
         LogOutput.logEvent("Database connection established.");
     }
 
