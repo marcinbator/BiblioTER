@@ -1,74 +1,59 @@
-22:27:13: BiblioTER launched.
-22:27:14: Login window launched.
-22:27:19: Database connection established.
-22:27:19: User Marcinek authenticated.
-22:27:20: Database connection established.
-22:27:20: Database connection established.
-22:27:20: Books downloaded from database.
-22:27:20: Database connection established.
-22:27:20: Readers downloaded from database.
-22:27:20: GUI initialized.
-22:27:20: GUI established.
-22:27:20: Login successfull.
-22:27:25: Database connection established.
-22:27:25: Database connection established.
-22:27:25: Database connection established.
-22:27:25: Book 78 shown.
-22:27:25: Readers downloaded from database.
-22:27:25: Borrow creator window launched.
-22:27:27: Borrow 0 created successfully in database.
-22:27:27: Book 78 edited in database.
-22:27:27: Borrow creator window closed.
-22:27:27: Borrow added.
-22:27:29: Database connection established.
-22:27:29: Add book window launched.
-22:27:31: Book 78 edited.
-22:27:31: Book 78 edited in database.
-22:27:31: Database connection closed.
-22:27:31: Add book window closed.
-22:27:35: Book 78 downloaded from database.
-22:27:35: Book 78 downloaded from database.
-22:27:35: Book 78 downloaded from database.
-22:27:35: Books that has reader 21 in history downloaded from database.
-22:27:35: Database connection established.
-22:27:35: Database connection established.
-22:27:35: Database connection established.
-22:27:35: Details window launched.
-22:27:39: Book 78 edited in database.
-22:27:40: Database connection established.
-22:27:40: Book 78 edited in database.
-22:27:40: All borrows for book 78 deactivated.
-22:27:42: Books that has reader 21 in history downloaded from database.
-22:27:42: Database connection established.
-22:27:42: Database connection established.
-22:27:42: Database connection established.
-22:27:42: Details window launched.
-22:27:46: Database connection established.
-22:27:46: Database connection established.
-22:27:46: Database connection established.
-22:27:46: Book 78 shown.
-22:27:46: Readers downloaded from database.
-22:27:46: Borrow creator window launched.
-22:27:48: Borrow 0 created successfully in database.
-22:27:48: Book 78 edited in database.
-22:27:48: Borrow creator window closed.
-22:27:48: Borrow added.
-22:27:50: Book 78 downloaded from database.
-22:27:50: Books that has reader 21 in history downloaded from database.
-22:27:50: Database connection established.
-22:27:50: Database connection established.
-22:27:51: Database connection established.
-22:27:51: Details window launched.
-22:27:55: Database connection established.
-22:27:55: Add book window launched.
-22:28:21: Book 78 edited.
-22:28:21: Book 78 edited in database.
-22:28:21: Database connection closed.
-22:28:21: Add book window closed.
-22:28:24: Book 78 downloaded from database.
-22:28:24: Books that has reader 21 in history downloaded from database.
-22:28:24: Database connection established.
-22:28:25: Database connection established.
-22:28:25: Database connection established.
-22:28:25: Details window launched.
-22:28:42: BiblioTER closed.
+22:29:29: BiblioTER launched.
+22:29:30: Login window launched.
+22:29:34: Database connection established.
+22:29:34: ERROR: Login failed - incorrect parameters.
+22:29:39: Database connection established.
+22:29:39: User Marcinek authenticated.
+22:29:39: Database connection established.
+22:29:39: Database connection established.
+22:29:39: Books downloaded from database.
+22:29:40: Database connection established.
+22:29:40: Readers downloaded from database.
+22:29:40: GUI initialized.
+22:29:40: GUI established.
+22:29:40: Login successfull.
+22:29:42: Database connection established.
+22:29:43: Add book window launched.
+22:29:43: Book  added properly.
+22:30:09: ERROR: Book - not proper author detected.
+22:30:09: ERROR: Book not added - invalid parameters.
+22:30:15: Book 0 added to database.
+22:30:15: Book 79 downloaded from database.
+22:30:15: Database connection closed.
+22:30:15: Add book window closed.
+22:30:23: Database connection established.
+22:30:23: Database connection established.
+22:30:23: Book 79 shown.
+22:30:23: Book details window launched.
+22:30:28: Book details window closed.
+22:30:29: Database connection established.
+22:30:29: Database connection established.
+22:30:29: Database connection established.
+22:30:29: Book 79 shown.
+22:30:29: Readers downloaded from database.
+22:30:29: Borrow creator window launched.
+22:30:31: Borrow 0 created successfully in database.
+22:30:31: Book 79 edited in database.
+22:30:31: Borrow creator window closed.
+22:30:31: Borrow added.
+22:30:35: Database connection established.
+22:30:35: Database connection established.
+22:30:36: Database connection established.
+22:30:36: Reader 21 downloaded from database.
+22:30:36: Book 79 shown.
+22:30:36: Book details window launched.
+22:30:37: Database connection established.
+22:30:37: Add book window launched.
+22:30:37: Book details window closed.
+22:30:40: Book 79 edited.
+22:30:40: Book 79 edited in database.
+22:30:40: Database connection closed.
+22:30:40: Add book window closed.
+22:30:43: Book 78 downloaded from database.
+22:30:43: Book 79 downloaded from database.
+22:30:43: Books that has reader 21 in history downloaded from database.
+22:30:43: Database connection established.
+22:30:44: Database connection established.
+22:30:44: Database connection established.
+22:30:44: Details window launched.
+22:30:54: BiblioTER closed.
