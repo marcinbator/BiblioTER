@@ -30,6 +30,7 @@ public class LoginWindow extends Application {
     private TextField passwordField;
     @FXML
     private TextField usernameField;
+    public static User user;
 
 
     public void start(Stage stage) throws IOException {
@@ -44,7 +45,14 @@ public class LoginWindow extends Application {
 
     @FXML
     private void onLoginButtonClick() throws IOException, SQLException, ClassNotFoundException {
-        if(validate()){
+        String username=usernameField.getText();
+        String password=passwordField.getText();
+        user=new User();
+        user.setUserName(username);
+        user.setPassword(password);
+        DBUser connection=new DBUser();
+        if(connection.authenticate(user)){
+            user.setId(connection.getUserId(user));
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/view/gui.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
@@ -69,16 +77,6 @@ public class LoginWindow extends Application {
             messagePanel.setText("Nie udało się zalogować - sprawdź dane.");
             LogOutput.logError("Login failed - incorrect parameters.");
         }
-    }
-
-    private boolean validate() throws IOException, SQLException, ClassNotFoundException {
-        String username=usernameField.getText();
-        String password=passwordField.getText();
-        User user=new User();
-        user.setUserName(username);
-        user.setPassword(password);
-        DBUser connection=new DBUser();
-        return connection.authenticate(user);
     }
 
     @FXML

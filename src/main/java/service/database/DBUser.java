@@ -40,6 +40,17 @@ public class DBUser extends DBConnect{
         LogOutput.logEvent("User "+user.getUserName()+" registered successfully.");
     }
 
+    public int getUserId(User user) throws SQLException {
+        PreparedStatement statement=connection.prepareStatement("SELECT id FROM userstable WHERE username=?");
+        statement.setString(1, user.getUserName());
+        ResultSet result=statement.executeQuery();
+        int id=0;
+        while(result.next()){
+            id=result.getInt("id");
+        }
+        return id;
+    }
+
     public boolean authenticate(User user) throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("SELECT * FROM userstable WHERE username=? AND password=?");
         statement.setString(1,user.getUserName());

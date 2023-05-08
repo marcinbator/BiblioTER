@@ -1,5 +1,6 @@
 package controllers;
 
+import com.mysql.cj.log.Log;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import service.database.DBBorrows;
 import service.database.DBReader;
@@ -19,6 +21,7 @@ import service.database.DBBook;
 import service.LogOutput;
 import service.objects.BorrowRecord;
 import service.objects.Reader;
+import service.objects.User;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +35,8 @@ public class GUI implements Initializable {
 
     @FXML
     public TableView<Book>booksTable;
+    @FXML
+    private Text greeting;
     @FXML
     private TableColumn<Book, Integer>bookId;
     @FXML
@@ -58,6 +63,7 @@ public class GUI implements Initializable {
     public DBBook bookConnection;
     public DBReader readerConnection;
     public DBBorrows borrowsConnection;
+    public User user;
     public static Image image = new Image(Objects.requireNonNull(GUI.class.getResource("/img/logo2.png")).toString());
 
 
@@ -102,6 +108,10 @@ public class GUI implements Initializable {
         }
         booksTable.getSortOrder().add(title);
         readersTable.getSortOrder().add(surname);
+        user=LoginWindow.user;
+        if(user!=null){
+            greeting.setText("Cześć, "+user.getUserName()+"!");
+        }
     }
 
 
