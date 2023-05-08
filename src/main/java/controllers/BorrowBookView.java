@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import service.LogOutput;
@@ -19,6 +18,7 @@ import service.objects.Reader;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class BorrowBookView {
@@ -108,7 +108,7 @@ public class BorrowBookView {
             this.closeWindow();
             return;
         }
-        BorrowRecord borrow=new BorrowRecord(0,book, borrower, true);
+        BorrowRecord borrow=new BorrowRecord(0,book, borrower, true, LocalDate.now());
         borrowsConnection.addBorrow(borrow);
         book.setAccessible(false);
         ObservableList<Book> books=grandParentController.booksTable.getItems();

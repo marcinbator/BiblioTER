@@ -6,9 +6,8 @@ import service.objects.BorrowRecord;
 import service.objects.Reader;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +67,7 @@ public class DBBorrows extends DBConnect{
         statement.setInt(1,record.getBook().getId());
         statement.setInt(2,record.getReader().getId());
         statement.setBoolean(3,record.isActive());
+        statement.setDate(4, Date.valueOf(record.getBorrowDate()));
         statement.executeUpdate();
     }
 
@@ -118,7 +118,7 @@ public class DBBorrows extends DBConnect{
     }
 
     public void addBorrow(BorrowRecord record) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("INSERT INTO borrowstable (bookid, borrowerid, active) VALUES(?,?,?)");
+        PreparedStatement statement=connection.prepareStatement("INSERT INTO borrowstable (bookid, borrowerid, active, date) VALUES(?,?,?,?)");
         uploadBorrow(record, statement);
         LogOutput.logEvent("Borrow "+record.getId()+" created successfully in database.");
     }
@@ -131,6 +131,18 @@ public class DBBorrows extends DBConnect{
         books.editBook(book);
         statement.executeUpdate();
         LogOutput.logEvent("All borrows for book "+book.getId()+" deactivated.");
+    }
+
+    public LocalDate getBorrowDate(Reader reader, Book book) throws SQLException, IOException {
+        PreparedStatement statement=connection.prepareStatement("SELECT * FROM borrowstable WHERE borrowerid=? AND bookid=? AND active=1");
+        statement.setInt(1,reader.getId());
+        statement.setInt(2, book.getId());
+        ResultSet resultSet=statement.executeQuery();
+        LocalDate date = null;
+        while(resultSet.next()){
+            date=resultSet.getDate("date").toLocalDate();
+        }
+        return date;
     }
 
     public List<BorrowRecord> getAllBorrows(Boolean active) throws SQLException, IOException {

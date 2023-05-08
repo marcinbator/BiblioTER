@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import service.LogOutput;
 import service.database.DBUser;
-import service.objects.Reader;
 import service.objects.User;
 
 import java.io.IOException;

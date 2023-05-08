@@ -719,7 +719,7 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="215" parent="203" name="id">
-      <AutoIncrement>8</AutoIncrement>
+      <AutoIncrement>9</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -739,70 +739,74 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
       <DefaultExpression>1</DefaultExpression>
       <Position>4</Position>
     </column>
-    <index id="219" parent="203" name="PRIMARY">
+    <column id="219" parent="203" name="date">
+      <DasType>date|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="220" parent="203" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="220" parent="203" name="PRIMARY">
+    <key id="221" parent="203" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="221" parent="204" name="id">
-      <AutoIncrement>21</AutoIncrement>
+    <column id="222" parent="204" name="id">
+      <AutoIncrement>22</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="222" parent="204" name="name">
+    <column id="223" parent="204" name="name">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="223" parent="204" name="surname">
+    <column id="224" parent="204" name="surname">
       <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="224" parent="204" name="phone">
+    <column id="225" parent="204" name="phone">
       <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="225" parent="204" name="userId">
+    <column id="226" parent="204" name="userId">
       <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="226" parent="204" name="PRIMARY">
+    <index id="227" parent="204" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="227" parent="204" name="PRIMARY">
+    <key id="228" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="228" parent="205" name="id">
-      <AutoIncrement>6</AutoIncrement>
+    <column id="229" parent="205" name="id">
+      <AutoIncrement>7</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="229" parent="205" name="username">
+    <column id="230" parent="205" name="username">
       <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="230" parent="205" name="password">
+    <column id="231" parent="205" name="password">
       <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="231" parent="205" name="PRIMARY">
+    <index id="232" parent="205" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="232" parent="205" name="PRIMARY">
+    <key id="233" parent="205" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

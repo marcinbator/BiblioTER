@@ -1,34 +1,36 @@
 package controllers;
 
-import com.mysql.cj.log.Log;
-import javafx.application.Application;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import service.LogOutput;
+import service.database.DBBook;
 import service.database.DBBorrows;
 import service.database.DBReader;
 import service.database.DBUser;
 import service.objects.Book;
-import service.database.DBBook;
-import service.LogOutput;
-import service.objects.BorrowRecord;
 import service.objects.Reader;
 import service.objects.User;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.*;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class GUI implements Initializable {
 
@@ -261,12 +263,19 @@ public class GUI implements Initializable {
         String title="Wypożyczenia czytelnika "+reader.getName();
         StringBuilder text= new StringBuilder();
         for(Book book:books){
-            text.append(book.getId()).append(" ");
-            text.append(book.getNumber()).append(" ");
-            text.append(book.getTitle()).append(" ");
-            text.append(book.getAuthor()).append(" ");
-            text.append(book.getCategory());
-            text.append("\n");
+            LocalDate date=borrowsConnection.getBorrowDate(reader, book);
+            text.append(book.getId()).append(", ");
+            text.append(book.getNumber()).append(", ");
+            text.append(book.getTitle()).append(", ");
+            text.append(book.getAuthor()).append(", ");
+            text.append(book.getCategory()).append(", ");
+            text.append(date).append(" (");
+            int diff= (int) DAYS.between(LocalDate.now(), date);
+            text.append(diff).append(" dni");
+            if(diff>30){
+                text.append("!");
+            }
+            text.append(")\n");
         }
         InfoView.launchBookDetails(this, title, text.toString());
     }

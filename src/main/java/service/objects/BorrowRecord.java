@@ -3,6 +3,7 @@ package service.objects;
 import service.LogOutput;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class BorrowRecord {
 
@@ -13,6 +14,7 @@ public class BorrowRecord {
     private Book book;
     private Reader reader;
     private boolean active;
+    private LocalDate borrowDate;
 
 
     //Constructors
@@ -22,13 +24,15 @@ public class BorrowRecord {
         this.book=new Book();
         this.reader=new Reader();
         this.active=true;
+        this.borrowDate=LocalDate.now();
     }
 
-    public BorrowRecord(int id, Book book, Reader reader, boolean active) throws IOException {
+    public BorrowRecord(int id, Book book, Reader reader, boolean active, LocalDate borrowDate) throws IOException {
         this.setId(id);
         this.setBook(book);
         this.setReader(reader);
         this.setActive(active);
+        this.setBorrowDate(borrowDate);
     }
 
 
@@ -81,6 +85,14 @@ public class BorrowRecord {
 
     public void setActive(boolean active){
         this.active=active;
+    }
+
+    public LocalDate getBorrowDate(){
+        return borrowDate;
+    }
+
+    public void setBorrowDate(LocalDate borrowDate){
+        this.borrowDate=borrowDate;
     }
 
 }

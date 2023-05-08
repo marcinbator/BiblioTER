@@ -1,25 +1,19 @@
-09:56:46: BiblioTER launched.
-09:56:47: Login window launched.
-09:56:52: Database connection established.
-09:56:52: User Marcinek authenticated.
-09:56:52: Database connection established.
-09:56:52: Database connection established.
-09:56:52: Books downloaded from database.
-09:56:52: Database connection established.
-09:56:53: Readers downloaded from database.
-09:56:53: GUI initialized.
-09:56:53: GUI established.
-09:56:53: Login successfull.
-09:57:00: Database connection established.
-09:57:00: Database connection established.
-09:57:01: Database connection established.
-09:57:01: Reader 21 downloaded from database.
-09:57:01: Book 71 shown.
-09:57:01: Book details window launched.
-09:57:02: Reader 21 downloaded from database.
-09:57:02: Readers of book 71 downloaded from database.
-09:57:03: Database connection established.
-09:57:03: Database connection established.
-09:57:03: Database connection established.
-09:57:03: Details window launched.
-09:57:06: BiblioTER closed.
+22:19:58: BiblioTER launched.
+22:19:59: Login window launched.
+22:20:07: Database connection established.
+22:20:07: User Marcinek authenticated.
+22:20:07: Database connection established.
+22:20:08: Database connection established.
+22:20:08: Books downloaded from database.
+22:20:08: Database connection established.
+22:20:08: Readers downloaded from database.
+22:20:08: GUI initialized.
+22:20:08: GUI established.
+22:20:08: Login successfull.
+22:20:13: Book 71 downloaded from database.
+22:20:13: Books that has reader 21 in history downloaded from database.
+22:20:13: Database connection established.
+22:20:13: Database connection established.
+22:20:13: Database connection established.
+22:20:13: Details window launched.
+22:20:16: BiblioTER closed.
