@@ -128,8 +128,8 @@ public class BookDetailsWindow {
         for(Reader reader:readers){
             text.append(reader.getId()).append(" ");
             text.append(reader.getName()).append(" ");
-            text.append(reader.getPhone()).append(" ");
-            text.append(reader.getSurname());
+            text.append(reader.getSurname()).append(" ");
+            text.append(reader.getPhone());
             text.append("\n");
         }
         InfoView.launchBookDetails(parentController, title, text.toString());

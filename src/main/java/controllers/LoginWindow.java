@@ -6,10 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import service.LogOutput;
 import service.database.DBUser;
+import service.objects.Reader;
 import service.objects.User;
 
 import java.io.IOException;
@@ -41,6 +43,30 @@ public class LoginWindow extends Application {
         stage.getIcons().add(image);
         stage.show();
         LogOutput.logEvent("Login window launched.");
+    }
+
+    public void initialize(){
+        passwordField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                try {
+                    onLoginButtonClick();
+                } catch (IOException | SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    public static void launchWindow(Stage oldStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(LoginWindow.class.getResource("/view/loginForm.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Logowanie");
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
+        stage.getIcons().add(image);
+        stage.show();
+        LogOutput.logEvent("Login window launched.");
+        oldStage.close();
     }
 
     @FXML
@@ -81,14 +107,7 @@ public class LoginWindow extends Application {
 
     @FXML
     private void onRegisterLinkClick() throws IOException {
-        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/view/registerForm.fxml"));
-        Stage stage=new Stage();
-        stage.setScene(new Scene(fxmlLoader.load()));
-        stage.setTitle("Rejestracja");
-        stage.getIcons().add(GUI.image);
-        stage.setResizable(false);
-        stage.show();
         Stage oldStage = (Stage) loginButton.getScene().getWindow();
-        oldStage.close();
+        RegisterWindow.launchWindow(oldStage);
     }
 }

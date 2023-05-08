@@ -1,29 +1,25 @@
-09:35:03: BiblioTER launched.
-09:35:04: Login window launched.
-09:35:08: Database connection established.
-09:35:08: User Marcinek authenticated.
-09:35:08: Database connection established.
-09:35:09: Database connection established.
-09:35:09: Books downloaded from database.
-09:35:09: Database connection established.
-09:35:09: Readers downloaded from database.
-09:35:09: GUI initialized.
-09:35:09: GUI established.
-09:35:09: Login successfull.
-09:35:13: Database connection established.
-09:35:14: Database connection established.
-09:35:14: Database connection established.
-09:35:14: Book 71 shown.
-09:35:14: Readers downloaded from database.
-09:35:14: Borrow creator window launched.
-09:35:16: Borrow 0 created successfully in database.
-09:35:16: Book 71 edited in database.
-09:35:16: Borrow creator window closed.
-09:35:16: Borrow added.
-09:35:20: Database connection established.
-09:35:20: Database connection established.
-09:35:20: Database connection established.
-09:35:20: Reader 21 downloaded from database.
-09:35:20: Book 71 shown.
-09:35:20: Book details window launched.
-09:35:23: BiblioTER closed.
+09:56:46: BiblioTER launched.
+09:56:47: Login window launched.
+09:56:52: Database connection established.
+09:56:52: User Marcinek authenticated.
+09:56:52: Database connection established.
+09:56:52: Database connection established.
+09:56:52: Books downloaded from database.
+09:56:52: Database connection established.
+09:56:53: Readers downloaded from database.
+09:56:53: GUI initialized.
+09:56:53: GUI established.
+09:56:53: Login successfull.
+09:57:00: Database connection established.
+09:57:00: Database connection established.
+09:57:01: Database connection established.
+09:57:01: Reader 21 downloaded from database.
+09:57:01: Book 71 shown.
+09:57:01: Book details window launched.
+09:57:02: Reader 21 downloaded from database.
+09:57:02: Readers of book 71 downloaded from database.
+09:57:03: Database connection established.
+09:57:03: Database connection established.
+09:57:03: Database connection established.
+09:57:03: Details window launched.
+09:57:06: BiblioTER closed.

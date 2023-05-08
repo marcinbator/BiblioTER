@@ -20,8 +20,14 @@
          <items>
            <MenuItem mnemonicParsing="false" onAction="#onAddBookClick" text="Dodaj książkę" />
              <MenuItem mnemonicParsing="false" onAction="#onAddReaderClick" text="Dodaj czytelnika" />
+               <MenuItem mnemonicParsing="false" onAction="#onLogoutClick" text="Wyloguj się" />
          </items>
        </Menu>
+         <Menu mnemonicParsing="false" text="Użytkownik">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#onDeleteAccountClick" text="Usuń konto" />
+            </items>
+         </Menu>
      </menus>
    </MenuBar>
    <Text fx:id="greeting" strokeType="OUTSIDE" strokeWidth="0.0">

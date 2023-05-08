@@ -10,13 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69e286b3-baf1-4a85-ae31-c1803a2f14e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
       <workItem from="1683484943395" duration="378000" />
       <workItem from="1683485347941" duration="105000" />
       <workItem from="1683485462862" duration="4649000" />
-      <workItem from="1683527633409" duration="3724000" />
+      <workItem from="1683527633409" duration="5007000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

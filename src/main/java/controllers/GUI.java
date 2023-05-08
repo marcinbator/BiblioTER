@@ -3,6 +3,7 @@ package controllers;
 import com.mysql.cj.log.Log;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import service.database.DBBorrows;
 import service.database.DBReader;
+import service.database.DBUser;
 import service.objects.Book;
 import service.database.DBBook;
 import service.LogOutput;
@@ -293,4 +295,14 @@ public class GUI implements Initializable {
     }
 
 
+    public void onLogoutClick() throws IOException {
+        Stage oldStage = (Stage) greeting.getScene().getWindow();
+        LoginWindow.launchWindow(oldStage);
+    }
+
+    public void onDeleteAccountClick() throws SQLException, IOException, ClassNotFoundException {
+        DBUser connection=new DBUser();
+        connection.deleteUser(user);
+        onLogoutClick();
+    }
 }

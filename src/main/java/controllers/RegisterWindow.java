@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import service.LogOutput;
@@ -34,6 +35,29 @@ public class RegisterWindow {
     @FXML
     private TextField usernameField;
 
+    public void initialize(){
+        password2Field.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                try {
+                    onRegisterButtonClick();
+                } catch (IOException | SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    public static void launchWindow(Stage oldStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(LoginWindow.class.getResource("/view/registerForm.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Rejestracja");
+        stage.setScene(new Scene(loader.load(), 600, 400));
+        stage.setResizable(false);
+        stage.getIcons().add(image);
+        stage.show();
+        LogOutput.logEvent("Register window launched.");
+        oldStage.close();
+    }
 
     @FXML
     private void onRegisterButtonClick() throws IOException, SQLException, ClassNotFoundException {
@@ -70,15 +94,7 @@ public class RegisterWindow {
 
     @FXML
     private void onLoginLinkClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginForm.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("Logowanie");
-        stage.setScene(new Scene(loader.load(), 600, 400));
-        stage.setResizable(false);
-        stage.getIcons().add(image);
-        stage.show();
-        LogOutput.logEvent("Login window launched.");
         Stage oldStage = (Stage) registerButton.getScene().getWindow();
-        oldStage.close();
+        LoginWindow.launchWindow(oldStage);
     }
 }

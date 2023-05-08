@@ -76,6 +76,7 @@ public class DBUser extends DBConnect{
     public void deleteUser(User user) throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("DELETE FROM userstable WHERE id=?");
         statement.setInt(1,user.getId());
+        statement.executeUpdate();
         LogOutput.logEvent("User "+user.getUserName()+" deleted successfully.");
     }
 }
