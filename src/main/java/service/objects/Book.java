@@ -6,15 +6,13 @@ import java.io.IOException;
 
 public class Book {
 
-
-    //Attributes
-
-    int id;
+    private int id;
     private String number;
     private String title;
     private String author;
     private String category;
     private String accessible;
+
 
     //Constructors
 
@@ -42,7 +40,6 @@ public class Book {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -50,7 +47,6 @@ public class Book {
     public String getNumber(){
         return number;
     }
-
     public void setNumber(String number){
         this.number=number;
     }
@@ -58,7 +54,6 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
     public boolean setTitle(String title) throws IOException {
         if(stringValidate(title)){
             this.title = title;
@@ -73,7 +68,6 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-
     public boolean setAuthor(String author) throws IOException {
         if(stringValidate(author)){
             this.author = author;
@@ -88,7 +82,6 @@ public class Book {
     public String getCategory() {
         return category;
     }
-
     public boolean setCategory(String category) throws IOException {
         if(stringValidate(category)){
             this.category = category;
@@ -103,11 +96,9 @@ public class Book {
     public String getAccessible(){
         return this.accessible;
     }
-
     public boolean isAccessible() {
         return accessible.equals("Dostępna");
     }
-
     public void setAccessible(boolean accessible) {
         if(accessible){
             this.accessible="Dostępna";
@@ -121,7 +112,7 @@ public class Book {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,30}");
+        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*/!?\\-()& ]{2,30}");
     }
 
 }

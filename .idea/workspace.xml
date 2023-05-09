@@ -12,9 +12,17 @@
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/BorrowRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +159,7 @@
       <workItem from="1683570376583" duration="1681000" />
       <workItem from="1683572933249" duration="4354000" />
       <workItem from="1683577753208" duration="104000" />
-      <workItem from="1683653863314" duration="4885000" />
+      <workItem from="1683653863314" duration="6249000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

@@ -47,7 +47,7 @@ public class DBReader extends DBConnect{
     }
 
 
-    //DB operations
+    //Database operations
 
     public void addReader(Reader reader) throws SQLException, IOException {
         PreparedStatement statement = connection.prepareStatement("INSERT INTO readerstable (name, surname, phone, userId) VALUES(?,?,?,?) ");
@@ -74,14 +74,6 @@ public class DBReader extends DBConnect{
             borrows.deactivateAllBorrows(book);
         }
         LogOutput.logEvent("Reader "+reader.getId() +" deleted from database.");
-    }
-
-    public Reader getReader(int id) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE id=? AND userId=?");
-        statement.setInt(1, id);
-        statement.setInt(2, user.getId());
-        Reader reader=new Reader();
-        return getReader(reader, statement);
     }
 
     public Reader getReader(String name) throws SQLException, IOException {

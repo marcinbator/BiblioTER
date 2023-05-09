@@ -85,9 +85,9 @@ public class Reader {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]{2,20}");
+        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*/!?\\-()& ]{2,30}");
     }
     private static boolean phoneValidate(String phone){
-        return phone.matches("[0-9 ]{9,11}");
+        return phone.matches("^\\d{3}[\\s\\-]?\\d{3}[\\s\\-]?\\d{3}$");
     }
 }

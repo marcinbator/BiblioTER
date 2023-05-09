@@ -64,15 +64,6 @@ public class DBUser extends DBConnect{
         return isUser;
     }
 
-    public void editUser(User user) throws SQLException, IOException {
-        PreparedStatement statement=connection.prepareStatement("UPDATE userstable SET username=?, password=? WHERE id=?");
-        statement.setString(1, user.getUserName());
-        statement.setString(2,user.getPassword());
-        statement.setInt(3, user.getId());
-        statement.executeUpdate();
-        LogOutput.logEvent("User "+user.getUserName()+" edited successfully.");
-    }
-
     public void deleteUser(User user) throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("DELETE FROM userstable WHERE id=?");
         statement.setInt(1,user.getId());

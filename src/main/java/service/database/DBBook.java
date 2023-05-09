@@ -2,9 +2,8 @@ package service.database;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import service.objects.Book;
 import service.LogOutput;
-import service.objects.User;
+import service.objects.Book;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -53,13 +52,6 @@ public class DBBook extends DBConnect {
 
     //Database operations
 
-    public Book getBook(int id) throws SQLException, IOException {
-        Book book=new Book();
-        PreparedStatement statement=connection.prepareStatement("SELECT * FROM bookstable WHERE id=? AND userId=?");
-        statement.setInt(1,id);
-        statement.setInt(2, user.getId());
-        return getBook(book, statement);
-    }
     public Book getBook(String title) throws SQLException, IOException {
         Book book=new Book();
         PreparedStatement statement=connection.prepareStatement("SELECT * FROM bookstable WHERE title=? AND userId=?");
@@ -77,7 +69,6 @@ public class DBBook extends DBConnect {
             Book book=new Book();
             downloadBook(book, result);
             books.add(book);
-            booksAmount++;
         }
         LogOutput.logEvent("Books downloaded from database.");
         return books;

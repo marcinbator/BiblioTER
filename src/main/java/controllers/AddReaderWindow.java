@@ -114,7 +114,8 @@ public class AddReaderWindow {
     @FXML private void onAddReaderButtonClicked() throws SQLException, IOException {
         if(!defaultReader.setName(nameField.getText())|| !defaultReader.setSurname(surnameField.getText())|| !defaultReader.setPhone(phoneField.getText())){
             LogOutput.logError("Reader not added - invalid parameters.");
-            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a telefon od 9 do 11 cyfr i spacji.");
+            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a " +
+                    "telefon 9 cyfr w formatach: xxxxxxxxx, xxx-xxx-xxx lub xxx xxx xxx.");
             text.setFill(Color.WHITE);
             messageField.getChildren().add(text);
             return;

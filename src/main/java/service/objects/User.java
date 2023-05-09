@@ -6,9 +6,6 @@ import java.io.IOException;
 
 public class User {
 
-
-    //Attributes
-
     private int id;
     private String userName;
     private String password;
@@ -34,7 +31,6 @@ public class User {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -42,7 +38,6 @@ public class User {
     public String getUserName() {
         return userName;
     }
-
     public boolean setUserName(String userName) throws IOException {
         if(stringValidate(userName)){
             this.userName = userName;
@@ -55,7 +50,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-
     public boolean setPassword(String password) throws IOException {
         if(passwordValidate(password)){
             this.password = password;
@@ -69,9 +63,9 @@ public class User {
     //Authentication
 
     private static boolean stringValidate(String line){
-        return line.matches("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9]{5,30}");
+        return line.matches("[a-zA-Z0-9_\\-]{5,30}");
     }
     private static boolean passwordValidate(String line){
-        return line.matches("[a-zA-Z0-9]{4,30}");
+        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*/!?\\-()& ]{4,30}");
     }
 }

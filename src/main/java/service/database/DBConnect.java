@@ -11,12 +11,8 @@ import java.sql.SQLException;
 
 public class DBConnect {
 
-
-    //Attributes
-
     protected Connection connection;
     protected User user;
-    public static int booksAmount=0;
 
 
     //Connection operations

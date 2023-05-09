@@ -61,7 +61,7 @@ public class RegisterWindow {
         if(password1.equals(password2)){
             User user=new User();
             if(!user.setUserName(username)||!user.setPassword(password1)){
-                messagePanel.setText("Nieprawidłowe dane - nazwa od 5 do 30 znaków, bez polskich znaków i spacji, hasło od 4 do 30 znaków, bez polskich i spacji.");
+                messagePanel.setText("Nieprawidłowe dane - nazwa od 5 do 30 znaków, bez polskich znaków i spacji, hasło od 4 do 30 znaków.");
                 return;
             }
             DBUser connection=new DBUser();
@@ -71,7 +71,7 @@ public class RegisterWindow {
                 onLoginLinkClick();
             }
             else{
-                messagePanel.setText("Użytkownik o podanej nazwie istnieje.");
+                messagePanel.setText("Użytkownik o podanej nazwie już istnieje.");
                 LogOutput.logError("User already exists.");
             }
         }

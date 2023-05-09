@@ -13,8 +13,6 @@ import java.util.List;
 
 public class DBBorrows extends DBConnect{
 
-
-    //Attributes
     private final String readerQuery = "SELECT readerstable.id, readerstable.name, readerstable.surname, readerstable.phone  FROM readerstable";
 
 
@@ -26,7 +24,6 @@ public class DBBorrows extends DBConnect{
 
 
     //Utilities
-
 
     private void downloadReader(ResultSet result, Reader reader) throws SQLException, IOException {
         reader.setId(result.getInt("id"));
@@ -72,7 +69,7 @@ public class DBBorrows extends DBConnect{
     }
 
 
-    //DB operations
+    //Database operations
 
     public List<Reader> getReadersByBook(Book book) throws SQLException, IOException {
         List<Reader> readers=new ArrayList<>();
@@ -144,22 +141,4 @@ public class DBBorrows extends DBConnect{
         }
         return date;
     }
-
-    public List<BorrowRecord> getAllBorrows(Boolean active) throws SQLException, IOException {
-        String query="SELECT * FROM borrowstable JOIN bookstable ON bookid=bookstable.id JOIN readerstable ON borrowerid=readerstable.id";
-        if(active){
-            query+=" WHERE active=true";
-        }
-        PreparedStatement statement=connection.prepareStatement(query);
-        ResultSet results=statement.executeQuery();
-        List<BorrowRecord> records=new ArrayList<>();
-        while(results.next()){
-            BorrowRecord record=new BorrowRecord();
-            downloadBorrow(results, record);
-            records.add(record);
-        }
-        LogOutput.logEvent("Borrows downloaded from database.");
-        return records;
-    }
-
 }
