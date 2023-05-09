@@ -1,12 +1,3 @@
-21:21:07: Login window launched.
-21:21:11: ERROR: User creation failed - invalid username
-21:21:11: ERROR: User creation failed - invalid password
-21:21:11: Database connection established.
-21:21:11: ERROR: Login failed - incorrect parameters.
-21:21:12: Register window launched.
-21:21:14: ERROR: User creation failed - invalid username
-21:21:23: ERROR: User creation failed - invalid password
-21:21:28: Database connection established.
-21:21:28: ERROR: User already exists.
-21:21:30: BiblioTER closed.
-21:21:30: BiblioTER launched.
+21:54:26: Login window launched.
+21:54:28: BiblioTER closed.
+21:54:28: BiblioTER launched.
