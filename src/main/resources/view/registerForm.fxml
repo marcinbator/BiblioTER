@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.PasswordField?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterWindow">
+<AnchorPane fx:id="registerFormPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterWindow">
    <children>
       <PasswordField fx:id="passwordField" layoutX="171.0" layoutY="133.0" prefHeight="36.0" prefWidth="259.0" promptText="Hasło">
          <font>

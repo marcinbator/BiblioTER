@@ -1,59 +1,17 @@
-22:29:29: BiblioTER launched.
-22:29:30: Login window launched.
-22:29:34: Database connection established.
-22:29:34: ERROR: Login failed - incorrect parameters.
-22:29:39: Database connection established.
-22:29:39: User Marcinek authenticated.
-22:29:39: Database connection established.
-22:29:39: Database connection established.
-22:29:39: Books downloaded from database.
-22:29:40: Database connection established.
-22:29:40: Readers downloaded from database.
-22:29:40: GUI initialized.
-22:29:40: GUI established.
-22:29:40: Login successfull.
-22:29:42: Database connection established.
-22:29:43: Add book window launched.
-22:29:43: Book  added properly.
-22:30:09: ERROR: Book - not proper author detected.
-22:30:09: ERROR: Book not added - invalid parameters.
-22:30:15: Book 0 added to database.
-22:30:15: Book 79 downloaded from database.
-22:30:15: Database connection closed.
-22:30:15: Add book window closed.
-22:30:23: Database connection established.
-22:30:23: Database connection established.
-22:30:23: Book 79 shown.
-22:30:23: Book details window launched.
-22:30:28: Book details window closed.
-22:30:29: Database connection established.
-22:30:29: Database connection established.
-22:30:29: Database connection established.
-22:30:29: Book 79 shown.
-22:30:29: Readers downloaded from database.
-22:30:29: Borrow creator window launched.
-22:30:31: Borrow 0 created successfully in database.
-22:30:31: Book 79 edited in database.
-22:30:31: Borrow creator window closed.
-22:30:31: Borrow added.
-22:30:35: Database connection established.
-22:30:35: Database connection established.
-22:30:36: Database connection established.
-22:30:36: Reader 21 downloaded from database.
-22:30:36: Book 79 shown.
-22:30:36: Book details window launched.
-22:30:37: Database connection established.
-22:30:37: Add book window launched.
-22:30:37: Book details window closed.
-22:30:40: Book 79 edited.
-22:30:40: Book 79 edited in database.
-22:30:40: Database connection closed.
-22:30:40: Add book window closed.
-22:30:43: Book 78 downloaded from database.
-22:30:43: Book 79 downloaded from database.
-22:30:43: Books that has reader 21 in history downloaded from database.
-22:30:43: Database connection established.
-22:30:44: Database connection established.
-22:30:44: Database connection established.
-22:30:44: Details window launched.
-22:30:54: BiblioTER closed.
+20:48:41: Login window launched.
+20:49:15: Database connection established.
+20:49:15: User Marcinek authenticated.
+20:49:15: Database connection established.
+20:49:15: Database connection established.
+20:49:15: Books downloaded from database.
+20:49:16: Database connection established.
+20:49:16: Readers downloaded from database.
+20:49:16: GUI initialized.
+20:49:16: GUI established.
+20:49:16: Login successfull.
+20:49:21: Book 78 downloaded from database.
+20:49:21: Books that has reader 21 in history downloaded from database.
+20:49:21: Details window launched.
+20:49:24: Info window closed.
+20:49:25: BiblioTER closed.
+20:49:25: BiblioTER launched.

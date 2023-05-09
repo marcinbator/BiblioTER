@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BorrowBookView">
+<AnchorPane fx:id="borrowBookPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BorrowBookView">
    <children>
       <ChoiceBox fx:id="selectBorrower" layoutX="225.0" layoutY="188.0" prefWidth="150.0" style="-fx-background-color: white;" stylesheets="@../css/gui.css" />
-      <Button fx:id="borrowButton" layoutX="265.0" layoutY="266.0" mnemonicParsing="false" onAction="#onBorrowButtonClick" styleClass="button2" stylesheets="@../css/gui.css" text="Wypożycz" textFill="WHITE">
+      <Button fx:id="borrowButton" layoutX="265.0" layoutY="251.0" mnemonicParsing="false" onAction="#onBorrowButtonClick" prefHeight="40.0" prefWidth="70.0" styleClass="button2" stylesheets="@../css/gui.css" text="Wypożycz" textFill="WHITE">
          <styleClass>
             <String fx:value="button" />
             <String fx:value="button" />

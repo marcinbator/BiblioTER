@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import service.LogOutput;
@@ -23,24 +25,18 @@ import java.util.List;
 
 public class BorrowBookView {
 
+    @FXML private AnchorPane borrowBookPane;
+    @FXML private TextFlow bookDetails;
+    @FXML private Button borrowButton;
+    @FXML private ChoiceBox<String> selectBorrower;
 
-    //Attributes
-    @FXML
-    private TextFlow bookDetails;
-
-    @FXML
-    private Button borrowButton;
-
-    @FXML
-    private ChoiceBox<String> selectBorrower;
-
-    public GUI grandParentController;
-    public Book book;
-    public DBBook bookConnection;
-    public DBReader readerConnection;
-    public DBBorrows borrowsConnection;
-    public Reader borrower;
-    public List<Reader> readersList;
+    private GUI grandParentController;
+    private Book book;
+    private DBBook bookConnection;
+    private DBReader readerConnection;
+    private DBBorrows borrowsConnection;
+    private Reader borrower;
+    private List<Reader> readersList;
 
 
     //WindowControllers
@@ -56,12 +52,34 @@ public class BorrowBookView {
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
         stage.getIcons().add(GUI.image);
+        stage.setOnCloseRequest(event->{
+            try {
+                LogOutput.logEvent("Borrow window closed.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         BorrowBookView borrowBookView =loader.getController();
         borrowBookView.settings(book, grandParentController);
-        borrowBookView.showBook(book);
-        borrowBookView.setReaderList();
+        BookDetailsWindow.showBookDetails(book, borrowBookView.bookDetails);
         stage.show();
         LogOutput.logEvent("Borrow creator window launched.");
+    }
+
+    public void initialize() throws SQLException, IOException {
+        borrowBookPane.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                try {
+                    onBorrowButtonClick();
+                } catch (IOException | SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        readersList=readerConnection.getReaders();
+        for(Reader reader:readersList){
+            selectBorrower.getItems().add(reader.getId()+" "+reader.getName()+" "+reader.getSurname());
+        }
     }
 
     private void settings(Book book,GUI grandParentController) throws SQLException, ClassNotFoundException, IOException {
@@ -81,16 +99,8 @@ public class BorrowBookView {
         LogOutput.logEvent("Borrow creator window closed.");
     }
 
-    private void showBook(Book book) throws IOException, SQLException, ClassNotFoundException {
-        BookDetailsWindow.showBookDetails(book, bookDetails);
-    }
 
-    private void setReaderList() throws SQLException, IOException {
-        readersList=readerConnection.getReaders();
-        for(Reader reader:readersList){
-            selectBorrower.getItems().add(reader.getId()+" "+reader.getName()+" "+reader.getSurname());
-        }
-    }
+    //Operations
 
     private void onBorrowerSelect(){
         String[]readerData=selectBorrower.getSelectionModel().getSelectedItem().split(" ");
@@ -101,8 +111,7 @@ public class BorrowBookView {
         }
     }
 
-    @FXML
-    private void onBorrowButtonClick() throws IOException, SQLException {
+    @FXML private void onBorrowButtonClick() throws IOException, SQLException {
         if(borrower==null){
             LogOutput.logError("Borrower not selected.");
             this.closeWindow();

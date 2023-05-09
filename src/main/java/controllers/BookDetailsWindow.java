@@ -21,25 +21,18 @@ import java.util.List;
 
 public class BookDetailsWindow {
 
+    @FXML private TextFlow textPanel;
+    @FXML private Button editButton;
+    @FXML private Button setAvailableButton;
+    @FXML private Button borrowButton;
 
-    //Attributes
-
-    @FXML
-    private TextFlow textPanel;
-    @FXML
-    private Button editButton;
-    @FXML
-    private Button setAvailableButton;
-    @FXML
-    private Button borrowButton;
-
-    public GUI parentController;
-    public Book book;
-    public DBBook connection;
-    public DBBorrows borrowsConnection;
+    private GUI parentController;
+    private Book book;
+    private DBBook connection;
+    private DBBorrows borrowsConnection;
 
 
-    //WindowControllers
+    //Window controllers
 
     public static void launchBookDetails(GUI parentController, Book book) throws Exception {
         FXMLLoader loader=new FXMLLoader();
@@ -49,9 +42,16 @@ public class BookDetailsWindow {
         stage.setScene(new Scene(loader.load(), 600, 400));
         stage.setResizable(false);
         stage.getIcons().add(GUI.image);
-        BookDetailsWindow bookDetailsWindow =loader.getController();
+        stage.setOnCloseRequest(event->{
+            try {
+                LogOutput.logEvent("Book details window closed.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        BookDetailsWindow bookDetailsWindow = loader.getController();
         bookDetailsWindow.settings(book, parentController);
-        bookDetailsWindow.showBook(book);
+        showBookDetails(book, bookDetailsWindow.textPanel);
         stage.show();
         LogOutput.logEvent("Book details window launched.");
     }
@@ -76,7 +76,8 @@ public class BookDetailsWindow {
 
     public static void showBookDetails(Book book, TextFlow bookDetails) throws IOException, SQLException, ClassNotFoundException {
         bookDetails.getChildren().clear();
-        String text="ID książki: "+book.getId()+"\n" +"Numer: "+book.getNumber()+"\n"+"Tytuł: "+book.getTitle()+"\n"+"Autor: "+book.getAuthor()+"\n"+"Kategoria: "+book.getCategory()+"\n"+"Dostępność: "+book.getAccessible()+"\n";
+        String text="ID książki: "+book.getId()+"\n" +"Numer: "+book.getNumber()+"\n"+"Tytuł: "+book.getTitle()+"\n"+"Autor: "
+                +book.getAuthor()+"\n"+"Kategoria: "+book.getCategory()+"\n"+"Dostępność: "+book.getAccessible()+"\n";
         if(!book.isAccessible()){
             DBBorrows borrowConnection=new DBBorrows();
             Reader reader=borrowConnection.getCurrentReader(book);
@@ -90,38 +91,31 @@ public class BookDetailsWindow {
         LogOutput.logEvent("Book "+book.getId()+" shown.");
     }
 
-    private void showBook(Book book) throws IOException, SQLException, ClassNotFoundException {
-        showBookDetails(book, textPanel);
-    }
-
 
     //Listeners
 
-    @FXML
-    private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
+    @FXML private void onEditBookClick() throws IOException, SQLException, ClassNotFoundException {
         AddBookWindow.launchAddBookWindow(parentController, book);
         closeWindow();
     }
 
-    @FXML
-    private void onDeleteBookClick() throws SQLException, IOException {
+    @FXML private void onDeleteBookClick() throws SQLException, IOException {
         connection.deleteBook(book);
         parentController.booksTable.getItems().remove(book);
         closeWindow();
     }
 
-    @FXML
-    private void onSetAccessibleButtonClick() throws SQLException, IOException, ClassNotFoundException {
+    @FXML private void onSetAccessibleButtonClick() throws SQLException, IOException, ClassNotFoundException {
         book.setAccessible(true);
         borrowsConnection.deactivateAllBorrows(book);
         connection.editBook(book);
         parentController.booksTable.refresh();
         borrowButton.setVisible(true);
         setAvailableButton.setVisible(false);
-        showBook(book);
+        showBookDetails(book, textPanel);
     }
 
-    public void onBorrowHistoryClick() throws Exception {
+    @FXML private void onBorrowHistoryClick() throws Exception {
         String title="Historia wypożyczeń książki "+book.getTitle();
         List<Reader> readers=borrowsConnection.getReadersByBook(book);
         StringBuilder text= new StringBuilder();
@@ -132,10 +126,10 @@ public class BookDetailsWindow {
             text.append(reader.getPhone());
             text.append("\n");
         }
-        InfoView.launchBookDetails(parentController, title, text.toString());
+        InfoView.launchBookDetails(title, text.toString());
     }
 
-    public void onAddBorrowButtonClick() throws Exception {
+    @FXML private void onAddBorrowButtonClick() throws Exception {
         BorrowBookView.launchBorrowBookView(parentController,this, book);
         setAvailableButton.setVisible(true);
     }

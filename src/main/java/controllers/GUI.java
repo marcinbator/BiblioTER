@@ -2,7 +2,9 @@ package controllers;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
@@ -13,6 +15,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import service.BiblioTER;
 import service.LogOutput;
 import service.database.DBBook;
 import service.database.DBBorrows;
@@ -34,49 +37,58 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 public class GUI implements Initializable {
 
+    @FXML public TableView<Book>booksTable;
+    @FXML private Text greeting;
+    @FXML private TableColumn<Book, Integer>bookId;
+    @FXML private TableColumn<Book, String>number;
+    @FXML private TableColumn<Book, String>title;
+    @FXML private TableColumn<Book, String>author;
+    @FXML private TableColumn<Book, String>category;
+    @FXML private TableColumn<Book, String>accessible;
+    @FXML public TableView<Reader> readersTable;
+    @FXML private TableColumn<Reader, Integer>readerId;
+    @FXML private TableColumn<Reader, String>name;
+    @FXML private TableColumn<Reader, String>surname;
+    @FXML private TableColumn<Reader, String>phone;
 
-    //Attributes
-
-    @FXML
-    public TableView<Book>booksTable;
-    @FXML
-    private Text greeting;
-    @FXML
-    private TableColumn<Book, Integer>bookId;
-    @FXML
-    private TableColumn<Book, String>number;
-    @FXML
-    private TableColumn<Book, String>title;
-    @FXML
-    private TableColumn<Book, String>author;
-    @FXML
-    private TableColumn<Book, String>category;
-    @FXML
-    private TableColumn<Book, String>accessible;
-    @FXML
-    public TableView<Reader> readersTable;
-    @FXML
-    private TableColumn<Reader, Integer>readerId;
-    @FXML
-    private TableColumn<Reader, String>name;
-    @FXML
-    private TableColumn<Reader, String>surname;
-    @FXML
-    private TableColumn<Reader, String>phone;
-
-    public DBBook bookConnection;
-    public DBReader readerConnection;
-    public DBBorrows borrowsConnection;
-    public User user;
+    private DBBook bookConnection;
+    private DBReader readerConnection;
+    private DBBorrows borrowsConnection;
+    private User user;
     public static Image image = new Image(Objects.requireNonNull(GUI.class.getResource("/img/logo2.png")).toString());
 
 
-    //Constructors
+    //Window controllers
 
+    public static void launchWindow(Stage oldStage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(GUI.class.getResource("/view/gui.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Stage stage=new Stage();
+        stage.setTitle("BiblioTER");
+        stage.getIcons().add(GUI.image);
+        stage.setScene(scene);
+        LogOutput.logEvent("GUI established.");
+        BiblioTER.setCloseAction(stage);
+        stage.show();
+        if(oldStage!=null){
+            oldStage.close();
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //init books table
+        initBooksTable();
+        initReadersTable();
+        booksTable.getSortOrder().add(title);
+        readersTable.getSortOrder().add(surname);
+        user=LoginWindow.user;
+        if(user!=null){
+            greeting.setText("Cześć, "+user.getUserName()+"!");
+        }
+    }
+
+    private void initBooksTable(){
         bookId.setCellValueFactory(new PropertyValueFactory<>("id"));
         number.setCellValueFactory(new PropertyValueFactory<>("number"));
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -91,7 +103,9 @@ public class GUI implements Initializable {
         } catch (SQLException | ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
-        //init readers table
+    }
+
+    private void initReadersTable(){
         readerId.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         surname.setCellValueFactory(new PropertyValueFactory<>("surname"));
@@ -109,12 +123,6 @@ public class GUI implements Initializable {
             LogOutput.logEvent("GUI initialized.");
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        booksTable.getSortOrder().add(title);
-        readersTable.getSortOrder().add(surname);
-        user=LoginWindow.user;
-        if(user!=null){
-            greeting.setText("Cześć, "+user.getUserName()+"!");
         }
     }
 
@@ -207,22 +215,19 @@ public class GUI implements Initializable {
 
     //Listeners
 
-    @FXML
-    private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
+    @FXML private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
         Book book=new Book();
         AddBookWindow.launchAddBookWindow(this, book);
         LogOutput.logEvent("Book "+book.getTitle()+" added properly.");
     }
 
-    @FXML
-    private void onAddReaderClick() throws IOException, SQLException, ClassNotFoundException {
+    @FXML private void onAddReaderClick() throws IOException, SQLException, ClassNotFoundException {
         Reader reader=new Reader();
         AddReaderWindow.launchAddReaderWindow(this, reader);
         LogOutput.logEvent("Reader "+reader.getId()+" added properly.");
     }
 
-    @FXML
-    private void onBookClick(MouseEvent mouseEvent) throws Exception {
+    @FXML private void onBookClick(MouseEvent mouseEvent) throws Exception {
         if(mouseEvent.getClickCount()==2 && mouseEvent.getButton()== MouseButton.PRIMARY){
             List<Book> books=booksTable.getSelectionModel().getSelectedItems();
             for(Book book:books){
@@ -234,10 +239,23 @@ public class GUI implements Initializable {
         }
     }
 
-    @FXML
-    private void onReaderClick() {
+    @FXML private void onReaderClick() {
         readersTable.setContextMenu(launchReaderContextMenu());
     }
+
+    @FXML private void onLogoutClick() throws IOException {
+        Stage oldStage = (Stage) greeting.getScene().getWindow();
+        LoginWindow.launchWindow(oldStage);
+    }
+
+    @FXML private void onDeleteAccountClick() throws SQLException, IOException, ClassNotFoundException {
+        DBUser connection=new DBUser();
+        connection.deleteUser(user);
+        onLogoutClick();
+    }
+
+
+    //Context menus operations
 
     private void onDeleteBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
         if (bookConnection.isClosed()) {
@@ -270,18 +288,17 @@ public class GUI implements Initializable {
             text.append(book.getAuthor()).append(", ");
             text.append(book.getCategory()).append(", ");
             text.append(date).append(" (");
-            int diff= (int) DAYS.between(LocalDate.now(), date);
+            int diff= (int) DAYS.between(date,LocalDate.now());
             text.append(diff).append(" dni");
             if(diff>30){
                 text.append("!");
             }
             text.append(")\n\n");
         }
-        InfoView.launchBookDetails(this, title, text.toString());
+        InfoView.launchBookDetails(title, text.toString());
     }
 
     private void onEditBookClick(Book book) throws IOException, SQLException, ClassNotFoundException {
-        System.out.println(book.isAccessible());
         AddBookWindow.launchAddBookWindow(this, book);
     }
 
@@ -302,17 +319,5 @@ public class GUI implements Initializable {
         booksTable.getItems().add(book);
         booksTable.refresh();
         LogOutput.logEvent("Book "+book.getId()+" cloned properly.");
-    }
-
-
-    public void onLogoutClick() throws IOException {
-        Stage oldStage = (Stage) greeting.getScene().getWindow();
-        LoginWindow.launchWindow(oldStage);
-    }
-
-    public void onDeleteAccountClick() throws SQLException, IOException, ClassNotFoundException {
-        DBUser connection=new DBUser();
-        connection.deleteUser(user);
-        onLogoutClick();
     }
 }

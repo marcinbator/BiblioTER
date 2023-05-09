@@ -7,33 +7,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddBookWindow">
+<AnchorPane fx:id="addBookFormPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddBookWindow">
    <children>
-      <TextField fx:id="titleField" layoutX="72.0" layoutY="114.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
-      <Label layoutX="72.0" layoutY="94.0" prefHeight="18.0" prefWidth="73.0" text="Tytuł" textFill="WHITE">
+      <TextField fx:id="titleField" layoutX="71.0" layoutY="95.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
+      <Label layoutX="71.0" layoutY="75.0" prefHeight="18.0" prefWidth="73.0" text="Tytuł" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="authorField" layoutX="72.0" layoutY="170.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
-      <Label layoutX="72.0" layoutY="150.0" prefHeight="12.0" prefWidth="74.0" text="Autor" textFill="WHITE">
+      <TextField fx:id="authorField" layoutX="71.0" layoutY="151.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
+      <Label layoutX="71.0" layoutY="131.0" prefHeight="12.0" prefWidth="74.0" text="Autor" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="categoryField" layoutX="72.0" layoutY="226.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
-      <Label layoutX="72.0" layoutY="206.0" prefHeight="18.0" prefWidth="73.0" text="Kategoria" textFill="WHITE">
+      <TextField fx:id="categoryField" layoutX="71.0" layoutY="207.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
+      <Label layoutX="71.0" layoutY="187.0" prefHeight="18.0" prefWidth="73.0" text="Kategoria" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="addBookButton" layoutX="240.0" layoutY="304.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" prefHeight="52.0" prefWidth="121.0" styleClass="button2" stylesheets="@../css/gui.css" text="Zapisz">
+      <Button fx:id="addBookButton" layoutX="240.0" layoutY="326.0" mnemonicParsing="false" onAction="#onAddBookButtonClicked" prefHeight="52.0" prefWidth="121.0" styleClass="button2" stylesheets="@../css/gui.css" text="Zapisz">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <TextFlow fx:id="messageField" layoutX="200.0" layoutY="218.0" prefHeight="26.0" prefWidth="200.0" />
-      <TextField fx:id="numberField" layoutX="72.0" layoutY="62.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
-      <Label layoutX="72.0" layoutY="42.0" prefHeight="18.0" prefWidth="73.0" text="Numer" textFill="WHITE">
+      <TextFlow fx:id="messageField" layoutX="201.0" layoutY="240.0" prefHeight="26.0" prefWidth="200.0" />
+      <TextField fx:id="numberField" layoutX="71.0" layoutY="43.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
+      <Label layoutX="71.0" layoutY="23.0" prefHeight="18.0" prefWidth="73.0" text="Numer" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
