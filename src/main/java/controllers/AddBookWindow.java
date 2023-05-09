@@ -67,16 +67,17 @@ public class AddBookWindow {
                 }
             }
         });
-        this.numberField.setText(defaultBook.getNumber());
-        this.titleField.setText(defaultBook.getTitle());
-        this.authorField.setText(defaultBook.getAuthor());
-        this.categoryField.setText(defaultBook.getCategory());
+
     }
 
     private void setForm(GUI parentController, Book book) throws SQLException, ClassNotFoundException, IOException {
         this.parentController = parentController;
         this.defaultBook=book;
         this.connection=new DBBook();
+        this.numberField.setText(defaultBook.getNumber());
+        this.titleField.setText(defaultBook.getTitle());
+        this.authorField.setText(defaultBook.getAuthor());
+        this.categoryField.setText(defaultBook.getCategory());
     }
 
     private void closeWindow() throws SQLException, IOException {

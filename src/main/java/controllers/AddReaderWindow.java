@@ -66,15 +66,15 @@ public class AddReaderWindow {
                 }
             }
         });
-        this.nameField.setText(defaultReader.getName());
-        this.surnameField.setText(defaultReader.getSurname());
-        this.phoneField.setText(defaultReader.getPhone());
     }
 
     private void setForm(GUI parentController, Reader reader) throws SQLException, ClassNotFoundException, IOException {
         this.parentController = parentController;
         this.defaultReader =reader;
         this.connection=new DBReader();
+        this.nameField.setText(defaultReader.getName());
+        this.surnameField.setText(defaultReader.getSurname());
+        this.phoneField.setText(defaultReader.getPhone());
     }
 
     private void closeWindow() throws SQLException, IOException {

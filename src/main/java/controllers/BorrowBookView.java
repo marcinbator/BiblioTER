@@ -76,10 +76,6 @@ public class BorrowBookView {
                 }
             }
         });
-        readersList=readerConnection.getReaders();
-        for(Reader reader:readersList){
-            selectBorrower.getItems().add(reader.getId()+" "+reader.getName()+" "+reader.getSurname());
-        }
     }
 
     private void settings(Book book,GUI grandParentController) throws SQLException, ClassNotFoundException, IOException {
@@ -91,6 +87,10 @@ public class BorrowBookView {
         selectBorrower.setOnAction(event->{
             onBorrowerSelect();
         });
+        readersList=readerConnection.getReaders();
+        for(Reader reader:readersList){
+            selectBorrower.getItems().add(reader.getId()+" "+reader.getName()+" "+reader.getSurname());
+        }
     }
 
     private void closeWindow() throws IOException {
