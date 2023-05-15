@@ -64,7 +64,7 @@ public class RegisterWindow {
                 messagePanel.setText("Nieprawidłowe dane - nazwa od 5 do 30 znaków, bez polskich znaków i spacji, hasło od 4 do 30 znaków.");
                 return;
             }
-            DBUser connection=new DBUser();
+            DBUser connection=new DBUser(messagePanel);
             if(!connection.ifUserExists(user)){
                 connection.registerUser(user);
                 LogOutput.logEvent("User "+username+" registered successfully.");

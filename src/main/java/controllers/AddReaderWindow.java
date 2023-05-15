@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class AddReaderWindow {
 
     @FXML private AnchorPane addReaderFormPane;
-    @FXML private TextFlow messageField;
+    @FXML private Text messageField;
     @FXML private TextField nameField;
     @FXML private TextField surnameField;
     @FXML private TextField phoneField;
@@ -114,10 +114,10 @@ public class AddReaderWindow {
     @FXML private void onAddReaderButtonClicked() throws SQLException, IOException {
         if(!defaultReader.setName(nameField.getText())|| !defaultReader.setSurname(surnameField.getText())|| !defaultReader.setPhone(phoneField.getText())){
             LogOutput.logError("Reader not added - invalid parameters.");
-            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a " +
-                    "telefon 9 cyfr w formatach: xxxxxxxxx, xxx-xxx-xxx lub xxx xxx xxx.");
-            text.setFill(Color.WHITE);
-            messageField.getChildren().add(text);
+            String text="Nieprawidłowe dane. Tekst powinien zawierać tylko litery oraz spacje oraz być długości od 2 do 30 znaków, a " +
+                    "telefon 9 cyfr w formatach: xxxxxxxxx, xxx-xxx-xxx lub xxx xxx xxx.";
+            messageField.setFill(Color.WHITE);
+            messageField.setText(text);
             return;
         }
         if (defaultReader.getId() != 0) {

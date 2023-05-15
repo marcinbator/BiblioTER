@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class AddBookWindow {
 
     @FXML private AnchorPane addBookFormPane;
-    @FXML private TextFlow messageField;
+    @FXML private Text messageField;
     @FXML private TextField numberField;
     @FXML private TextField titleField;
     @FXML private TextField authorField;
@@ -118,9 +118,9 @@ public class AddBookWindow {
     @FXML private void onAddBookButtonClicked() throws SQLException, IOException {
         if(!defaultBook.setTitle(titleField.getText())|| !defaultBook.setAuthor(authorField.getText())|| !defaultBook.setCategory(categoryField.getText())){
             LogOutput.logError("Book not added - invalid parameters.");
-            Text text=new Text("Nieprawidłowe dane. Tekst powinien zawierać tylko litery, cyfry oraz spacje oraz być długości od 2 do 30 znaków.");
-            text.setFill(Color.WHITE);
-            messageField.getChildren().add(text);
+            String text="Nieprawidłowe dane. Tekst powinien zawierać tylko litery, cyfry oraz spacje oraz być długości od 2 do 30 znaków.";
+            messageField.setFill(Color.WHITE);
+            messageField.setText(text);
             return;
         }
         defaultBook.setNumber(numberField.getText());

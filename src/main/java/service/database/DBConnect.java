@@ -17,7 +17,7 @@ public class DBConnect {
 
     //Connection operations
 
-    protected void connect() throws ClassNotFoundException, SQLException, IOException {
+    protected boolean connect() throws ClassNotFoundException, SQLException, IOException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String username = "sql7615554";
         String password = "6kcHFl8kCK";
@@ -25,9 +25,15 @@ public class DBConnect {
         //String username="root";
         //String password="javademo";
         //String url="jdbc:mysql://localhost:3306/javadatabase";
-        connection = DriverManager.getConnection(url, username, password);
+        try{
+            connection = DriverManager.getConnection(url, username, password);
+        }
+        catch(SQLException e){
+            return false;
+        }
         user=LoginWindow.user;
         LogOutput.logEvent("Database connection established.");
+        return true;
     }
 
     public boolean isClosed() throws SQLException {

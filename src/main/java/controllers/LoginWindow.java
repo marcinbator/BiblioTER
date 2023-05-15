@@ -63,7 +63,7 @@ public class LoginWindow {
         user=new User();
         user.setUserName(username);
         user.setPassword(password);
-        DBUser connection=new DBUser();
+        DBUser connection=new DBUser(messagePanel);
         if(connection.authenticate(user)){
             user.setId(connection.getUserId(user));
             Stage oldStage = (Stage) loginButton.getScene().getWindow();

@@ -1,5 +1,6 @@
 package service.database;
 
+import javafx.scene.text.Text;
 import service.LogOutput;
 import service.objects.User;
 
@@ -17,6 +18,11 @@ public class DBUser extends DBConnect{
         this.connect();
     }
 
+    public DBUser(Text messageField) throws SQLException, IOException, ClassNotFoundException {
+        if(!this.connect()){
+            messageField.setText("Błąd łączenia - sprawdź połączenie z internetem.");
+        }
+    }
 
     //Database operations
 
