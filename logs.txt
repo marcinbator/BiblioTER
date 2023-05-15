@@ -1,3 +1,67 @@
-21:54:26: Login window launched.
-21:54:28: BiblioTER closed.
-21:54:28: BiblioTER launched.
+13:08:14: Login window launched.
+13:08:22: Register window launched.
+13:08:33: ERROR: Passwords doesn't match.
+13:08:46: Database connection established.
+13:08:46: User Kucaj registered successfully.
+13:08:46: User Kucaj registered successfully.
+13:08:46: Login window launched.
+13:08:55: Database connection established.
+13:08:55: User Kucaj authenticated.
+13:08:55: Database connection established.
+13:08:56: Database connection established.
+13:08:56: Books downloaded from database.
+13:08:56: Database connection established.
+13:08:56: Readers downloaded from database.
+13:08:56: GUI initialized.
+13:08:56: GUI established.
+13:08:56: Login successfull.
+13:08:58: Database connection established.
+13:08:59: Add book window launched.
+13:08:59: Book  added properly.
+13:09:32: Book 0 added to database.
+13:09:32: Book 83 downloaded from database.
+13:09:32: Database connection closed.
+13:09:32: Add book window closed.
+13:09:39: Books downloaded from database.
+13:09:42: Books downloaded from database.
+13:09:43: Books downloaded from database.
+13:09:43: Books downloaded from database.
+13:09:46: Books downloaded from database.
+13:09:48: Books downloaded from database.
+13:09:50: Database connection established.
+13:09:51: Add reader window launched.
+13:09:51: Reader 0 added properly.
+13:09:55: ERROR: Reader - not proper surname detected
+13:09:55: ERROR: Reader not added - invalid parameters.
+13:10:10: ERROR: Reader - not proper phone detected
+13:10:10: ERROR: Reader not added - invalid parameters.
+13:10:21: Reader 0 added to database.
+13:10:21: Reader 30 downloaded from database.
+13:10:21: Database connection closed.
+13:10:21: Add reader window closed.
+13:10:31: Database connection established.
+13:10:31: Database connection established.
+13:10:31: Database connection established.
+13:10:31: Readers downloaded from database.
+13:10:31: Book 83 shown.
+13:10:31: Borrow creator window launched.
+13:10:33: Borrow 0 created successfully in database.
+13:10:33: Book 83 edited in database.
+13:10:33: Borrow creator window closed.
+13:10:33: Borrow added.
+13:10:39: Database connection established.
+13:10:39: User Kucaj deleted successfully.
+13:10:39: Login window launched.
+13:10:48: Database connection established.
+13:10:48: User Marcinek authenticated.
+13:10:48: Database connection established.
+13:10:48: Database connection established.
+13:10:48: Books downloaded from database.
+13:10:49: Database connection established.
+13:10:49: Readers downloaded from database.
+13:10:49: GUI initialized.
+13:10:49: GUI established.
+13:10:49: Login successfull.
+13:11:18: Books downloaded from database.
+13:11:28: BiblioTER closed.
+13:11:28: BiblioTER launched.

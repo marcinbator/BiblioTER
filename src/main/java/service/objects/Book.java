@@ -1,8 +1,11 @@
 package service.objects;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import service.LogOutput;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Book {
 
@@ -34,6 +37,17 @@ public class Book {
         this.setAccessible(accessible);
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", number='" + number + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", category='" + category + '\'' +
+                ", accessible='" + accessible + '\'' +
+                '}';
+    }
 
     //Getters, setters
 
@@ -113,6 +127,19 @@ public class Book {
 
     private static boolean stringValidate(String line){
         return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*/!?\\-()& ]{2,30}");
+    }
+
+
+    //Search
+
+    public static ObservableList<Book> searchBook(List<Book> books, String text){
+        ObservableList<Book> newBooks = FXCollections.observableArrayList();
+        for(Book book:books){
+            if(book.toString().toLowerCase().contains(text)){
+                newBooks.add(book);
+            }
+        }
+        return newBooks;
     }
 
 }

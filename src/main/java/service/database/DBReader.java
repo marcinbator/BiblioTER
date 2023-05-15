@@ -1,5 +1,7 @@
 package service.database;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import service.LogOutput;
 import service.objects.Book;
 import service.objects.Reader;
@@ -84,18 +86,18 @@ public class DBReader extends DBConnect{
         return getReader(reader, statement);
     }
 
-    public List<Reader> getReaders() throws SQLException, IOException {
+    public ObservableList<Reader> getReaders() throws SQLException, IOException {
         PreparedStatement statement=connection.prepareStatement("SELECT * FROM readerstable WHERE userId=?");
         statement.setInt(1, user.getId());
         ResultSet results=statement.executeQuery();
-        List<Reader> readers=new ArrayList<>();
+        ObservableList<Reader> readers= FXCollections.observableArrayList();
         while(results.next()){
             Reader reader=new Reader();
             downloadReader(results, reader);
             readers.add(reader);
         }
         LogOutput.logEvent("Readers downloaded from database.");
-        return  readers;
+        return readers;
     }
 
 }
