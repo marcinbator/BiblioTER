@@ -10,13 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="DBBorrows class implementation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BiblioTER_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BiblioTER_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/BiblioTER.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTER_jar/logs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/objects/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +158,13 @@
       <workItem from="1683661345636" duration="187000" />
       <workItem from="1683661561442" duration="269000" />
       <workItem from="1683661998417" duration="166000" />
+      <workItem from="1683823289257" duration="848000" />
+      <workItem from="1683824600270" duration="76000" />
+      <workItem from="1683886023178" duration="273000" />
+      <workItem from="1684000921468" duration="724000" />
+      <workItem from="1684003743481" duration="502000" />
+      <workItem from="1684004346289" duration="193000" />
+      <workItem from="1684145946366" duration="3449000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>

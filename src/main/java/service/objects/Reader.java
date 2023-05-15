@@ -1,8 +1,11 @@
 package service.objects;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import service.LogOutput;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Reader {
 
@@ -31,6 +34,15 @@ public class Reader {
         this.setPhone(phone);
     }
 
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 
     //Getters, setters
 
@@ -89,5 +101,18 @@ public class Reader {
     }
     private static boolean phoneValidate(String phone){
         return phone.matches("^\\d{3}[\\s\\-]?\\d{3}[\\s\\-]?\\d{3}$");
+    }
+
+
+    //Search
+
+    public static ObservableList<Reader> searchReader(List<Reader> readers, String text){
+        ObservableList<Reader> newReaders = FXCollections.observableArrayList();
+        for(Reader reader:readers){
+            if(reader.toString().toLowerCase().contains(text)){
+                newReaders.add(reader);
+            }
+        }
+        return newReaders;
     }
 }

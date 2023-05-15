@@ -1,16 +1,17 @@
 package controllers;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -32,6 +33,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
@@ -39,6 +41,8 @@ public class GUI implements Initializable {
 
     @FXML public TableView<Book>booksTable;
     @FXML private Text greeting;
+    @FXML private TabPane tabView;
+    @FXML private TextField searchField;
     @FXML private TableColumn<Book, Integer>bookId;
     @FXML private TableColumn<Book, String>number;
     @FXML private TableColumn<Book, String>title;
@@ -86,6 +90,13 @@ public class GUI implements Initializable {
         if(user!=null){
             greeting.setText("Cześć, "+user.getUserName()+"!");
         }
+        searchField.textProperty().addListener((observable, oldValue, newValue)->{
+            try {
+                onSearchFieldChange();
+            } catch (SQLException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private void initBooksTable(){
@@ -214,6 +225,28 @@ public class GUI implements Initializable {
 
 
     //Listeners
+
+    @FXML private void onSearchFieldChange() throws SQLException, IOException {
+        String searchPhrase=searchField.getText();
+        searchPhrase=searchPhrase.toLowerCase();
+        int tab=tabView.getSelectionModel().getSelectedIndex();
+        if(!searchPhrase.equals("")){
+            if(tab==0){
+                booksTable.setItems(Book.searchBook(booksTable.getItems(),searchPhrase));
+            }
+            else{
+                readersTable.setItems(Reader.searchReader(readersTable.getItems(),searchPhrase));
+            }
+        }
+        else{
+            if(tab==0){
+                booksTable.setItems(bookConnection.getBooks());
+            }
+            else{
+                readersTable.setItems(readerConnection.getReaders());
+            }
+        }
+    }
 
     @FXML private void onAddBookClick() throws IOException, SQLException, ClassNotFoundException {
         Book book=new Book();
