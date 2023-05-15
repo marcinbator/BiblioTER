@@ -11,25 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="searchField">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBookWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddReaderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BookDetailsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BorrowBookView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBBorrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/database/DBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/addReaderForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/bookDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/borrowBookView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +160,7 @@
       <workItem from="1684004346289" duration="193000" />
       <workItem from="1684145946366" duration="3514000" />
       <workItem from="1684149547180" duration="93000" />
-      <workItem from="1684168086936" duration="1578000" />
+      <workItem from="1684168086936" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
