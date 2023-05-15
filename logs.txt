@@ -1,16 +1,66 @@
-13:19:26: Login window launched.
-13:19:29: Database connection established.
-13:19:29: User Marcinek authenticated.
-13:19:29: Database connection established.
-13:19:29: Database connection established.
-13:19:30: Books downloaded from database.
-13:19:30: Database connection established.
-13:19:30: Readers downloaded from database.
-13:19:30: GUI initialized.
-13:19:30: GUI established.
-13:19:30: Login successfull.
-13:19:54: Books downloaded from database.
-13:20:02: Books downloaded from database.
-13:20:11: Books downloaded from database.
-13:20:16: BiblioTER closed.
-13:20:16: BiblioTER launched.
+19:08:19: Login window launched.
+19:08:20: ERROR: User creation failed - invalid username
+19:08:20: ERROR: User creation failed - invalid password
+19:08:21: Database connection established.
+19:08:21: ERROR: Login failed - incorrect parameters.
+19:08:24: Database connection established.
+19:08:24: User Marcinek authenticated.
+19:08:25: Database connection established.
+19:08:25: Database connection established.
+19:08:25: Books downloaded from database.
+19:08:25: Database connection established.
+19:08:25: Readers downloaded from database.
+19:08:25: GUI initialized.
+19:08:25: GUI established.
+19:08:25: Login successfull.
+19:08:28: Database connection established.
+19:08:28: Add book window launched.
+19:08:28: Book  added properly.
+19:08:29: Add book window closed.
+19:08:31: Database connection established.
+19:08:31: Add reader window launched.
+19:08:31: Reader 0 added properly.
+19:08:32: Add reader window closed.
+19:08:33: Database connection established.
+19:08:33: Add book window launched.
+19:08:33: Book  added properly.
+19:08:50: Book 0 added to database.
+19:08:50: Book 84 downloaded from database.
+19:08:50: Database connection closed.
+19:08:50: Add book window closed.
+19:08:58: Database connection established.
+19:08:58: Add book window launched.
+19:09:02: Book 82 edited.
+19:09:02: Book 82 edited in database.
+19:09:02: Database connection closed.
+19:09:02: Add book window closed.
+19:09:09: Database connection established.
+19:09:09: Database connection established.
+19:09:09: Database connection established.
+19:09:09: Reader 26 downloaded from database.
+19:09:09: Book 80 shown.
+19:09:09: Book details window launched.
+19:09:11: Book details window closed.
+19:09:13: Book 80 added to database.
+19:09:14: Book 80 cloned properly.
+19:09:19: Book 84 added to database.
+19:09:19: Book 84 cloned properly.
+19:09:21: Book 84 added to database.
+19:09:21: Book 84 cloned properly.
+19:09:23: Book 82 added to database.
+19:09:23: Book 82 cloned properly.
+19:09:30: Books downloaded from database.
+19:09:33: Database connection established.
+19:09:33: Database connection established.
+19:09:33: Book 85 shown.
+19:09:33: Book details window launched.
+19:09:34: Book details window closed.
+19:09:38: Database connection established.
+19:09:38: Database connection established.
+19:09:38: Book 86 shown.
+19:09:38: Book details window launched.
+19:09:39: Book details window closed.
+19:09:55: Books downloaded from database.
+19:10:02: Readers downloaded from database.
+19:10:08: BiblioTER closed.
+19:10:08: BiblioTER launched.

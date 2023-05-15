@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="addBookFormPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A4969B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddBookWindow">
    <children>
@@ -31,7 +31,10 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <TextFlow fx:id="messageField" layoutX="201.0" layoutY="240.0" prefHeight="26.0" prefWidth="200.0" />
+      <Text fx:id="messageField" layoutX="22.0" layoutY="261.0" textAlignment="CENTER" wrappingWidth="557.0">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
       <TextField fx:id="numberField" layoutX="71.0" layoutY="43.0" prefHeight="26.0" prefWidth="458.0" styleClass="input" stylesheets="@../css/gui.css" />
       <Label layoutX="71.0" layoutY="23.0" prefHeight="18.0" prefWidth="73.0" text="Numer" textFill="WHITE">
          <font>

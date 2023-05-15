@@ -126,7 +126,7 @@ public class Book {
     //Validation
 
     private static boolean stringValidate(String line){
-        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*/!?\\-()& ]{2,30}");
+        return line.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ*./!?\\-()& ]{2,30}");
     }
 
 
