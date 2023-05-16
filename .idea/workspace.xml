@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a47cfe-7ecb-453c-b35b-bff57d18ccf6" name="Changes" comment="searchField">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +161,7 @@
       <workItem from="1684145946366" duration="3514000" />
       <workItem from="1684149547180" duration="93000" />
       <workItem from="1684168086936" duration="4337000" />
+      <workItem from="1684217530409" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1681728611526</created>
