@@ -227,10 +227,10 @@ public class GUI implements Initializable {
         int tab=tabView.getSelectionModel().getSelectedIndex();
         if(!searchPhrase.equals("")){
             if(tab==0){
-                booksTable.setItems(Book.searchBook(booksTable.getItems(),searchPhrase));
+                booksTable.setItems(Book.searchBook(bookConnection.getBooks(),searchPhrase));
             }
             else{
-                readersTable.setItems(Reader.searchReader(readersTable.getItems(),searchPhrase));
+                readersTable.setItems(Reader.searchReader(readerConnection.getReaders(),searchPhrase));
             }
         }
         else{

@@ -1,35 +1,79 @@
-08:13:13: Login window launched.
-08:13:14: ERROR: User creation failed - invalid username
-08:13:14: ERROR: User creation failed - invalid password
-08:13:15: Database connection established.
-08:13:15: ERROR: Login failed - incorrect parameters.
-08:13:19: Database connection established.
-08:13:19: User Marcinek authenticated.
-08:13:19: Database connection established.
-08:13:20: Database connection established.
-08:13:20: Books downloaded from database.
-08:13:20: Database connection established.
-08:13:20: Readers downloaded from database.
-08:13:20: GUI initialized.
-08:13:20: GUI established.
-08:13:20: Login successfull.
-08:13:30: Database connection established.
-08:13:30: Database connection established.
-08:13:30: Database connection established.
-08:13:30: Reader 27 downloaded from database.
-08:13:30: Book 80 shown.
-08:13:30: Book details window launched.
-08:13:32: Reader 26 downloaded from database.
-08:13:32: Reader 26 downloaded from database.
-08:13:32: Reader 26 downloaded from database.
-08:13:32: Reader 27 downloaded from database.
-08:13:32: Readers of book 80 downloaded from database.
-08:13:32: Details window launched.
-08:13:34: Info window closed.
-08:13:34: Book details window closed.
-08:13:37: Book 80 downloaded from database.
-08:13:37: Books that has reader 27 in history downloaded from database.
-08:13:37: Details window launched.
-08:13:38: Info window closed.
-08:13:39: BiblioTER closed.
-08:13:39: BiblioTER launched.
+13:40:51: Login window launched.
+13:40:55: Database connection established.
+13:40:55: User Marcinek authenticated.
+13:40:55: Database connection established.
+13:40:55: Database connection established.
+13:40:55: Books downloaded from database.
+13:40:55: Database connection established.
+13:40:55: Readers downloaded from database.
+13:40:55: GUI initialized.
+13:40:55: GUI established.
+13:40:56: Login successfull.
+13:40:59: Books downloaded from database.
+13:40:59: Books downloaded from database.
+13:40:59: Books downloaded from database.
+13:40:59: Books downloaded from database.
+13:40:59: Books downloaded from database.
+13:41:00: Books downloaded from database.
+13:41:00: Books downloaded from database.
+13:41:01: Books downloaded from database.
+13:41:01: Books downloaded from database.
+13:41:02: Books downloaded from database.
+13:41:19: Books downloaded from database.
+13:41:19: Books downloaded from database.
+13:41:20: Books downloaded from database.
+13:41:20: Books downloaded from database.
+13:41:21: Books downloaded from database.
+13:41:22: Books downloaded from database.
+13:41:23: Books downloaded from database.
+13:41:23: Books downloaded from database.
+13:41:23: Books downloaded from database.
+13:41:23: Books downloaded from database.
+13:41:25: Books downloaded from database.
+13:41:29: Books downloaded from database.
+13:41:29: Books downloaded from database.
+13:41:30: Books downloaded from database.
+13:41:31: Books downloaded from database.
+13:41:34: Books downloaded from database.
+13:41:36: Books downloaded from database.
+13:41:42: Books downloaded from database.
+13:41:43: Books downloaded from database.
+13:41:46: Books downloaded from database.
+13:41:47: Books downloaded from database.
+13:41:49: Books downloaded from database.
+13:41:50: Books downloaded from database.
+13:41:50: Books downloaded from database.
+13:41:50: Books downloaded from database.
+13:41:53: Books downloaded from database.
+13:41:53: Books downloaded from database.
+13:41:53: Books downloaded from database.
+13:41:55: Books downloaded from database.
+13:41:55: Books downloaded from database.
+13:41:55: Books downloaded from database.
+13:41:55: Books downloaded from database.
+13:41:56: Books downloaded from database.
+13:41:56: Books downloaded from database.
+13:41:56: Books downloaded from database.
+13:41:57: Books downloaded from database.
+13:41:57: Books downloaded from database.
+13:41:57: Books downloaded from database.
+13:41:59: Books downloaded from database.
+13:42:00: Books downloaded from database.
+13:42:00: Books downloaded from database.
+13:42:00: Books downloaded from database.
+13:42:00: Books downloaded from database.
+13:42:00: Books downloaded from database.
+13:42:05: Books downloaded from database.
+13:42:05: Books downloaded from database.
+13:42:05: Books downloaded from database.
+13:42:05: Books downloaded from database.
+13:42:06: Books downloaded from database.
+13:42:06: Books downloaded from database.
+13:42:06: Books downloaded from database.
+13:42:07: Books downloaded from database.
+13:42:07: Books downloaded from database.
+13:42:07: Books downloaded from database.
+13:42:07: Books downloaded from database.
+13:42:08: Books downloaded from database.
+13:42:31: BiblioTER closed.
+13:42:31: BiblioTER launched.
