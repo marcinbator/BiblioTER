@@ -1,3 +1,3 @@
 # BiblioTER
-Aplikacja desktopowa do zarządzania biblioteką. Obsługa książek, czytelników, użytkowników.
+Desktop app for managing the library in JavaFX with MySQL database.
 
