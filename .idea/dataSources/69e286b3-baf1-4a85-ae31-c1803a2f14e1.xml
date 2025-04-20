@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="javadatabase">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -677,36 +677,36 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
     </table>
     <column id="206" parent="202" name="id">
       <AutoIncrement>72</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="207" parent="202" name="title">
-      <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="208" parent="202" name="author">
-      <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="209" parent="202" name="category">
-      <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="210" parent="202" name="accessibility">
-      <DasType>tinyint(4)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <Position>5</Position>
+      <StoredType>tinyint(4)|0s</StoredType>
     </column>
     <column id="211" parent="202" name="number">
-      <DasType>varchar(45)|0s</DasType>
       <Position>6</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="212" parent="202" name="userId">
-      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <index id="213" parent="202" name="PRIMARY">
       <ColNames>id</ColNames>
@@ -720,28 +720,28 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
     </key>
     <column id="215" parent="203" name="id">
       <AutoIncrement>9</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="216" parent="203" name="bookid">
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="217" parent="203" name="borrowerid">
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="218" parent="203" name="active">
-      <DasType>tinyint(4)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <Position>4</Position>
+      <StoredType>tinyint(4)|0s</StoredType>
     </column>
     <column id="219" parent="203" name="date">
-      <DasType>date|0s</DasType>
       <Position>5</Position>
+      <StoredType>date|0s</StoredType>
     </column>
     <index id="220" parent="203" name="PRIMARY">
       <ColNames>id</ColNames>
@@ -755,27 +755,27 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
     </key>
     <column id="222" parent="204" name="id">
       <AutoIncrement>22</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="223" parent="204" name="name">
-      <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="224" parent="204" name="surname">
-      <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="225" parent="204" name="phone">
-      <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="226" parent="204" name="userId">
-      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <index id="227" parent="204" name="PRIMARY">
       <ColNames>id</ColNames>
@@ -789,17 +789,17 @@ sql7615554|schema||sql7615554||UPDATE|G</Grants>
     </key>
     <column id="229" parent="205" name="id">
       <AutoIncrement>7</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
     </column>
     <column id="230" parent="205" name="username">
-      <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <column id="231" parent="205" name="password">
-      <DasType>varchar(45)|0s</DasType>
       <Position>3</Position>
+      <StoredType>varchar(45)|0s</StoredType>
     </column>
     <index id="232" parent="205" name="PRIMARY">
       <ColNames>id</ColNames>
